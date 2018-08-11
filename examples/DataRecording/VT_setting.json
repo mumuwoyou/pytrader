@@ -1,0 +1,22 @@
+{
+	"fontFamily": "微软雅黑",
+	"fontSize": 9,
+
+	"mongoHost": "localhost",
+	"mongoPort": 27017,
+	"mongoLogging": true,
+	"mongoUser":"root",
+	"mongoPwd":"ll159582",
+
+	"darkStyle": true,
+	"language": "chinese",
+
+	"logActive": true,
+	"logLevel": "debug",
+	"logConsole": true,
+	"logFile": true,
+
+	"tdPenalty": ["IF", "IH", "IC"],
+
+	"maxDecimal": 4
+}

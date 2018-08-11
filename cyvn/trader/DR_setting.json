@@ -1,0 +1,30 @@
+{
+    "working": true,
+
+    "tick":
+    [
+
+    ],
+
+    "bar":
+    [
+        ["rb1810", "CTP"],
+        ["ag1812","CTP"],
+        ["m1809", "CTP"],
+        ["SR809", "CTP"],
+        ["IF1812", "CTP"],
+        ["IH1812", "CTP"],
+        ["IC1812", "CTP"]
+    ],
+
+    "active":
+    {
+        "rb.HOT": "rb1810",
+        "ag.HOT":"rb1812",
+        "m.HOT": "m1809",
+        "SR.HOT": "SR809",
+        "IF.HOT": "IF1812",
+        "IH.HOT": "IH1812",
+        "IC.HOT": "IC1812"
+    }
+}

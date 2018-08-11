@@ -1,0 +1,321 @@
+2018-08-07 09:53:54,827  INFO: CTP	行情服务器连接成功
+2018-08-07 09:53:54,828  INFO: CTP	交易服务器连接成功
+2018-08-07 09:53:54,853  INFO: CTP	交易服务器登录完成
+2018-08-07 09:53:54,853  INFO: CTP	行情服务器登录完成
+2018-08-07 09:53:54,885  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-07 09:53:55,319  INFO: CTP	结算信息确认完成
+2018-08-07 09:53:55,462  INFO: CTP	交易合约信息获取完成
+2018-08-07 09:57:05,141  INFO: CTP	行情服务器连接成功
+2018-08-07 09:57:05,144  INFO: CTP	交易服务器连接成功
+2018-08-07 09:57:05,150  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-07 09:57:05,164  INFO: CTP	行情服务器登录完成
+2018-08-07 09:57:05,168  INFO: CTP	交易服务器登录完成
+2018-08-07 09:57:05,205  INFO: CTP	结算信息确认完成
+2018-08-07 09:57:05,350  INFO: CTP	交易合约信息获取完成
+2018-08-07 10:47:50,112  INFO: CTP	行情服务器连接成功
+2018-08-07 10:47:50,122  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-07 10:47:50,139  INFO: CTP	行情服务器登录完成
+2018-08-07 10:47:51,128  INFO: CTP	交易服务器连接成功
+2018-08-07 10:47:51,155  INFO: CTP	交易服务器登录完成
+2018-08-07 10:47:51,196  INFO: CTP	结算信息确认完成
+2018-08-07 10:47:51,312  INFO: CTP	交易合约信息获取完成
+2018-08-07 10:53:05,021  INFO: CTP	行情服务器连接成功
+2018-08-07 10:53:05,024  INFO: CTP	交易服务器连接成功
+2018-08-07 10:53:05,032  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-07 10:53:05,045  INFO: CTP	行情服务器登录完成
+2018-08-07 10:53:05,050  INFO: CTP	交易服务器登录完成
+2018-08-07 10:53:05,352  INFO: CTP	结算信息确认完成
+2018-08-07 10:53:05,803  INFO: CTP	交易合约信息获取完成
+2018-08-07 10:56:55,821  INFO: CTP	行情服务器连接成功
+2018-08-07 10:56:55,824  INFO: CTP	交易服务器连接成功
+2018-08-07 10:56:55,832  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-07 10:56:55,846  INFO: CTP	行情服务器登录完成
+2018-08-07 10:56:55,963  INFO: CTP	交易服务器登录完成
+2018-08-07 10:56:56,005  INFO: CTP	结算信息确认完成
+2018-08-07 10:56:56,414  INFO: CTP	交易合约信息获取完成
+2018-08-07 11:59:52,801  INFO: CTP	交易服务器连接成功
+2018-08-07 11:59:52,802  INFO: CTP	行情服务器连接成功
+2018-08-07 11:59:52,822  INFO: CTP	交易服务器登录完成
+2018-08-07 11:59:52,823  INFO: CTP	行情服务器登录完成
+2018-08-07 11:59:52,859  INFO: CTP	结算信息确认完成
+2018-08-07 11:59:52,993  INFO: CTP	交易合约信息获取完成
+2018-08-07 11:59:55,070  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-07 12:00:10,301  INFO: CTA_STRATEGY	CTA引擎启动成功
+2018-08-07 12:00:14,376  INFO: CTA_STRATEGY	策略加载成功
+2018-08-07 12:00:28,155  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略初始化
+2018-08-07 12:00:41,939  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略启动
+2018-08-07 12:02:00,068  INFO: CTP	行情服务器连接成功
+2018-08-07 12:02:00,069  INFO: CTP	交易服务器连接成功
+2018-08-07 12:02:00,085  INFO: CTP	行情服务器登录完成
+2018-08-07 12:02:00,090  INFO: CTP	交易服务器登录完成
+2018-08-07 12:02:00,124  INFO: CTP	结算信息确认完成
+2018-08-07 12:02:00,243  INFO: CTP	交易合约信息获取完成
+2018-08-07 12:02:02,341  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-07 12:02:18,704  INFO: CTA_STRATEGY	CTA引擎启动成功
+2018-08-07 12:02:20,368  INFO: CTA_STRATEGY	策略加载成功
+2018-08-07 12:02:23,524  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略初始化
+2018-08-07 12:02:31,828  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略启动
+2018-08-07 15:43:30,254  INFO: CTP	交易服务器连接成功
+2018-08-07 15:43:30,258  INFO: CTP	行情服务器连接成功
+2018-08-07 15:43:30,270  INFO: CTP	交易服务器登录完成
+2018-08-07 15:43:30,283  INFO: CTP	行情服务器登录完成
+2018-08-07 15:43:30,303  INFO: CTP	结算信息确认完成
+2018-08-07 15:43:30,428  INFO: CTP	交易合约信息获取完成
+2018-08-07 15:43:32,480  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-07 15:43:56,188  INFO: CTA_STRATEGY	CTA引擎启动成功
+2018-08-07 15:44:00,734  INFO: CTA_STRATEGY	策略加载成功
+2018-08-07 15:44:04,775  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略初始化
+2018-08-07 15:44:18,103  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略启动
+2018-08-07 16:09:51,229  INFO: CTP	行情服务器连接成功
+2018-08-07 16:09:51,232  INFO: CTP	交易服务器连接成功
+2018-08-07 16:09:51,244  INFO: CTP	行情服务器登录完成
+2018-08-07 16:09:51,254  INFO: CTP	交易服务器登录完成
+2018-08-07 16:09:51,293  INFO: CTP	结算信息确认完成
+2018-08-07 16:09:51,428  INFO: CTP	交易合约信息获取完成
+2018-08-07 16:09:53,472  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-07 16:10:13,539  INFO: CTA_STRATEGY	CTA引擎启动成功
+2018-08-07 16:10:15,212  INFO: CTA_STRATEGY	策略加载成功
+2018-08-07 16:10:18,229  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略初始化
+2018-08-07 16:10:29,695  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略启动
+2018-08-07 16:11:21,447  INFO: CTP	行情服务器连接成功
+2018-08-07 16:11:21,451  INFO: CTP	交易服务器连接成功
+2018-08-07 16:11:21,461  INFO: CTP	行情服务器登录完成
+2018-08-07 16:11:21,477  INFO: CTP	交易服务器登录完成
+2018-08-07 16:11:21,520  INFO: CTP	结算信息确认完成
+2018-08-07 16:11:21,684  INFO: CTP	交易合约信息获取完成
+2018-08-07 16:11:23,659  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-07 16:11:26,483  INFO: CTA_STRATEGY	CTA引擎启动成功
+2018-08-07 16:11:28,152  INFO: CTA_STRATEGY	策略加载成功
+2018-08-07 16:11:35,015  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化
+2018-08-07 16:11:39,632  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略启动
+2018-08-07 16:12:15,458  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略初始化
+2018-08-07 16:13:49,895  INFO: CTP	行情服务器连接成功
+2018-08-07 16:13:49,897  INFO: CTP	交易服务器连接成功
+2018-08-07 16:13:49,920  INFO: CTP	交易服务器登录完成
+2018-08-07 16:13:49,921  INFO: CTP	行情服务器登录完成
+2018-08-07 16:13:49,981  INFO: CTP	结算信息确认完成
+2018-08-07 16:13:50,191  INFO: CTP	交易合约信息获取完成
+2018-08-07 16:13:52,176  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-07 16:13:54,597  INFO: CTA_STRATEGY	CTA引擎启动成功
+2018-08-07 16:13:58,471  INFO: CTA_STRATEGY	策略加载成功
+2018-08-07 16:14:00,296  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略初始化
+2018-08-07 16:16:06,869  INFO: CTA_STRATEGY	请勿重复初始化策略实例：HorizBreakout
+2018-08-07 16:21:54,304  INFO: CTP	行情服务器连接成功
+2018-08-07 16:21:54,306  INFO: CTP	交易服务器连接成功
+2018-08-07 16:21:54,327  INFO: CTP	交易服务器登录完成
+2018-08-07 16:21:54,329  INFO: CTP	行情服务器登录完成
+2018-08-07 16:21:54,365  INFO: CTP	结算信息确认完成
+2018-08-07 16:21:54,537  INFO: CTP	交易合约信息获取完成
+2018-08-07 16:21:56,505  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-07 16:22:00,132  INFO: CTA_STRATEGY	CTA引擎启动成功
+2018-08-07 16:22:04,167  INFO: CTA_STRATEGY	策略加载成功
+2018-08-07 16:22:06,387  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化
+2018-08-07 16:22:14,575  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略启动
+2018-08-07 16:22:41,310  INFO: CTP	行情服务器连接成功
+2018-08-07 16:22:41,315  INFO: CTP	交易服务器连接成功
+2018-08-07 16:22:41,331  INFO: CTP	行情服务器登录完成
+2018-08-07 16:22:41,341  INFO: CTP	交易服务器登录完成
+2018-08-07 16:22:41,386  INFO: CTP	结算信息确认完成
+2018-08-07 16:22:41,557  INFO: CTP	交易合约信息获取完成
+2018-08-07 16:22:43,529  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-07 16:22:45,683  INFO: CTA_STRATEGY	CTA引擎启动成功
+2018-08-07 16:22:51,877  INFO: CTA_STRATEGY	策略加载成功
+2018-08-07 16:22:55,648  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化
+2018-08-07 16:24:45,581  INFO: CTP	交易服务器连接成功
+2018-08-07 16:24:45,586  INFO: CTP	行情服务器连接成功
+2018-08-07 16:24:45,603  INFO: CTP	交易服务器登录完成
+2018-08-07 16:24:45,614  INFO: CTP	行情服务器登录完成
+2018-08-07 16:24:45,635  INFO: CTP	结算信息确认完成
+2018-08-07 16:24:45,798  INFO: CTP	交易合约信息获取完成
+2018-08-07 16:24:47,808  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-07 16:24:50,162  INFO: CTA_STRATEGY	CTA引擎启动成功
+2018-08-07 16:24:53,927  INFO: CTA_STRATEGY	策略加载成功
+2018-08-07 16:24:57,766  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化
+2018-08-07 16:25:06,521  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 86, in onInit
+    self.onMyBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 161, in onMyBar
+    long_avg = np.sum(am.close[-self.m1, -1])/self.m1
+IndexError: too many indices for array
+
+2018-08-07 16:26:17,436  INFO: CTP	交易服务器连接成功
+2018-08-07 16:26:17,439  INFO: CTP	行情服务器连接成功
+2018-08-07 16:26:17,460  INFO: CTP	交易服务器登录完成
+2018-08-07 16:26:17,462  INFO: CTP	行情服务器登录完成
+2018-08-07 16:26:17,494  INFO: CTP	结算信息确认完成
+2018-08-07 16:26:17,616  INFO: CTP	交易合约信息获取完成
+2018-08-07 16:26:19,671  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-07 16:26:21,445  INFO: CTA_STRATEGY	CTA引擎启动成功
+2018-08-07 16:26:25,178  INFO: CTA_STRATEGY	策略加载成功
+2018-08-07 16:26:34,970  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化
+2018-08-07 16:26:35,854  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 86, in onInit
+    self.onMyBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 161, in onMyBar
+    long_avg = np.sum(am.close[-self.m1, -1])/self.m1
+IndexError: too many indices for array
+
+2018-08-07 16:27:00,970  INFO: CTP	行情服务器连接成功
+2018-08-07 16:27:00,972  INFO: CTP	交易服务器连接成功
+2018-08-07 16:27:00,989  INFO: CTP	行情服务器登录完成
+2018-08-07 16:27:01,010  INFO: CTP	交易服务器登录完成
+2018-08-07 16:27:01,107  INFO: CTP	结算信息确认完成
+2018-08-07 16:27:01,704  INFO: CTP	交易合约信息获取完成
+2018-08-07 16:27:03,457  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-07 16:27:06,003  INFO: CTA_STRATEGY	CTA引擎启动成功
+2018-08-07 16:27:09,855  INFO: CTA_STRATEGY	策略加载成功
+2018-08-07 16:27:13,219  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化
+2018-08-07 16:28:28,464  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 86, in onInit
+    self.onMyBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 161, in onMyBar
+    long_avg = np.sum(am.close[-self.m1, -1])/self.m1
+IndexError: too many indices for array
+
+2018-08-07 16:29:02,289  INFO: CTP	行情服务器连接成功
+2018-08-07 16:29:02,291  INFO: CTP	交易服务器连接成功
+2018-08-07 16:29:02,306  INFO: CTP	行情服务器登录完成
+2018-08-07 16:29:02,317  INFO: CTP	交易服务器登录完成
+2018-08-07 16:29:02,366  INFO: CTP	结算信息确认完成
+2018-08-07 16:29:02,528  INFO: CTP	交易合约信息获取完成
+2018-08-07 16:29:04,498  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-07 16:29:06,283  INFO: CTA_STRATEGY	CTA引擎启动成功
+2018-08-07 16:29:10,005  INFO: CTA_STRATEGY	策略加载成功
+2018-08-07 16:29:20,147  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化
+2018-08-07 16:31:25,692  INFO: CTA_STRATEGY	CTA引擎启动成功
+2018-08-07 16:31:27,500  INFO: CTA_STRATEGY	策略加载成功
+2018-08-07 16:31:39,020  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化
+2018-08-07 16:31:39,021  INFO: MAIN_ENGINE	数据查询失败，MongoDB没有连接
+2018-08-07 16:31:39,023  INFO: MAIN_ENGINE	数据查询失败，MongoDB没有连接
+2018-08-07 16:31:39,024  INFO: CTA_STRATEGY	AvgBreak的交易合约rb1810无法找到
+2018-08-07 16:31:49,525  INFO: CTP	行情服务器连接成功
+2018-08-07 16:31:49,526  INFO: CTP	交易服务器连接成功
+2018-08-07 16:31:49,549  INFO: CTP	行情服务器登录完成
+2018-08-07 16:31:49,552  INFO: CTP	交易服务器登录完成
+2018-08-07 16:31:49,590  INFO: CTP	结算信息确认完成
+2018-08-07 16:31:49,756  INFO: CTP	交易合约信息获取完成
+2018-08-07 16:31:51,732  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-07 16:31:57,930  INFO: CTA_STRATEGY	请勿重复初始化策略实例：AvgBreak
+2018-08-07 16:32:16,160  INFO: CTP	行情服务器连接成功
+2018-08-07 16:32:16,165  INFO: CTP	交易服务器连接成功
+2018-08-07 16:32:16,178  INFO: CTP	行情服务器登录完成
+2018-08-07 16:32:16,188  INFO: CTP	交易服务器登录完成
+2018-08-07 16:32:16,229  INFO: CTP	结算信息确认完成
+2018-08-07 16:32:16,398  INFO: CTP	交易合约信息获取完成
+2018-08-07 16:32:18,393  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-07 16:32:21,064  INFO: CTA_STRATEGY	CTA引擎启动成功
+2018-08-07 16:32:27,698  INFO: CTA_STRATEGY	策略加载成功
+2018-08-07 16:32:29,955  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化
+2018-08-07 16:32:35,585  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 86, in onInit
+    self.onMyBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 161, in onMyBar
+    print(am.close[-self.m1, -1])
+IndexError: too many indices for array
+
+2018-08-07 16:38:08,358  INFO: CTP	交易服务器连接成功
+2018-08-07 16:38:08,360  INFO: CTP	行情服务器连接成功
+2018-08-07 16:38:08,380  INFO: CTP	交易服务器登录完成
+2018-08-07 16:38:08,384  INFO: CTP	行情服务器登录完成
+2018-08-07 16:38:08,420  INFO: CTP	结算信息确认完成
+2018-08-07 16:38:08,582  INFO: CTP	交易合约信息获取完成
+2018-08-07 16:38:10,592  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-07 16:38:12,856  INFO: CTA_STRATEGY	CTA引擎启动成功
+2018-08-07 16:38:14,473  INFO: CTA_STRATEGY	策略加载成功
+2018-08-07 16:38:17,656  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化
+2018-08-07 16:38:23,289  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 86, in onInit
+    self.onMyBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 161, in onMyBar
+    print(am.close[ -50, -1])
+IndexError: too many indices for array
+
+2018-08-07 16:39:27,236  INFO: CTP	交易服务器连接成功
+2018-08-07 16:39:27,238  INFO: CTP	行情服务器连接成功
+2018-08-07 16:39:27,258  INFO: CTP	交易服务器登录完成
+2018-08-07 16:39:27,262  INFO: CTP	行情服务器登录完成
+2018-08-07 16:39:27,297  INFO: CTP	结算信息确认完成
+2018-08-07 16:39:27,464  INFO: CTP	交易合约信息获取完成
+2018-08-07 16:39:29,573  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-07 16:39:31,407  INFO: CTA_STRATEGY	CTA引擎启动成功
+2018-08-07 16:39:34,669  INFO: CTA_STRATEGY	策略加载成功
+2018-08-07 16:39:37,111  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化
+2018-08-07 16:39:54,558  INFO: CTP	行情服务器连接断开
+2018-08-07 16:39:54,852  INFO: CTP	行情服务器连接成功
+2018-08-07 16:39:55,189  INFO: CTP	交易服务器连接断开
+2018-08-07 16:39:58,063  INFO: CTP	行情服务器连接断开
+2018-08-07 16:40:15,482  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-07 16:40:16,969  INFO: CTA_STRATEGY	CTA引擎启动成功
+2018-08-07 16:40:20,539  INFO: CTA_STRATEGY	策略加载成功
+2018-08-07 16:40:23,509  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化
+2018-08-07 17:35:02,590  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-07 17:35:04,401  INFO: CTA_STRATEGY	CTA引擎启动成功
+2018-08-07 17:35:08,459  INFO: CTA_STRATEGY	策略加载成功
+2018-08-07 17:35:10,890  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化
+2018-08-07 17:39:54,785  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-07 17:39:57,178  INFO: CTA_STRATEGY	CTA引擎启动成功
+2018-08-07 17:40:01,441  INFO: CTA_STRATEGY	策略加载成功
+2018-08-07 17:40:04,871  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化
+2018-08-07 17:40:06,019  INFO: CTA_STRATEGY	AvgBreak的交易合约rb1810无法找到
+2018-08-07 17:42:19,953  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-07 21:08:04,653  INFO: CTP	交易服务器连接成功
+2018-08-07 21:08:04,654  INFO: CTP	行情服务器连接成功
+2018-08-07 21:08:04,674  INFO: CTP	交易服务器登录完成
+2018-08-07 21:08:04,676  INFO: CTP	行情服务器登录完成
+2018-08-07 21:08:04,718  INFO: CTP	结算信息确认完成
+2018-08-07 21:08:04,891  INFO: CTP	交易合约信息获取完成
+2018-08-07 21:08:06,965  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-07 21:34:59,549  INFO: CTP	行情服务器连接成功
+2018-08-07 21:34:59,549  INFO: CTP	交易服务器连接成功
+2018-08-07 21:34:59,571  INFO: CTP	交易服务器登录完成
+2018-08-07 21:34:59,572  INFO: CTP	行情服务器登录完成
+2018-08-07 21:34:59,612  INFO: CTP	结算信息确认完成
+2018-08-07 21:34:59,957  INFO: CTP	交易合约信息获取完成
+2018-08-07 21:35:01,747  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-07 21:36:39,461  INFO: CTP	行情服务器连接成功
+2018-08-07 21:36:39,464  INFO: CTP	交易服务器连接成功
+2018-08-07 21:36:39,485  INFO: CTP	行情服务器登录完成
+2018-08-07 21:36:39,654  INFO: CTP	交易服务器登录完成
+2018-08-07 21:36:39,814  INFO: CTP	结算信息确认完成
+2018-08-07 21:36:40,583  INFO: CTP	交易合约信息获取完成
+2018-08-07 21:36:41,673  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-07 21:37:51,939  INFO: CTP	交易服务器连接成功
+2018-08-07 21:37:51,940  INFO: CTP	行情服务器连接成功
+2018-08-07 21:37:51,959  INFO: CTP	行情服务器登录完成
+2018-08-07 21:37:51,963  INFO: CTP	交易服务器登录完成
+2018-08-07 21:37:52,007  INFO: CTP	结算信息确认完成
+2018-08-07 21:37:52,181  INFO: CTP	交易合约信息获取完成
+2018-08-07 21:37:54,154  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-07 22:33:00,780  INFO: CTP	行情服务器连接成功
+2018-08-07 22:33:00,810  INFO: CTP	交易服务器连接成功
+2018-08-07 22:33:00,810  INFO: CTP	行情服务器登录完成
+2018-08-07 22:33:00,811  INFO: CTP	交易服务器登录完成
+2018-08-07 22:33:00,844  INFO: CTP	结算信息确认完成
+2018-08-07 22:33:00,958  INFO: CTP	交易合约信息获取完成
+2018-08-07 22:33:03,077  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-07 22:39:52,700  INFO: CTP	行情服务器连接成功
+2018-08-07 22:39:52,703  INFO: CTP	交易服务器连接成功
+2018-08-07 22:39:52,718  INFO: CTP	行情服务器登录完成
+2018-08-07 22:39:52,989  INFO: CTP	交易服务器登录完成
+2018-08-07 22:39:53,021  INFO: CTP	结算信息确认完成
+2018-08-07 22:39:53,331  INFO: CTP	交易合约信息获取完成
+2018-08-07 22:39:55,044  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-07 22:39:57,998  INFO: CTA_STRATEGY	CTA引擎启动成功
+2018-08-07 22:40:02,700  INFO: CTA_STRATEGY	策略加载成功
+2018-08-07 22:40:05,853  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略初始化
+2018-08-07 22:40:24,123  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化

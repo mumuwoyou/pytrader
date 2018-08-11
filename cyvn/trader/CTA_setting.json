@@ -1,0 +1,12 @@
+[
+    {
+        "name": "HorizBreakout",
+        "className": "HorizBreakoutStrategy",
+        "vtSymbol": "rb1810"
+    },
+    {
+        "name": "AvgBreak",
+        "className": "AvgBreakStrategy",
+        "vtSymbol": "rb1810"
+    }
+]

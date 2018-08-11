@@ -1,0 +1,92 @@
+2018-07-29 15:02:16,492  INFO: CTP	交易服务器连接成功
+2018-07-29 15:02:16,553  INFO: CTP	交易服务器登录完成
+2018-07-29 15:02:16,598  INFO: CTP	结算信息确认完成
+2018-07-29 15:02:16,854  INFO: CTP	交易合约信息获取完成
+2018-07-29 15:02:18,800  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 15:02:21,058  INFO: CTA_STRATEGY	CTA引擎启动成功
+2018-07-29 15:02:25,236  INFO: CTA_STRATEGY	找不到策略类：EmaDemoStrategy
+2018-07-29 15:02:25,238  INFO: CTA_STRATEGY	找不到策略类：AtrRsiStrategy
+2018-07-29 15:02:25,239  INFO: CTA_STRATEGY	找不到策略类：KkStrategy
+2018-07-29 15:02:25,239  INFO: CTA_STRATEGY	策略加载成功
+2018-07-29 15:03:53,601  INFO: CTP	交易服务器连接成功
+2018-07-29 15:03:53,700  INFO: CTP	交易服务器登录完成
+2018-07-29 15:03:55,046  INFO: CTP	结算信息确认完成
+2018-07-29 15:03:55,830  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 15:03:57,152  INFO: CTA_STRATEGY	CTA引擎启动成功
+2018-07-29 15:03:59,678  INFO: CTP	交易合约信息获取完成
+2018-07-29 15:04:00,477  INFO: CTA_STRATEGY	找不到策略类：PonderDNCoreStrategy
+2018-07-29 15:04:31,796  INFO: CTP	交易服务器连接成功
+2018-07-29 15:04:31,868  INFO: CTP	交易服务器登录完成
+2018-07-29 15:04:31,934  INFO: CTP	结算信息确认完成
+2018-07-29 15:04:32,249  INFO: CTP	交易合约信息获取完成
+2018-07-29 15:04:34,007  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 15:04:35,177  INFO: CTA_STRATEGY	CTA引擎启动成功
+2018-07-29 15:04:37,013  INFO: CTA_STRATEGY	找不到策略类：PonderDNCoreStrategy
+2018-07-29 15:04:37,084  INFO: CTA_STRATEGY	策略加载成功
+2018-07-29 15:06:35,276  INFO: CTP	交易服务器连接成功
+2018-07-29 15:06:35,311  INFO: CTP	交易服务器登录完成
+2018-07-29 15:06:35,732  INFO: CTP	结算信息确认完成
+2018-07-29 15:06:37,389  INFO: CTP	交易合约信息获取完成
+2018-07-29 15:06:37,473  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 15:07:22,953  INFO: CTP	交易服务器连接成功
+2018-07-29 15:07:22,995  INFO: CTP	交易服务器登录完成
+2018-07-29 15:07:23,081  INFO: CTP	结算信息确认完成
+2018-07-29 15:07:25,045  INFO: CTP	交易合约信息获取完成
+2018-07-29 15:07:26,027  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 15:07:38,923  INFO: CTA_STRATEGY	CTA引擎启动成功
+2018-07-29 15:07:42,380  INFO: CTA_STRATEGY	策略加载成功
+2018-07-29 15:07:49,868  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化
+2018-07-29 15:07:50,847  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 86, in onInit
+    self.onMyBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 157, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 15:07:51,268  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略初始化
+2018-07-29 15:07:53,725  INFO: CTA_STRATEGY	策略HorizBreakout触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 88, in onInit
+    self.onBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 112, in onBar
+    self.bg.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 525, in updateBar
+    self.onXminBar(self.xminBar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 124, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 15:15:54,881  INFO: MAIN_ENGINE	接口不存在：OKCOIN
+2018-07-29 15:15:54,882  INFO: MAIN_ENGINE	接口不存在：OKCOIN
+2018-07-29 15:15:54,882  INFO: MAIN_ENGINE	接口不存在：OKCOIN
+2018-07-29 15:17:57,085  INFO: MAIN_ENGINE	接口不存在：OKCOIN
+2018-07-29 15:17:57,086  INFO: MAIN_ENGINE	接口不存在：OKCOIN
+2018-07-29 15:17:57,086  INFO: MAIN_ENGINE	接口不存在：OKCOIN
+2018-07-29 15:19:42,361  INFO: CTP	交易服务器连接成功
+2018-07-29 15:19:42,401  INFO: CTP	交易服务器登录完成
+2018-07-29 15:19:44,532  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 15:19:44,797  INFO: CTP	结算信息确认完成
+2018-07-29 15:19:47,908  INFO: CTP	交易合约信息获取完成
+2018-07-29 15:25:00,694  INFO: CTP	交易服务器连接成功
+2018-07-29 15:25:00,728  INFO: CTP	交易服务器登录完成
+2018-07-29 15:25:01,117  INFO: CTP	结算信息确认完成
+2018-07-29 15:25:01,788  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 15:25:02,062  INFO: CTP	交易合约信息获取完成
+2018-07-29 15:25:17,015  INFO: 风控模块	风险管理功能停止
+2018-07-29 15:25:19,469  INFO: 风控模块	风险管理功能启动
+2018-07-29 15:25:20,993  INFO: 风控模块	风险管理功能停止
+2018-07-29 15:34:31,683  INFO: CTP	交易服务器连接成功
+2018-07-29 15:34:31,724  INFO: CTP	交易服务器登录完成
+2018-07-29 15:34:31,850  INFO: CTP	结算信息确认完成
+2018-07-29 15:34:32,915  INFO: CTP	交易合约信息获取完成
+2018-07-29 15:34:33,851  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 15:34:48,379  INFO: CTA_STRATEGY	CTA引擎启动成功

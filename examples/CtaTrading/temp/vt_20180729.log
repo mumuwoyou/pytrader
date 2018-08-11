@@ -1,0 +1,1292 @@
+2018-07-29 15:29:39,034  INFO: 启动CTA策略运行子进程
+2018-07-29 15:29:39,034  INFO: 事件引擎创建成功
+2018-07-29 15:29:39,037  INFO: 主引擎创建成功
+2018-07-29 15:29:39,037  INFO: 主引擎创建成功
+2018-07-29 15:29:39,037  INFO: 注册日志事件监听
+2018-07-29 15:29:39,037  INFO: 注册日志事件监听
+2018-07-29 15:29:39,037  INFO: 连接CTP接口
+2018-07-29 15:29:39,037  INFO: 连接CTP接口
+2018-07-29 15:29:39,038  INFO: MAIN_ENGINE	接口不存在：CTP
+2018-07-29 15:29:39,038  INFO: MAIN_ENGINE	接口不存在：CTP
+2018-07-29 15:29:39,039  INFO: MAIN_ENGINE	接口不存在：CTP
+2018-07-29 15:29:39,039  INFO: MAIN_ENGINE	接口不存在：CTP
+2018-07-29 15:29:49,069  INFO: CTA策略载入成功
+2018-07-29 15:29:49,069  INFO: CTA策略载入成功
+2018-07-29 15:29:49,069  INFO: CTA_STRATEGY	找不到策略类：PonderDNCoreStrategy
+2018-07-29 15:29:49,069  INFO: CTA_STRATEGY	找不到策略类：PonderDNCoreStrategy
+2018-07-29 15:29:49,072  INFO: CTA_STRATEGY	找不到策略类：PonderDNCoreStrategy
+2018-07-29 15:29:49,072  INFO: CTA_STRATEGY	找不到策略类：PonderDNCoreStrategy
+2018-07-29 15:29:49,072  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化
+2018-07-29 15:29:49,072  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化
+2018-07-29 15:29:49,073  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化
+2018-07-29 15:29:49,073  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化
+2018-07-29 15:29:49,073  INFO: MAIN_ENGINE	数据查询失败，MongoDB没有连接
+2018-07-29 15:29:49,073  INFO: MAIN_ENGINE	数据查询失败，MongoDB没有连接
+2018-07-29 15:29:49,074  INFO: MAIN_ENGINE	数据查询失败，MongoDB没有连接
+2018-07-29 15:29:49,074  INFO: MAIN_ENGINE	数据查询失败，MongoDB没有连接
+2018-07-29 15:29:49,074  INFO: MAIN_ENGINE	数据查询失败，MongoDB没有连接
+2018-07-29 15:29:49,074  INFO: MAIN_ENGINE	数据查询失败，MongoDB没有连接
+2018-07-29 15:29:49,075  INFO: MAIN_ENGINE	数据查询失败，MongoDB没有连接
+2018-07-29 15:29:49,075  INFO: MAIN_ENGINE	数据查询失败，MongoDB没有连接
+2018-07-29 15:29:49,076  INFO: CTA_STRATEGY	AvgBreak的交易合约rb1810无法找到
+2018-07-29 15:29:49,076  INFO: CTA_STRATEGY	AvgBreak的交易合约rb1810无法找到
+2018-07-29 15:29:49,076  INFO: CTA_STRATEGY	AvgBreak的交易合约rb1810无法找到
+2018-07-29 15:29:49,076  INFO: CTA_STRATEGY	AvgBreak的交易合约rb1810无法找到
+2018-07-29 15:29:49,077  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略初始化
+2018-07-29 15:29:49,077  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略初始化
+2018-07-29 15:29:49,077  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略初始化
+2018-07-29 15:29:49,077  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略初始化
+2018-07-29 15:29:49,078  INFO: MAIN_ENGINE	数据查询失败，MongoDB没有连接
+2018-07-29 15:29:49,078  INFO: MAIN_ENGINE	数据查询失败，MongoDB没有连接
+2018-07-29 15:29:49,078  INFO: MAIN_ENGINE	数据查询失败，MongoDB没有连接
+2018-07-29 15:29:49,078  INFO: MAIN_ENGINE	数据查询失败，MongoDB没有连接
+2018-07-29 15:29:49,079  INFO: MAIN_ENGINE	数据查询失败，MongoDB没有连接
+2018-07-29 15:29:49,079  INFO: MAIN_ENGINE	数据查询失败，MongoDB没有连接
+2018-07-29 15:29:49,079  INFO: MAIN_ENGINE	数据查询失败，MongoDB没有连接
+2018-07-29 15:29:49,079  INFO: MAIN_ENGINE	数据查询失败，MongoDB没有连接
+2018-07-29 15:29:49,080  INFO: CTA_STRATEGY	HorizBreakout的交易合约rb1810无法找到
+2018-07-29 15:29:49,080  INFO: CTA_STRATEGY	HorizBreakout的交易合约rb1810无法找到
+2018-07-29 15:29:49,081  INFO: CTA_STRATEGY	HorizBreakout的交易合约rb1810无法找到
+2018-07-29 15:29:49,081  INFO: CTA_STRATEGY	HorizBreakout的交易合约rb1810无法找到
+2018-07-29 15:29:49,071  INFO: CTA策略初始化成功
+2018-07-29 15:29:49,071  INFO: CTA策略初始化成功
+2018-07-29 15:29:49,082  INFO: CTA策略启动成功
+2018-07-29 15:29:49,082  INFO: CTA策略启动成功
+2018-07-29 15:29:49,083  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略启动
+2018-07-29 15:29:49,083  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略启动
+2018-07-29 15:29:49,083  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略启动
+2018-07-29 15:29:49,083  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略启动
+2018-07-29 15:29:49,084  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略启动
+2018-07-29 15:29:49,084  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略启动
+2018-07-29 15:29:49,085  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略启动
+2018-07-29 15:29:49,085  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略启动
+2018-07-29 15:30:59,694  INFO: 启动CTA策略运行子进程
+2018-07-29 15:30:59,695  INFO: 事件引擎创建成功
+2018-07-29 15:30:59,697  INFO: 主引擎创建成功
+2018-07-29 15:30:59,697  INFO: 主引擎创建成功
+2018-07-29 15:30:59,697  INFO: 注册日志事件监听
+2018-07-29 15:30:59,697  INFO: 注册日志事件监听
+2018-07-29 15:30:59,740  INFO: CTP	交易服务器连接成功
+2018-07-29 15:30:59,740  INFO: CTP	交易服务器连接成功
+2018-07-29 15:30:59,741  INFO: CTP	交易服务器连接成功
+2018-07-29 15:30:59,741  INFO: CTP	交易服务器连接成功
+2018-07-29 15:30:59,781  INFO: CTP	交易服务器登录完成
+2018-07-29 15:30:59,781  INFO: CTP	交易服务器登录完成
+2018-07-29 15:30:59,782  INFO: CTP	交易服务器登录完成
+2018-07-29 15:30:59,782  INFO: CTP	交易服务器登录完成
+2018-07-29 15:30:59,860  INFO: CTP	结算信息确认完成
+2018-07-29 15:30:59,860  INFO: CTP	结算信息确认完成
+2018-07-29 15:30:59,860  INFO: CTP	结算信息确认完成
+2018-07-29 15:30:59,860  INFO: CTP	结算信息确认完成
+2018-07-29 15:31:00,796  INFO: CTP	交易合约信息获取完成
+2018-07-29 15:31:00,796  INFO: CTP	交易合约信息获取完成
+2018-07-29 15:31:00,797  INFO: CTP	交易合约信息获取完成
+2018-07-29 15:31:00,797  INFO: CTP	交易合约信息获取完成
+2018-07-29 15:31:01,935  INFO: 连接CTP接口
+2018-07-29 15:31:01,935  INFO: 连接CTP接口
+2018-07-29 15:31:01,935  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 15:31:01,935  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 15:31:01,936  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 15:31:01,936  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 15:31:11,958  INFO: CTA策略载入成功
+2018-07-29 15:31:11,958  INFO: CTA策略载入成功
+2018-07-29 15:31:11,958  INFO: CTA_STRATEGY	找不到策略类：PonderDNCoreStrategy
+2018-07-29 15:31:11,958  INFO: CTA_STRATEGY	找不到策略类：PonderDNCoreStrategy
+2018-07-29 15:31:11,961  INFO: CTA_STRATEGY	找不到策略类：PonderDNCoreStrategy
+2018-07-29 15:31:11,961  INFO: CTA_STRATEGY	找不到策略类：PonderDNCoreStrategy
+2018-07-29 15:31:11,962  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化
+2018-07-29 15:31:11,962  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化
+2018-07-29 15:31:11,962  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化
+2018-07-29 15:31:11,962  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化
+2018-07-29 15:31:12,787  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 86, in onInit
+    self.onMyBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 157, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 15:31:12,787  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 86, in onInit
+    self.onMyBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 157, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 15:31:12,788  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 86, in onInit
+    self.onMyBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 157, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 15:31:12,788  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 86, in onInit
+    self.onMyBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 157, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 15:31:13,061  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略初始化
+2018-07-29 15:31:13,061  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略初始化
+2018-07-29 15:31:13,061  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略初始化
+2018-07-29 15:31:13,061  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略初始化
+2018-07-29 15:31:15,336  INFO: CTA_STRATEGY	策略HorizBreakout触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 88, in onInit
+    self.onBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 112, in onBar
+    self.bg.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 525, in updateBar
+    self.onXminBar(self.xminBar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 124, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 15:31:15,336  INFO: CTA_STRATEGY	策略HorizBreakout触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 88, in onInit
+    self.onBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 112, in onBar
+    self.bg.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 525, in updateBar
+    self.onXminBar(self.xminBar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 124, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 15:31:15,338  INFO: CTA_STRATEGY	策略HorizBreakout触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 88, in onInit
+    self.onBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 112, in onBar
+    self.bg.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 525, in updateBar
+    self.onXminBar(self.xminBar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 124, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 15:31:15,338  INFO: CTA_STRATEGY	策略HorizBreakout触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 88, in onInit
+    self.onBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 112, in onBar
+    self.bg.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 525, in updateBar
+    self.onXminBar(self.xminBar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 124, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 15:31:15,610  INFO: CTA策略初始化成功
+2018-07-29 15:31:15,610  INFO: CTA策略初始化成功
+2018-07-29 15:31:15,611  INFO: CTA策略启动成功
+2018-07-29 15:31:15,611  INFO: CTA策略启动成功
+2018-07-29 15:33:01,447  INFO: 启动CTA策略运行子进程
+2018-07-29 15:33:01,447  INFO: 事件引擎创建成功
+2018-07-29 15:33:01,450  INFO: 主引擎创建成功
+2018-07-29 15:33:01,450  INFO: 主引擎创建成功
+2018-07-29 15:33:01,451  INFO: 注册日志事件监听
+2018-07-29 15:33:01,451  INFO: 注册日志事件监听
+2018-07-29 15:33:01,493  INFO: CTP	交易服务器连接成功
+2018-07-29 15:33:01,493  INFO: CTP	交易服务器连接成功
+2018-07-29 15:33:01,494  INFO: CTP	交易服务器连接成功
+2018-07-29 15:33:01,494  INFO: CTP	交易服务器连接成功
+2018-07-29 15:33:01,536  INFO: CTP	交易服务器登录完成
+2018-07-29 15:33:01,536  INFO: CTP	交易服务器登录完成
+2018-07-29 15:33:01,537  INFO: CTP	交易服务器登录完成
+2018-07-29 15:33:01,537  INFO: CTP	交易服务器登录完成
+2018-07-29 15:33:01,615  INFO: CTP	结算信息确认完成
+2018-07-29 15:33:01,615  INFO: CTP	结算信息确认完成
+2018-07-29 15:33:01,616  INFO: CTP	结算信息确认完成
+2018-07-29 15:33:01,616  INFO: CTP	结算信息确认完成
+2018-07-29 15:33:02,382  INFO: CTP	交易合约信息获取完成
+2018-07-29 15:33:02,382  INFO: CTP	交易合约信息获取完成
+2018-07-29 15:33:02,382  INFO: CTP	交易合约信息获取完成
+2018-07-29 15:33:02,382  INFO: CTP	交易合约信息获取完成
+2018-07-29 15:33:03,691  INFO: 连接CTP接口
+2018-07-29 15:33:03,691  INFO: 连接CTP接口
+2018-07-29 15:33:03,692  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 15:33:03,692  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 15:33:03,692  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 15:33:03,692  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 16:34:02,243  INFO: 启动CTA策略运行子进程
+2018-07-29 16:34:02,244  INFO: 事件引擎创建成功
+2018-07-29 16:34:02,248  INFO: 主引擎创建成功
+2018-07-29 16:34:02,248  INFO: 主引擎创建成功
+2018-07-29 16:34:02,248  INFO: 注册日志事件监听
+2018-07-29 16:34:02,248  INFO: 注册日志事件监听
+2018-07-29 16:34:02,297  INFO: CTP	交易服务器连接成功
+2018-07-29 16:34:02,297  INFO: CTP	交易服务器连接成功
+2018-07-29 16:34:02,297  INFO: CTP	交易服务器连接成功
+2018-07-29 16:34:02,297  INFO: CTP	交易服务器连接成功
+2018-07-29 16:34:03,075  INFO: CTP	交易服务器登录完成
+2018-07-29 16:34:03,075  INFO: CTP	交易服务器登录完成
+2018-07-29 16:34:03,075  INFO: CTP	交易服务器登录完成
+2018-07-29 16:34:03,075  INFO: CTP	交易服务器登录完成
+2018-07-29 16:34:04,060  INFO: CTP	结算信息确认完成
+2018-07-29 16:34:04,060  INFO: CTP	结算信息确认完成
+2018-07-29 16:34:04,061  INFO: CTP	结算信息确认完成
+2018-07-29 16:34:04,061  INFO: CTP	结算信息确认完成
+2018-07-29 16:34:04,478  INFO: 连接CTP接口
+2018-07-29 16:34:04,478  INFO: 连接CTP接口
+2018-07-29 16:34:04,478  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 16:34:04,478  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 16:34:04,479  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 16:34:04,479  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 16:34:13,200  INFO: CTP	交易合约信息获取完成
+2018-07-29 16:34:13,200  INFO: CTP	交易合约信息获取完成
+2018-07-29 16:34:13,201  INFO: CTP	交易合约信息获取完成
+2018-07-29 16:34:13,201  INFO: CTP	交易合约信息获取完成
+2018-07-29 16:34:14,498  INFO: CTA_STRATEGY	找不到策略类：PonderDNCoreStrategy
+2018-07-29 16:34:14,498  INFO: CTA_STRATEGY	找不到策略类：PonderDNCoreStrategy
+2018-07-29 16:34:14,499  INFO: CTA_STRATEGY	找不到策略类：PonderDNCoreStrategy
+2018-07-29 16:34:14,499  INFO: CTA_STRATEGY	找不到策略类：PonderDNCoreStrategy
+2018-07-29 16:34:14,499  INFO: CTA策略载入成功
+2018-07-29 16:34:14,499  INFO: CTA策略载入成功
+2018-07-29 16:34:14,502  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略初始化
+2018-07-29 16:34:14,502  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略初始化
+2018-07-29 16:34:14,503  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略初始化
+2018-07-29 16:34:14,503  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略初始化
+2018-07-29 16:34:18,492  INFO: CTA_STRATEGY	策略HorizBreakout触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 88, in onInit
+    self.onBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 112, in onBar
+    self.bg.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 525, in updateBar
+    self.onXminBar(self.xminBar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 124, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 16:34:18,492  INFO: CTA_STRATEGY	策略HorizBreakout触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 88, in onInit
+    self.onBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 112, in onBar
+    self.bg.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 525, in updateBar
+    self.onXminBar(self.xminBar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 124, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 16:34:18,494  INFO: CTA_STRATEGY	策略HorizBreakout触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 88, in onInit
+    self.onBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 112, in onBar
+    self.bg.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 525, in updateBar
+    self.onXminBar(self.xminBar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 124, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 16:34:18,494  INFO: CTA_STRATEGY	策略HorizBreakout触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 88, in onInit
+    self.onBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 112, in onBar
+    self.bg.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 525, in updateBar
+    self.onXminBar(self.xminBar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 124, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 16:34:18,773  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化
+2018-07-29 16:34:18,773  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化
+2018-07-29 16:34:18,773  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化
+2018-07-29 16:34:18,773  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化
+2018-07-29 16:34:19,339  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 86, in onInit
+    self.onMyBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 157, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 16:34:19,339  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 86, in onInit
+    self.onMyBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 157, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 16:34:19,340  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 86, in onInit
+    self.onMyBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 157, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 16:34:19,340  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 86, in onInit
+    self.onMyBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 157, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 16:34:19,617  INFO: CTA策略初始化成功
+2018-07-29 16:34:19,617  INFO: CTA策略初始化成功
+2018-07-29 16:34:19,617  INFO: CTA策略启动成功
+2018-07-29 16:34:19,617  INFO: CTA策略启动成功
+2018-07-29 16:44:23,503  INFO: 启动CTA策略运行子进程
+2018-07-29 16:44:23,503  INFO: 事件引擎创建成功
+2018-07-29 16:46:09,598  INFO: 启动CTA策略运行子进程
+2018-07-29 16:46:09,598  INFO: 事件引擎创建成功
+2018-07-29 22:54:55,051  INFO: 启动CTA策略运行子进程
+2018-07-29 22:54:55,065  INFO: 事件引擎创建成功
+2018-07-29 22:55:51,184  INFO: 启动CTA策略运行子进程
+2018-07-29 22:55:51,185  INFO: 事件引擎创建成功
+2018-07-29 22:55:51,222  INFO: 主引擎创建成功
+2018-07-29 22:55:51,222  INFO: 主引擎创建成功
+2018-07-29 22:55:51,222  INFO: 注册日志事件监听
+2018-07-29 22:55:51,222  INFO: 注册日志事件监听
+2018-07-29 22:55:51,262  INFO: CTP	交易服务器连接成功
+2018-07-29 22:55:51,262  INFO: CTP	交易服务器连接成功
+2018-07-29 22:55:51,262  INFO: CTP	交易服务器连接成功
+2018-07-29 22:55:51,262  INFO: CTP	交易服务器连接成功
+2018-07-29 22:55:51,345  INFO: CTP	交易服务器登录完成
+2018-07-29 22:55:51,345  INFO: CTP	交易服务器登录完成
+2018-07-29 22:55:51,346  INFO: CTP	交易服务器登录完成
+2018-07-29 22:55:51,346  INFO: CTP	交易服务器登录完成
+2018-07-29 22:55:51,431  INFO: CTP	结算信息确认完成
+2018-07-29 22:55:51,431  INFO: CTP	结算信息确认完成
+2018-07-29 22:55:51,431  INFO: CTP	结算信息确认完成
+2018-07-29 22:55:51,431  INFO: CTP	结算信息确认完成
+2018-07-29 22:55:51,880  INFO: CTP	交易合约信息获取完成
+2018-07-29 22:55:51,880  INFO: CTP	交易合约信息获取完成
+2018-07-29 22:55:51,881  INFO: CTP	交易合约信息获取完成
+2018-07-29 22:55:51,881  INFO: CTP	交易合约信息获取完成
+2018-07-29 22:55:53,559  INFO: 连接CTP接口
+2018-07-29 22:55:53,559  INFO: 连接CTP接口
+2018-07-29 22:55:53,559  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 22:55:53,559  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 22:55:53,560  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 22:55:53,560  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 23:02:25,192  INFO: 启动CTA策略运行子进程
+2018-07-29 23:02:25,193  INFO: 事件引擎创建成功
+2018-07-29 23:02:25,212  INFO: 主引擎创建成功
+2018-07-29 23:02:25,212  INFO: 主引擎创建成功
+2018-07-29 23:02:25,213  INFO: 注册日志事件监听
+2018-07-29 23:02:25,213  INFO: 注册日志事件监听
+2018-07-29 23:02:25,244  INFO: CTP	交易服务器连接成功
+2018-07-29 23:02:25,244  INFO: CTP	交易服务器连接成功
+2018-07-29 23:02:25,245  INFO: CTP	交易服务器连接成功
+2018-07-29 23:02:25,245  INFO: CTP	交易服务器连接成功
+2018-07-29 23:02:25,276  INFO: CTP	交易服务器登录完成
+2018-07-29 23:02:25,276  INFO: CTP	交易服务器登录完成
+2018-07-29 23:02:25,276  INFO: CTP	交易服务器登录完成
+2018-07-29 23:02:25,276  INFO: CTP	交易服务器登录完成
+2018-07-29 23:02:25,336  INFO: CTP	结算信息确认完成
+2018-07-29 23:02:25,336  INFO: CTP	结算信息确认完成
+2018-07-29 23:02:25,337  INFO: CTP	结算信息确认完成
+2018-07-29 23:02:25,337  INFO: CTP	结算信息确认完成
+2018-07-29 23:02:25,504  INFO: CTP	交易合约信息获取完成
+2018-07-29 23:02:25,504  INFO: CTP	交易合约信息获取完成
+2018-07-29 23:02:25,505  INFO: CTP	交易合约信息获取完成
+2018-07-29 23:02:25,505  INFO: CTP	交易合约信息获取完成
+2018-07-29 23:02:27,525  INFO: 连接CTP接口
+2018-07-29 23:02:27,525  INFO: 连接CTP接口
+2018-07-29 23:02:27,525  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 23:02:27,525  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 23:02:27,527  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 23:02:27,527  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 23:02:37,547  INFO: CTA策略载入成功
+2018-07-29 23:02:37,547  INFO: CTA策略载入成功
+2018-07-29 23:02:37,547  INFO: CTA_STRATEGY	找不到策略类：PonderDNCoreStrategy
+2018-07-29 23:02:37,547  INFO: CTA_STRATEGY	找不到策略类：PonderDNCoreStrategy
+2018-07-29 23:02:37,550  INFO: CTA_STRATEGY	找不到策略类：PonderDNCoreStrategy
+2018-07-29 23:02:37,550  INFO: CTA_STRATEGY	找不到策略类：PonderDNCoreStrategy
+2018-07-29 23:02:37,551  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化
+2018-07-29 23:02:37,551  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化
+2018-07-29 23:02:37,552  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化
+2018-07-29 23:02:37,552  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化
+2018-07-29 23:02:38,476  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 86, in onInit
+    self.onMyBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 157, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 23:02:38,476  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 86, in onInit
+    self.onMyBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 157, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 23:02:38,476  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 86, in onInit
+    self.onMyBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 157, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 23:02:38,476  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 86, in onInit
+    self.onMyBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 157, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 23:02:38,766  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略初始化
+2018-07-29 23:02:38,766  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略初始化
+2018-07-29 23:02:38,766  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略初始化
+2018-07-29 23:02:38,766  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略初始化
+2018-07-29 23:02:41,503  INFO: CTA_STRATEGY	策略HorizBreakout触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 88, in onInit
+    self.onBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 112, in onBar
+    self.bg.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 525, in updateBar
+    self.onXminBar(self.xminBar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 124, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 23:02:41,503  INFO: CTA_STRATEGY	策略HorizBreakout触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 88, in onInit
+    self.onBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 112, in onBar
+    self.bg.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 525, in updateBar
+    self.onXminBar(self.xminBar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 124, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 23:02:41,505  INFO: CTA_STRATEGY	策略HorizBreakout触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 88, in onInit
+    self.onBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 112, in onBar
+    self.bg.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 525, in updateBar
+    self.onXminBar(self.xminBar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 124, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 23:02:41,505  INFO: CTA_STRATEGY	策略HorizBreakout触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 88, in onInit
+    self.onBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 112, in onBar
+    self.bg.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 525, in updateBar
+    self.onXminBar(self.xminBar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 124, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 23:02:41,794  INFO: CTA策略初始化成功
+2018-07-29 23:02:41,794  INFO: CTA策略初始化成功
+2018-07-29 23:02:41,795  INFO: CTA策略启动成功
+2018-07-29 23:02:41,795  INFO: CTA策略启动成功
+2018-07-29 23:06:08,945  INFO: 启动CTA策略运行子进程
+2018-07-29 23:06:08,946  INFO: 事件引擎创建成功
+2018-07-29 23:06:08,966  INFO: 主引擎创建成功
+2018-07-29 23:06:08,966  INFO: 主引擎创建成功
+2018-07-29 23:06:08,966  INFO: 注册日志事件监听
+2018-07-29 23:06:08,966  INFO: 注册日志事件监听
+2018-07-29 23:06:08,998  INFO: CTP	交易服务器连接成功
+2018-07-29 23:06:08,998  INFO: CTP	交易服务器连接成功
+2018-07-29 23:06:08,999  INFO: CTP	交易服务器连接成功
+2018-07-29 23:06:08,999  INFO: CTP	交易服务器连接成功
+2018-07-29 23:06:09,033  INFO: CTP	交易服务器登录完成
+2018-07-29 23:06:09,033  INFO: CTP	交易服务器登录完成
+2018-07-29 23:06:09,033  INFO: CTP	交易服务器登录完成
+2018-07-29 23:06:09,033  INFO: CTP	交易服务器登录完成
+2018-07-29 23:06:09,156  INFO: CTP	结算信息确认完成
+2018-07-29 23:06:09,156  INFO: CTP	结算信息确认完成
+2018-07-29 23:06:09,157  INFO: CTP	结算信息确认完成
+2018-07-29 23:06:09,157  INFO: CTP	结算信息确认完成
+2018-07-29 23:06:10,255  INFO: CTP	交易合约信息获取完成
+2018-07-29 23:06:10,255  INFO: CTP	交易合约信息获取完成
+2018-07-29 23:06:10,256  INFO: CTP	交易合约信息获取完成
+2018-07-29 23:06:10,256  INFO: CTP	交易合约信息获取完成
+2018-07-29 23:06:11,242  INFO: 连接CTP接口
+2018-07-29 23:06:11,242  INFO: 连接CTP接口
+2018-07-29 23:06:11,242  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 23:06:11,242  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 23:06:11,243  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 23:06:11,243  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 23:06:20,407  INFO: 启动CTA策略运行子进程
+2018-07-29 23:06:20,411  INFO: 事件引擎创建成功
+2018-07-29 23:06:22,493  INFO: 主引擎创建成功
+2018-07-29 23:06:22,493  INFO: 主引擎创建成功
+2018-07-29 23:06:22,495  INFO: 注册日志事件监听
+2018-07-29 23:06:22,495  INFO: 注册日志事件监听
+2018-07-29 23:06:22,529  INFO: CTP	交易服务器连接成功
+2018-07-29 23:06:22,529  INFO: CTP	交易服务器连接成功
+2018-07-29 23:06:22,531  INFO: CTP	交易服务器连接成功
+2018-07-29 23:06:22,531  INFO: CTP	交易服务器连接成功
+2018-07-29 23:06:22,616  INFO: CTP	交易服务器登录完成
+2018-07-29 23:06:22,616  INFO: CTP	交易服务器登录完成
+2018-07-29 23:06:22,617  INFO: CTP	交易服务器登录完成
+2018-07-29 23:06:22,617  INFO: CTP	交易服务器登录完成
+2018-07-29 23:06:22,986  INFO: CTP	结算信息确认完成
+2018-07-29 23:06:22,986  INFO: CTP	结算信息确认完成
+2018-07-29 23:06:22,988  INFO: CTP	结算信息确认完成
+2018-07-29 23:06:22,988  INFO: CTP	结算信息确认完成
+2018-07-29 23:06:24,563  INFO: CTP	交易合约信息获取完成
+2018-07-29 23:06:24,563  INFO: CTP	交易合约信息获取完成
+2018-07-29 23:06:24,565  INFO: CTP	交易合约信息获取完成
+2018-07-29 23:06:24,565  INFO: CTP	交易合约信息获取完成
+2018-07-29 23:06:24,619  INFO: 连接CTP接口
+2018-07-29 23:06:24,619  INFO: 连接CTP接口
+2018-07-29 23:06:24,620  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 23:06:24,620  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 23:06:24,623  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 23:06:24,623  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 23:06:34,643  INFO: CTA策略载入成功
+2018-07-29 23:06:34,643  INFO: CTA策略载入成功
+2018-07-29 23:06:34,645  INFO: CTA_STRATEGY	找不到策略类：PonderDNCoreStrategy
+2018-07-29 23:06:34,645  INFO: CTA_STRATEGY	找不到策略类：PonderDNCoreStrategy
+2018-07-29 23:06:34,652  INFO: CTA_STRATEGY	找不到策略类：PonderDNCoreStrategy
+2018-07-29 23:06:34,652  INFO: CTA_STRATEGY	找不到策略类：PonderDNCoreStrategy
+2018-07-29 23:06:34,654  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化
+2018-07-29 23:06:34,654  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化
+2018-07-29 23:06:34,657  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化
+2018-07-29 23:06:34,657  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化
+2018-07-29 23:06:35,469  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 86, in onInit
+    self.onMyBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 157, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 23:06:35,469  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 86, in onInit
+    self.onMyBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 157, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 23:06:35,471  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 86, in onInit
+    self.onMyBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 157, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 23:06:35,471  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 86, in onInit
+    self.onMyBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 157, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 23:06:35,731  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略初始化
+2018-07-29 23:06:35,731  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略初始化
+2018-07-29 23:06:35,732  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略初始化
+2018-07-29 23:06:35,732  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略初始化
+2018-07-29 23:06:38,223  INFO: CTA_STRATEGY	策略HorizBreakout触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 88, in onInit
+    self.onBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 112, in onBar
+    self.bg.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 525, in updateBar
+    self.onXminBar(self.xminBar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 124, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 23:06:38,223  INFO: CTA_STRATEGY	策略HorizBreakout触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 88, in onInit
+    self.onBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 112, in onBar
+    self.bg.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 525, in updateBar
+    self.onXminBar(self.xminBar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 124, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 23:06:38,226  INFO: CTA_STRATEGY	策略HorizBreakout触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 88, in onInit
+    self.onBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 112, in onBar
+    self.bg.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 525, in updateBar
+    self.onXminBar(self.xminBar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 124, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 23:06:38,226  INFO: CTA_STRATEGY	策略HorizBreakout触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 88, in onInit
+    self.onBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 112, in onBar
+    self.bg.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 525, in updateBar
+    self.onXminBar(self.xminBar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 124, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 23:06:38,485  INFO: CTA策略初始化成功
+2018-07-29 23:06:38,485  INFO: CTA策略初始化成功
+2018-07-29 23:06:38,488  INFO: CTA策略启动成功
+2018-07-29 23:06:38,488  INFO: CTA策略启动成功
+2018-07-29 23:07:05,110  INFO: 启动CTA策略运行子进程
+2018-07-29 23:07:05,115  INFO: 事件引擎创建成功
+2018-07-29 23:07:13,523  INFO: 主引擎创建成功
+2018-07-29 23:07:13,523  INFO: 主引擎创建成功
+2018-07-29 23:07:20,552  INFO: 注册日志事件监听
+2018-07-29 23:07:20,552  INFO: 注册日志事件监听
+2018-07-29 23:07:20,586  INFO: CTP	交易服务器连接成功
+2018-07-29 23:07:20,586  INFO: CTP	交易服务器连接成功
+2018-07-29 23:07:20,588  INFO: CTP	交易服务器连接成功
+2018-07-29 23:07:20,588  INFO: CTP	交易服务器连接成功
+2018-07-29 23:07:20,617  INFO: CTP	交易服务器登录完成
+2018-07-29 23:07:20,617  INFO: CTP	交易服务器登录完成
+2018-07-29 23:07:20,618  INFO: CTP	交易服务器登录完成
+2018-07-29 23:07:20,618  INFO: CTP	交易服务器登录完成
+2018-07-29 23:07:20,675  INFO: CTP	结算信息确认完成
+2018-07-29 23:07:20,675  INFO: CTP	结算信息确认完成
+2018-07-29 23:07:20,677  INFO: CTP	结算信息确认完成
+2018-07-29 23:07:20,677  INFO: CTP	结算信息确认完成
+2018-07-29 23:07:22,023  INFO: CTP	交易合约信息获取完成
+2018-07-29 23:07:22,023  INFO: CTP	交易合约信息获取完成
+2018-07-29 23:07:22,025  INFO: CTP	交易合约信息获取完成
+2018-07-29 23:07:22,025  INFO: CTP	交易合约信息获取完成
+2018-07-29 23:07:22,814  INFO: 连接CTP接口
+2018-07-29 23:07:22,814  INFO: 连接CTP接口
+2018-07-29 23:07:22,817  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 23:07:22,817  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 23:07:22,820  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 23:07:22,820  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 23:07:32,836  INFO: CTA策略载入成功
+2018-07-29 23:07:32,836  INFO: CTA策略载入成功
+2018-07-29 23:07:32,837  INFO: CTA_STRATEGY	找不到策略类：PonderDNCoreStrategy
+2018-07-29 23:07:32,837  INFO: CTA_STRATEGY	找不到策略类：PonderDNCoreStrategy
+2018-07-29 23:07:32,844  INFO: CTA_STRATEGY	找不到策略类：PonderDNCoreStrategy
+2018-07-29 23:07:32,844  INFO: CTA_STRATEGY	找不到策略类：PonderDNCoreStrategy
+2018-07-29 23:07:32,846  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化
+2018-07-29 23:07:32,846  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化
+2018-07-29 23:07:32,848  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化
+2018-07-29 23:07:32,848  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化
+2018-07-29 23:07:33,722  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 86, in onInit
+    self.onMyBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 157, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 23:07:33,722  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 86, in onInit
+    self.onMyBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 157, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 23:07:33,724  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 86, in onInit
+    self.onMyBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 157, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 23:07:33,724  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 86, in onInit
+    self.onMyBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 157, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 23:07:34,010  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略初始化
+2018-07-29 23:07:34,010  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略初始化
+2018-07-29 23:07:34,012  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略初始化
+2018-07-29 23:07:34,012  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略初始化
+2018-07-29 23:09:05,202  INFO: 主引擎创建成功
+2018-07-29 23:09:05,202  INFO: 注册日志事件监听
+2018-07-29 23:09:05,233  INFO: CTP	交易服务器连接成功
+2018-07-29 23:09:05,233  INFO: CTP	交易服务器连接成功
+2018-07-29 23:09:05,267  INFO: CTP	交易服务器登录完成
+2018-07-29 23:09:05,268  INFO: CTP	交易服务器登录完成
+2018-07-29 23:09:05,645  INFO: CTP	结算信息确认完成
+2018-07-29 23:09:05,646  INFO: CTP	结算信息确认完成
+2018-07-29 23:09:07,380  INFO: CTP	交易合约信息获取完成
+2018-07-29 23:09:07,381  INFO: CTP	交易合约信息获取完成
+2018-07-29 23:09:07,429  INFO: 连接CTP接口
+2018-07-29 23:09:07,430  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 23:09:07,430  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 23:09:17,449  INFO: CTA策略载入成功
+2018-07-29 23:09:17,450  INFO: CTA_STRATEGY	找不到策略类：PonderDNCoreStrategy
+2018-07-29 23:09:17,452  INFO: CTA_STRATEGY	找不到策略类：PonderDNCoreStrategy
+2018-07-29 23:09:17,452  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略初始化
+2018-07-29 23:09:17,453  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略初始化
+2018-07-29 23:13:25,569  INFO: 启动CTA策略运行子进程
+2018-07-29 23:13:25,570  INFO: 事件引擎创建成功
+2018-07-29 23:13:25,590  INFO: 主引擎创建成功
+2018-07-29 23:13:25,590  INFO: 主引擎创建成功
+2018-07-29 23:13:25,590  INFO: 注册日志事件监听
+2018-07-29 23:13:25,590  INFO: 注册日志事件监听
+2018-07-29 23:13:25,601  INFO: CTP	交易服务器连接成功
+2018-07-29 23:13:25,601  INFO: CTP	交易服务器连接成功
+2018-07-29 23:13:25,602  INFO: CTP	交易服务器连接成功
+2018-07-29 23:13:25,602  INFO: CTP	交易服务器连接成功
+2018-07-29 23:13:26,379  INFO: CTP	交易服务器登录完成
+2018-07-29 23:13:26,379  INFO: CTP	交易服务器登录完成
+2018-07-29 23:13:26,380  INFO: CTP	交易服务器登录完成
+2018-07-29 23:13:26,380  INFO: CTP	交易服务器登录完成
+2018-07-29 23:13:27,125  INFO: CTP	结算信息确认完成
+2018-07-29 23:13:27,125  INFO: CTP	结算信息确认完成
+2018-07-29 23:13:27,125  INFO: CTP	结算信息确认完成
+2018-07-29 23:13:27,125  INFO: CTP	结算信息确认完成
+2018-07-29 23:13:27,773  INFO: 连接CTP接口
+2018-07-29 23:13:27,773  INFO: 连接CTP接口
+2018-07-29 23:13:27,774  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 23:13:27,774  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 23:13:27,775  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 23:13:27,775  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 23:13:31,606  INFO: CTP	交易合约信息获取完成
+2018-07-29 23:13:31,606  INFO: CTP	交易合约信息获取完成
+2018-07-29 23:13:31,607  INFO: CTP	交易合约信息获取完成
+2018-07-29 23:13:31,607  INFO: CTP	交易合约信息获取完成
+2018-07-29 23:14:11,599  INFO: 启动CTA策略运行子进程
+2018-07-29 23:14:11,600  INFO: 事件引擎创建成功
+2018-07-29 23:14:11,633  INFO: 主引擎创建成功
+2018-07-29 23:14:11,633  INFO: 主引擎创建成功
+2018-07-29 23:14:24,622  INFO: 注册日志事件监听
+2018-07-29 23:14:24,622  INFO: 注册日志事件监听
+2018-07-29 23:14:24,637  INFO: CTP	交易服务器连接成功
+2018-07-29 23:14:24,637  INFO: CTP	交易服务器连接成功
+2018-07-29 23:14:24,638  INFO: CTP	交易服务器连接成功
+2018-07-29 23:14:24,638  INFO: CTP	交易服务器连接成功
+2018-07-29 23:14:26,318  INFO: CTP	交易服务器登录完成
+2018-07-29 23:14:26,318  INFO: CTP	交易服务器登录完成
+2018-07-29 23:14:26,319  INFO: CTP	交易服务器登录完成
+2018-07-29 23:14:26,319  INFO: CTP	交易服务器登录完成
+2018-07-29 23:14:26,908  INFO: 连接CTP接口
+2018-07-29 23:14:26,908  INFO: 连接CTP接口
+2018-07-29 23:14:26,909  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 23:14:26,909  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 23:14:26,911  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 23:14:26,911  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 23:14:27,577  INFO: CTP	结算信息确认完成
+2018-07-29 23:14:27,577  INFO: CTP	结算信息确认完成
+2018-07-29 23:14:27,579  INFO: CTP	结算信息确认完成
+2018-07-29 23:14:27,579  INFO: CTP	结算信息确认完成
+2018-07-29 23:14:36,933  INFO: CTA策略载入成功
+2018-07-29 23:14:36,933  INFO: CTA策略载入成功
+2018-07-29 23:14:36,935  INFO: CTA_STRATEGY	找不到策略类：PonderDNCoreStrategy
+2018-07-29 23:14:36,935  INFO: CTA_STRATEGY	找不到策略类：PonderDNCoreStrategy
+2018-07-29 23:14:36,942  INFO: CTA_STRATEGY	找不到策略类：PonderDNCoreStrategy
+2018-07-29 23:14:36,942  INFO: CTA_STRATEGY	找不到策略类：PonderDNCoreStrategy
+2018-07-29 23:14:36,944  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化
+2018-07-29 23:14:36,944  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化
+2018-07-29 23:14:36,946  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化
+2018-07-29 23:14:36,946  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化
+2018-07-29 23:14:37,805  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 86, in onInit
+    self.onMyBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 157, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 23:14:37,805  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 86, in onInit
+    self.onMyBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 157, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 23:14:37,808  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 86, in onInit
+    self.onMyBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 157, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 23:14:37,808  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 86, in onInit
+    self.onMyBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 157, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 23:14:38,086  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略初始化
+2018-07-29 23:14:38,086  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略初始化
+2018-07-29 23:14:38,087  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略初始化
+2018-07-29 23:14:38,087  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略初始化
+2018-07-29 23:14:40,715  INFO: CTA_STRATEGY	策略HorizBreakout触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 88, in onInit
+    self.onBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 112, in onBar
+    self.bg.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 525, in updateBar
+    self.onXminBar(self.xminBar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 124, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 23:14:40,715  INFO: CTA_STRATEGY	策略HorizBreakout触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 88, in onInit
+    self.onBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 112, in onBar
+    self.bg.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 525, in updateBar
+    self.onXminBar(self.xminBar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 124, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 23:14:40,718  INFO: CTA_STRATEGY	策略HorizBreakout触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 88, in onInit
+    self.onBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 112, in onBar
+    self.bg.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 525, in updateBar
+    self.onXminBar(self.xminBar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 124, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 23:14:40,718  INFO: CTA_STRATEGY	策略HorizBreakout触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 88, in onInit
+    self.onBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 112, in onBar
+    self.bg.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 525, in updateBar
+    self.onXminBar(self.xminBar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 124, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 23:14:40,994  INFO: CTA策略初始化成功
+2018-07-29 23:14:40,994  INFO: CTA策略初始化成功
+2018-07-29 23:14:40,996  INFO: CTA策略启动成功
+2018-07-29 23:14:40,996  INFO: CTA策略启动成功
+2018-07-29 23:14:42,668  INFO: CTP	交易合约信息获取完成
+2018-07-29 23:14:42,668  INFO: CTP	交易合约信息获取完成
+2018-07-29 23:14:42,670  INFO: CTP	交易合约信息获取完成
+2018-07-29 23:14:42,670  INFO: CTP	交易合约信息获取完成
+2018-07-29 23:34:56,678  INFO: 启动CTA策略运行子进程
+2018-07-29 23:34:56,680  INFO: 事件引擎创建成功
+2018-07-29 23:34:56,712  INFO: 主引擎创建成功
+2018-07-29 23:34:56,712  INFO: 主引擎创建成功
+2018-07-29 23:34:56,713  INFO: 注册日志事件监听
+2018-07-29 23:34:56,713  INFO: 注册日志事件监听
+2018-07-29 23:34:56,746  INFO: CTP	交易服务器连接成功
+2018-07-29 23:34:56,746  INFO: CTP	交易服务器连接成功
+2018-07-29 23:34:56,748  INFO: CTP	交易服务器连接成功
+2018-07-29 23:34:56,748  INFO: CTP	交易服务器连接成功
+2018-07-29 23:34:56,779  INFO: CTP	交易服务器登录完成
+2018-07-29 23:34:56,779  INFO: CTP	交易服务器登录完成
+2018-07-29 23:34:56,780  INFO: CTP	交易服务器登录完成
+2018-07-29 23:34:56,780  INFO: CTP	交易服务器登录完成
+2018-07-29 23:34:56,840  INFO: CTP	结算信息确认完成
+2018-07-29 23:34:56,840  INFO: CTP	结算信息确认完成
+2018-07-29 23:34:56,842  INFO: CTP	结算信息确认完成
+2018-07-29 23:34:56,842  INFO: CTP	结算信息确认完成
+2018-07-29 23:34:57,467  INFO: CTP	交易合约信息获取完成
+2018-07-29 23:34:57,467  INFO: CTP	交易合约信息获取完成
+2018-07-29 23:34:57,468  INFO: CTP	交易合约信息获取完成
+2018-07-29 23:34:57,468  INFO: CTP	交易合约信息获取完成
+2018-07-29 23:34:58,974  INFO: 连接CTP接口
+2018-07-29 23:34:58,974  INFO: 连接CTP接口
+2018-07-29 23:34:58,975  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 23:34:58,975  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 23:34:58,978  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 23:34:58,978  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 23:35:27,411  INFO: 启动CTA策略运行子进程
+2018-07-29 23:35:27,413  INFO: 事件引擎创建成功
+2018-07-29 23:35:27,449  INFO: 主引擎创建成功
+2018-07-29 23:35:27,449  INFO: 主引擎创建成功
+2018-07-29 23:35:27,450  INFO: 注册日志事件监听
+2018-07-29 23:35:27,450  INFO: 注册日志事件监听
+2018-07-29 23:35:27,491  INFO: CTP	交易服务器连接成功
+2018-07-29 23:35:27,491  INFO: CTP	交易服务器连接成功
+2018-07-29 23:35:27,492  INFO: CTP	交易服务器连接成功
+2018-07-29 23:35:27,492  INFO: CTP	交易服务器连接成功
+2018-07-29 23:35:27,521  INFO: CTP	交易服务器登录完成
+2018-07-29 23:35:27,521  INFO: CTP	交易服务器登录完成
+2018-07-29 23:35:27,523  INFO: CTP	交易服务器登录完成
+2018-07-29 23:35:27,523  INFO: CTP	交易服务器登录完成
+2018-07-29 23:35:27,592  INFO: CTP	结算信息确认完成
+2018-07-29 23:35:27,592  INFO: CTP	结算信息确认完成
+2018-07-29 23:35:27,594  INFO: CTP	结算信息确认完成
+2018-07-29 23:35:27,594  INFO: CTP	结算信息确认完成
+2018-07-29 23:35:28,244  INFO: CTP	交易合约信息获取完成
+2018-07-29 23:35:28,244  INFO: CTP	交易合约信息获取完成
+2018-07-29 23:35:28,245  INFO: CTP	交易合约信息获取完成
+2018-07-29 23:35:28,245  INFO: CTP	交易合约信息获取完成
+2018-07-29 23:35:29,657  INFO: 连接CTP接口
+2018-07-29 23:35:29,657  INFO: 连接CTP接口
+2018-07-29 23:35:29,658  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 23:35:29,658  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 23:35:29,661  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 23:35:29,661  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 23:35:39,680  INFO: CTA策略载入成功
+2018-07-29 23:35:39,680  INFO: CTA策略载入成功
+2018-07-29 23:35:39,683  INFO: CTA_STRATEGY	找不到策略类：PonderDNCoreStrategy
+2018-07-29 23:35:39,683  INFO: CTA_STRATEGY	找不到策略类：PonderDNCoreStrategy
+2018-07-29 23:35:39,692  INFO: CTA_STRATEGY	找不到策略类：PonderDNCoreStrategy
+2018-07-29 23:35:39,692  INFO: CTA_STRATEGY	找不到策略类：PonderDNCoreStrategy
+2018-07-29 23:35:39,694  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化
+2018-07-29 23:35:39,694  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化
+2018-07-29 23:35:39,696  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化
+2018-07-29 23:35:39,696  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化
+2018-07-29 23:35:40,534  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 86, in onInit
+    self.onMyBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 157, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 23:35:40,534  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 86, in onInit
+    self.onMyBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 157, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 23:35:40,536  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 86, in onInit
+    self.onMyBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 157, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 23:35:40,536  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 86, in onInit
+    self.onMyBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyAvgBreak.py", line 157, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 23:35:40,808  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略初始化
+2018-07-29 23:35:40,808  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略初始化
+2018-07-29 23:35:40,809  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略初始化
+2018-07-29 23:35:40,809  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略初始化
+2018-07-29 23:35:43,422  INFO: CTA_STRATEGY	策略HorizBreakout触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 88, in onInit
+    self.onBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 112, in onBar
+    self.bg.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 525, in updateBar
+    self.onXminBar(self.xminBar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 124, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 23:35:43,422  INFO: CTA_STRATEGY	策略HorizBreakout触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 88, in onInit
+    self.onBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 112, in onBar
+    self.bg.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 525, in updateBar
+    self.onXminBar(self.xminBar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 124, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 23:35:43,426  INFO: CTA_STRATEGY	策略HorizBreakout触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 88, in onInit
+    self.onBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 112, in onBar
+    self.bg.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 525, in updateBar
+    self.onXminBar(self.xminBar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 124, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 23:35:43,426  INFO: CTA_STRATEGY	策略HorizBreakout触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 88, in onInit
+    self.onBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 112, in onBar
+    self.bg.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 525, in updateBar
+    self.onXminBar(self.xminBar)
+  File "/home/linlin/cyvn/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 124, in onMyBar
+    am.updateBar(bar)
+  File "/home/linlin/cyvn/app/ctaStrategy/ctaTemplate.py", line 559, in updateBar
+    self.datetimeArray[0:self.size-1] = self.datetimeArray[1:self.size]
+TypeError: 'range' object does not support item assignment
+
+2018-07-29 23:35:43,696  INFO: CTA策略初始化成功
+2018-07-29 23:35:43,696  INFO: CTA策略初始化成功
+2018-07-29 23:35:43,698  INFO: CTA策略启动成功
+2018-07-29 23:35:43,698  INFO: CTA策略启动成功
+2018-07-29 23:37:03,075  INFO: 启动CTA策略运行子进程
+2018-07-29 23:37:03,077  INFO: 事件引擎创建成功
+2018-07-29 23:37:03,116  INFO: 主引擎创建成功
+2018-07-29 23:37:03,116  INFO: 主引擎创建成功
+2018-07-29 23:37:03,117  INFO: 注册日志事件监听
+2018-07-29 23:37:03,117  INFO: 注册日志事件监听
+2018-07-29 23:37:04,153  INFO: CTP	交易服务器连接成功
+2018-07-29 23:37:04,153  INFO: CTP	交易服务器连接成功
+2018-07-29 23:37:04,156  INFO: CTP	交易服务器连接成功
+2018-07-29 23:37:04,156  INFO: CTP	交易服务器连接成功
+2018-07-29 23:37:04,185  INFO: CTP	交易服务器登录完成
+2018-07-29 23:37:04,185  INFO: CTP	交易服务器登录完成
+2018-07-29 23:37:04,187  INFO: CTP	交易服务器登录完成
+2018-07-29 23:37:04,187  INFO: CTP	交易服务器登录完成
+2018-07-29 23:37:04,243  INFO: CTP	结算信息确认完成
+2018-07-29 23:37:04,243  INFO: CTP	结算信息确认完成
+2018-07-29 23:37:04,245  INFO: CTP	结算信息确认完成
+2018-07-29 23:37:04,245  INFO: CTP	结算信息确认完成
+2018-07-29 23:37:05,380  INFO: 连接CTP接口
+2018-07-29 23:37:05,380  INFO: 连接CTP接口
+2018-07-29 23:37:05,381  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 23:37:05,381  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 23:37:05,385  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 23:37:05,385  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-29 23:37:05,821  INFO: CTP	交易合约信息获取完成
+2018-07-29 23:37:05,821  INFO: CTP	交易合约信息获取完成
+2018-07-29 23:37:05,823  INFO: CTP	交易合约信息获取完成
+2018-07-29 23:37:05,823  INFO: CTP	交易合约信息获取完成

@@ -1,0 +1,23 @@
+2018-07-05 21:45:24,851  INFO: 启动CTA策略运行子进程
+2018-07-05 21:45:24,851  INFO: 事件引擎创建成功
+2018-07-05 21:45:24,897  INFO: 主引擎创建成功
+2018-07-05 21:45:24,897  INFO: 注册日志事件监听
+2018-07-05 21:45:25,027  INFO: CTP	行情服务器连接成功
+2018-07-05 21:45:25,191  INFO: CTP	行情服务器登录完成
+2018-07-05 21:45:27,296  INFO: 连接CTP接口
+2018-07-05 21:45:27,325  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-07-05 21:45:35,027  INFO: CTP	交易服务器连接成功
+2018-07-05 21:45:35,343  INFO: CTP	交易服务器登录完成
+2018-07-05 21:45:35,678  INFO: CTP	结算信息确认完成
+2018-07-05 21:45:37,342  INFO: CTA策略载入成功
+2018-07-05 21:45:37,390  INFO: CTA_STRATEGY	ADXR:ADXR策略初始化
+2018-07-05 21:45:37,606  INFO: CTP	交易合约信息获取完成
+2018-07-05 21:46:08,783  INFO: CTA_STRATEGY	PonderDNCore:PonderDNCore策略初始化
+2018-07-05 21:46:10,961  WARNING: The `skip_connections` argument will be deprecated. Please use snt.SkipConnectionCore instead.
+2018-07-05 21:46:20,077  INFO: Restoring parameters from /QuantPython/RqAlphaMod/Model_Saver/ResidualPonderDNC_3.ckpt
+2018-07-05 21:47:17,106  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略初始化
+2018-07-05 21:48:08,096  INFO: CTA策略初始化成功
+2018-07-05 21:48:08,097  INFO: CTA策略启动成功
+2018-07-05 21:48:08,134  INFO: CTA_STRATEGY	ADXR:ADXR策略启动
+2018-07-05 21:48:08,135  INFO: CTA_STRATEGY	PonderDNCore:PonderDNCore策略启动
+2018-07-05 21:48:08,136  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略启动

@@ -1,0 +1,23 @@
+{
+    "working": true,
+
+    "tick":
+    [
+
+    ],
+
+    "bar":
+    [
+        ["rb1810","CTP"],
+        ["rb1901","CTP"],
+        ["rb1905","CTP"],
+        ["ag1812","CTP"],
+        ["ag1906","CTP"]
+    ],
+
+    "active":
+    {
+        "rb.HOT": "rb1810",
+        "ag.HOT": "ag1812"
+    }
+}
