@@ -174,19 +174,19 @@ class BollingerBotStrategy01(CtaTemplate):
 
             # self.intraTradeHigh = max(bar.high, self.avgEntryPrice)
             # self.intraTradeLow = min(bar.low, self.avgEntryPrice)
-            log = "-----" * 10 + "\n@onBar\n" + \
-                  "bar.datetime: {0}; pos: {1} \n".format(bar.datetime, self.pos) + \
-                  "buySig: {0}; shortSig: {1}\n".format(self.buySig, self.shortSig) + \
-                  "sellSig: {0}; coverSig: {1}\n".format(self.sellSig, self.coverSig) + \
-                  "intraTradeHigh: {0}\n".format(self.intraTradeHigh) + \
-                  "intraTradeLow: {0}\n".format(self.intraTradeLow)
-            self.writeCtaLog(log)
+            # log = "-----" * 10 + "\n@onBar\n" + \
+            #       "bar.datetime: {0}; pos: {1} \n".format(bar.datetime, self.pos) + \
+            #       "buySig: {0}; shortSig: {1}\n".format(self.buySig, self.shortSig) + \
+            #       "sellSig: {0}; coverSig: {1}\n".format(self.sellSig, self.coverSig) + \
+            #       "intraTradeHigh: {0}\n".format(self.intraTradeHigh) + \
+            #       "intraTradeLow: {0}\n".format(self.intraTradeLow)
+            # self.writeCtaLog(log)
             # 记录log
-            log = "\n Trading: {0}\n".format(self.trading) + \
-                  "{0} Buy : longEntry: {1};\n".format(bar.datetime, bar.close) + \
-                  " entryUp:{0}; maFilter:{1}; maFilter1:{2}; \n".format(self.entryUp, self.maFilter, self.maFilter1)
-            self.writeCtaLog(log)
-            self.buySig = False
+            # log = "\n Trading: {0}\n".format(self.trading) + \
+            #       "{0} Buy : longEntry: {1};\n".format(bar.datetime, bar.close) + \
+            #       " entryUp:{0}; maFilter:{1}; maFilter1:{2}; \n".format(self.entryUp, self.maFilter, self.maFilter1)
+            # self.writeCtaLog(log)
+            # self.buySig = False
             # return
 
         if self.shortSig:
@@ -201,18 +201,18 @@ class BollingerBotStrategy01(CtaTemplate):
             #
             # self.intraTradeHigh = max(bar.high, self.avgEntryPrice)
             # self.intraTradeLow = min(bar.low, self.avgEntryPrice)
-            log = "-----" * 10 + "\n@onBar\n" + \
-                  "bar.datetime: {0}; pos: {1} \n".format(bar.datetime, self.pos) + \
-                  "buySig: {0}; shortSig: {1}\n".format(self.buySig, self.shortSig) + \
-                  "sellSig: {0}; coverSig: {1}\n".format(self.sellSig, self.coverSig) + \
-                  "intraTradeHigh: {0}\n".format(self.intraTradeHigh) + \
-                  "intraTradeLow: {0}\n".format(self.intraTradeLow)
-            self.writeCtaLog(log)
-            # 记录log
-            log = "\n Trading: {0}\n".format(self.trading) + \
-                  "{0} Short : shortEntry: {1};\n".format(bar.datetime, bar.close) + \
-                  " entryDown:{0}; maFilter:{1}; maFilter1:{2}; \n".format(self.entryDown, self.maFilter, self.maFilter1)
-            self.writeCtaLog(log)
+            # log = "-----" * 10 + "\n@onBar\n" + \
+            #       "bar.datetime: {0}; pos: {1} \n".format(bar.datetime, self.pos) + \
+            #       "buySig: {0}; shortSig: {1}\n".format(self.buySig, self.shortSig) + \
+            #       "sellSig: {0}; coverSig: {1}\n".format(self.sellSig, self.coverSig) + \
+            #       "intraTradeHigh: {0}\n".format(self.intraTradeHigh) + \
+            #       "intraTradeLow: {0}\n".format(self.intraTradeLow)
+            # self.writeCtaLog(log)
+            # # 记录log
+            # log = "\n Trading: {0}\n".format(self.trading) + \
+            #       "{0} Short : shortEntry: {1};\n".format(bar.datetime, bar.close) + \
+            #       " entryDown:{0}; maFilter:{1}; maFilter1:{2}; \n".format(self.entryDown, self.maFilter, self.maFilter1)
+            # self.writeCtaLog(log)
 
             self.shortSig = False
             # return
@@ -224,18 +224,18 @@ class BollingerBotStrategy01(CtaTemplate):
                 price = bar.close
             res = self.sell(price, abs(self.pos), True)
             # self.orderList.extend(res)
-            log = "-----" * 10 + "\n@onBar\n" + \
-                  "bar.datetime: {0}; pos: {1} \n".format(bar.datetime, self.pos) + \
-                  "buySig: {0}; shortSig: {1}\n".format(self.buySig, self.shortSig) + \
-                  "sellSig: {0}; coverSig: {1}\n".format(self.sellSig, self.coverSig) + \
-                  "intraTradeHigh: {0}\n".format(self.intraTradeHigh) + \
-                  "intraTradeLow: {0}\n".format(self.intraTradeLow)
-            self.writeCtaLog(log)
-            # 记录log
-            log = "\n Trading: {0}\n".format(self.trading) + \
-                  "{0} Sell : {1};\n".format(bar.datetime, bar.close) + \
-                  " price:{0}; stopExit: {1}\n".format(price,self.stopExit)
-            self.writeCtaLog(log)
+            # log = "-----" * 10 + "\n@onBar\n" + \
+            #       "bar.datetime: {0}; pos: {1} \n".format(bar.datetime, self.pos) + \
+            #       "buySig: {0}; shortSig: {1}\n".format(self.buySig, self.shortSig) + \
+            #       "sellSig: {0}; coverSig: {1}\n".format(self.sellSig, self.coverSig) + \
+            #       "intraTradeHigh: {0}\n".format(self.intraTradeHigh) + \
+            #       "intraTradeLow: {0}\n".format(self.intraTradeLow)
+            # self.writeCtaLog(log)
+            # # 记录log
+            # log = "\n Trading: {0}\n".format(self.trading) + \
+            #       "{0} Sell : {1};\n".format(bar.datetime, bar.close) + \
+            #       " price:{0}; stopExit: {1}\n".format(price,self.stopExit)
+            # self.writeCtaLog(log)
 
             # self.entryPriceList = []
             # self.avgEntryPrice = 0
@@ -250,18 +250,18 @@ class BollingerBotStrategy01(CtaTemplate):
                 price = bar.close
             res = self.cover(price, abs(self.pos), True)
             # self.orderList.extend(res)
-            log = "-----" * 10 + "\n@onBar\n" + \
-                  "bar.datetime: {0}; pos: {1} \n".format(bar.datetime, self.pos) + \
-                  "buySig: {0}; shortSig: {1}\n".format(self.buySig, self.shortSig) + \
-                  "sellSig: {0}; coverSig: {1}\n".format(self.sellSig, self.coverSig) + \
-                  "intraTradeHigh: {0}\n".format(self.intraTradeHigh) + \
-                  "intraTradeLow: {0}\n".format(self.intraTradeLow)
-            self.writeCtaLog(log)
-            # 记录log
-            log = "\n Trading: {0}\n".format(self.trading) + \
-                  "{0} Cover : {1};\n".format(bar.datetime, bar.close) + \
-                  " price:{0}; stopExit: {1}\n".format(price,self.stopExit)
-            self.writeCtaLog(log)
+            # log = "-----" * 10 + "\n@onBar\n" + \
+            #       "bar.datetime: {0}; pos: {1} \n".format(bar.datetime, self.pos) + \
+            #       "buySig: {0}; shortSig: {1}\n".format(self.buySig, self.shortSig) + \
+            #       "sellSig: {0}; coverSig: {1}\n".format(self.sellSig, self.coverSig) + \
+            #       "intraTradeHigh: {0}\n".format(self.intraTradeHigh) + \
+            #       "intraTradeLow: {0}\n".format(self.intraTradeLow)
+            # self.writeCtaLog(log)
+            # # 记录log
+            # log = "\n Trading: {0}\n".format(self.trading) + \
+            #       "{0} Cover : {1};\n".format(bar.datetime, bar.close) + \
+            #       " price:{0}; stopExit: {1}\n".format(price,self.stopExit)
+            # self.writeCtaLog(log)
 
             # self.entryPriceList = []
             # self.avgEntryPrice = 0
@@ -315,12 +315,12 @@ class BollingerBotStrategy01(CtaTemplate):
                     # 下轨突破
                     self.shortSig = True
 
-            log = "-----" * 10 + "\n@onFiveBar\n" + \
-                  "bar.datetime: {0}; pos: {1} ; close: {2}\n".format(bar.datetime, self.pos,bar.close) + \
-                  "buySig: {0}; shortSig: {1}\n".format(self.buySig, self.shortSig) + \
-                  "intraTradeHigh: {0}\n".format(self.intraTradeHigh) + \
-                  "intraTradeLow: {0}\n".format(self.intraTradeLow)
-            self.writeCtaLog(log)
+            # log = "-----" * 10 + "\n@onFiveBar\n" + \
+            #       "bar.datetime: {0}; pos: {1} ; close: {2}\n".format(bar.datetime, self.pos,bar.close) + \
+            #       "buySig: {0}; shortSig: {1}\n".format(self.buySig, self.shortSig) + \
+            #       "intraTradeHigh: {0}\n".format(self.intraTradeHigh) + \
+            #       "intraTradeLow: {0}\n".format(self.intraTradeLow)
+            # self.writeCtaLog(log)
 
         # 当前有仓位
         else:
@@ -362,18 +362,18 @@ class BollingerBotStrategy01(CtaTemplate):
                         if (bar.close <= self.stopExit):
                     # 固定止损，回撤20跳
                             self.sellSig = True
-                log = "-----" * 10 + "\n@onFiveBar\n" + \
-                      "bar.datetime: {0}; pos: {1} ; close:{2}\n".format(bar.datetime, self.pos, bar.close) + \
-                      "sellSig: {0}; coverSig: {1}\n".format(self.sellSig, self.coverSig) + \
-                      "intraTradeHigh: {0}\n".format(self.intraTradeHigh) + \
-                      "intraTradeLow: {0}\n".format(self.intraTradeLow) + \
-                      "trailingStart1: {0}\n".format(self.avgEntryPrice + self.trailingStart1 * self.minDiff) + \
-                      "trailingStart2: {0}\n".format(self.avgEntryPrice + self.trailingStart2 * self.minDiff) + \
-                      "avgEntryPrice: {0}\n".format(self.avgEntryPrice) + \
-                      "trailingStop: {0}\n".format(self.trailingExit) + \
-                      "stopExit: {0}\n".format(self.stopExit)
-
-                self.writeCtaLog(log)
+                # log = "-----" * 10 + "\n@onFiveBar\n" + \
+                #       "bar.datetime: {0}; pos: {1} ; close:{2}\n".format(bar.datetime, self.pos, bar.close) + \
+                #       "sellSig: {0}; coverSig: {1}\n".format(self.sellSig, self.coverSig) + \
+                #       "intraTradeHigh: {0}\n".format(self.intraTradeHigh) + \
+                #       "intraTradeLow: {0}\n".format(self.intraTradeLow) + \
+                #       "trailingStart1: {0}\n".format(self.avgEntryPrice + self.trailingStart1 * self.minDiff) + \
+                #       "trailingStart2: {0}\n".format(self.avgEntryPrice + self.trailingStart2 * self.minDiff) + \
+                #       "avgEntryPrice: {0}\n".format(self.avgEntryPrice) + \
+                #       "trailingStop: {0}\n".format(self.trailingExit) + \
+                #       "stopExit: {0}\n".format(self.stopExit)
+                #
+                # self.writeCtaLog(log)
                     # if bar.close < self.longExit:
                     #     self.longExit = bar.close
                     # 记录log
@@ -436,18 +436,18 @@ class BollingerBotStrategy01(CtaTemplate):
                     #                                                                      bar.open)
                     # self.writeCtaLog(log)
 
-                log = "-----" * 10 + "\n@onFiveBar\n" + \
-                      "bar.datetime: {0}; pos: {1} ; close:{2}\n".format(bar.datetime, self.pos, bar.close) + \
-                      "sellSig: {0}; coverSig: {1}\n".format(self.sellSig, self.coverSig) + \
-                      "intraTradeHigh: {0}\n".format(self.intraTradeHigh) + \
-                      "intraTradeLow: {0}\n".format(self.intraTradeLow) + \
-                      "trailingStart1: {0}\n".format(self.avgEntryPrice - self.trailingStart1 * self.minDiff)+\
-                      "trailingStart2: {0}\n".format(self.avgEntryPrice - self.trailingStart2 * self.minDiff)+\
-                      "avgEntryPrice: {0}\n".format(self.avgEntryPrice)+\
-                      "trailingStop: {0}\n".format(self.trailingExit)+\
-                      "stopExit: {0}\n".format(self.stopExit)
-
-                self.writeCtaLog(log)
+                # log = "-----" * 10 + "\n@onFiveBar\n" + \
+                #       "bar.datetime: {0}; pos: {1} ; close:{2}\n".format(bar.datetime, self.pos, bar.close) + \
+                #       "sellSig: {0}; coverSig: {1}\n".format(self.sellSig, self.coverSig) + \
+                #       "intraTradeHigh: {0}\n".format(self.intraTradeHigh) + \
+                #       "intraTradeLow: {0}\n".format(self.intraTradeLow) + \
+                #       "trailingStart1: {0}\n".format(self.avgEntryPrice - self.trailingStart1 * self.minDiff)+\
+                #       "trailingStart2: {0}\n".format(self.avgEntryPrice - self.trailingStart2 * self.minDiff)+\
+                #       "avgEntryPrice: {0}\n".format(self.avgEntryPrice)+\
+                #       "trailingStop: {0}\n".format(self.trailingExit)+\
+                #       "stopExit: {0}\n".format(self.stopExit)
+                #
+                # self.writeCtaLog(log)
         # 发出状态更新事件
         self.putEvent()
 
@@ -459,10 +459,10 @@ class BollingerBotStrategy01(CtaTemplate):
         # CTAORDER_SELL = u'卖平'
         # CTAORDER_SHORT = u'卖开'
         # CTAORDER_COVER = u'买平'
-        log = "-----" * 10 + "\n@onOrder\n" + \
-              "orderTime: {0}; pos: {1} \n".format(order.orderTime, order.totalVolume) + \
-              "status {0}; vtOrderID: {1}\n".format(order.status, order.vtOrderID)
-        self.writeCtaLog(log)
+        # log = "-----" * 10 + "\n@onOrder\n" + \
+        #       "orderTime: {0}; pos: {1} \n".format(order.orderTime, order.totalVolume) + \
+        #       "status {0}; vtOrderID: {1}\n".format(order.status, order.vtOrderID)
+        # self.writeCtaLog(log)
 
         # 对于开仓，记录相关价格
         # if order.vtOrderID in self.orderList:
