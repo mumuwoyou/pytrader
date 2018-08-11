@@ -110,7 +110,8 @@ class BollingerBotStrategy01(CtaTemplate):
     
     # 同步列表
     syncList = ['pos',
-                'intraTradeHigh']
+                'intraTradeHigh',
+                'intraTradeLow']
 
     #----------------------------------------------------------------------
     def __init__(self, ctaEngine, setting):
@@ -268,6 +269,7 @@ class BollingerBotStrategy01(CtaTemplate):
             # self.stopExit = 0
             self.coverSig = False
             # return
+        self.saveSyncData()
         self.putEvent()
     #----------------------------------------------------------------------
     def onFiveBar(self, bar):
@@ -448,6 +450,7 @@ class BollingerBotStrategy01(CtaTemplate):
                 #       "stopExit: {0}\n".format(self.stopExit)
                 #
                 # self.writeCtaLog(log)
+
         # 发出状态更新事件
         self.putEvent()
 

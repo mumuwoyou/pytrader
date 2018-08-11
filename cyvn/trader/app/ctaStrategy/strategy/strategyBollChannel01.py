@@ -127,12 +127,12 @@ class BollChannelStrategy01(CtaTemplate):
         self.bm.updateBar(bar)
         if not self.trading:
             # 记录log
-            log = "-----" * 10 + "\n@onBar\n" + \
-                    "trading: {0}\n".format(self.trading)+\
-                  "bar.datetime: {0}; pos: {1} \n".format(bar.datetime, self.pos) + \
-                  "buySig: {0}; shortSig: {1}\n".format(self.buySig, self.shortSig)
-            self.writeCtaLog(log)
-            print(log)
+            # log = "-----" * 10 + "\n@onBar\n" + \
+            #         "trading: {0}\n".format(self.trading)+\
+            #       "bar.datetime: {0}; pos: {1} \n".format(bar.datetime, self.pos) + \
+            #       "buySig: {0}; shortSig: {1}\n".format(self.buySig, self.shortSig)
+            # self.writeCtaLog(log)
+            # print(log)
             self.buySig = False
             self.shortSig = False
             return
@@ -143,34 +143,34 @@ class BollChannelStrategy01(CtaTemplate):
             self.orderList.extend(res)
 
             # 记录log
-            log = "-----" * 10 + "\n@onBar\n" + \
-                  "bar.datetime: {0}; pos: {1} \n".format(bar.datetime, self.pos) + \
-                  "buySig: {0}; shortSig: {1}\n".format(self.buySig, self.shortSig)
-            self.writeCtaLog(log)
-
-            log = "\n Trading: {0}\n".format(self.trading) + \
-                  "{0} Buy : bar.close: {1};\n".format(bar.datetime, bar.close) + \
-                  " entryUp:{0}; cci:{1};\n".format(self.bollUp, self.cciValue)
-            self.writeCtaLog(log)
+            # log = "-----" * 10 + "\n@onBar\n" + \
+            #       "bar.datetime: {0}; pos: {1} \n".format(bar.datetime, self.pos) + \
+            #       "buySig: {0}; shortSig: {1}\n".format(self.buySig, self.shortSig)
+            # self.writeCtaLog(log)
+            #
+            # log = "\n Trading: {0}\n".format(self.trading) + \
+            #       "{0} Buy : bar.close: {1};\n".format(bar.datetime, bar.close) + \
+            #       " entryUp:{0}; cci:{1};\n".format(self.bollUp, self.cciValue)
+            # self.writeCtaLog(log)
             self.buySig = False
-            print(log)
+            # print(log)
 
         if self.shortSig:
             res = self.short(self.bollDown, self.fixedSize)
             self.orderList.extend(res)
 
             # 记录log
-            log = "-----" * 10 + "\n@onBar\n" + \
-                  "bar.datetime: {0}; pos: {1} \n".format(bar.datetime, self.pos) + \
-                  "buySig: {0}; shortSig: {1}\n".format(self.buySig, self.shortSig)
-            self.writeCtaLog(log)
-
-            log = "\n Trading: {0}\n".format(self.trading) + \
-                  "{0} Short : bar.close: {1};\n".format(bar.datetime, bar.close) + \
-                  " entryDown:{0}; cci:{1};\n".format(self.bollDown, self.cciValue)
-            self.writeCtaLog(log)
+            # log = "-----" * 10 + "\n@onBar\n" + \
+            #       "bar.datetime: {0}; pos: {1} \n".format(bar.datetime, self.pos) + \
+            #       "buySig: {0}; shortSig: {1}\n".format(self.buySig, self.shortSig)
+            # self.writeCtaLog(log)
+            #
+            # log = "\n Trading: {0}\n".format(self.trading) + \
+            #       "{0} Short : bar.close: {1};\n".format(bar.datetime, bar.close) + \
+            #       " entryDown:{0}; cci:{1};\n".format(self.bollDown, self.cciValue)
+            # self.writeCtaLog(log)
             self.shortSig = False
-            print(log)
+            # print(log)
 
         self.putEvent()
     #----------------------------------------------------------------------
@@ -218,14 +218,14 @@ class BollChannelStrategy01(CtaTemplate):
                     self.shortSig = True
 
             # 记录log
-            log = "-----" * 10 + "\n@on5minBar\n" + \
-                "timeWidow: {0}\n".format(timeWindow) +\
-                "bar.datetime: {0}; pos: {1} ; close: {2}\n".format(bar.datetime, self.pos, bar.close) + \
-                "buySig: {0}; shortSig: {1}\n".format(self.buySig, self.shortSig) + \
-                "intraTradeHigh: {0}\n".format(self.intraTradeHigh) + \
-                "intraTradeLow: {0}\n".format(self.intraTradeLow)
-            self.writeCtaLog(log)
-            print(log)
+            # log = "-----" * 10 + "\n@on5minBar\n" + \
+            #     "timeWidow: {0}\n".format(timeWindow) +\
+            #     "bar.datetime: {0}; pos: {1} ; close: {2}\n".format(bar.datetime, self.pos, bar.close) + \
+            #     "buySig: {0}; shortSig: {1}\n".format(self.buySig, self.shortSig) + \
+            #     "intraTradeHigh: {0}\n".format(self.intraTradeHigh) + \
+            #     "intraTradeLow: {0}\n".format(self.intraTradeLow)
+            # self.writeCtaLog(log)
+            # print(log)
 
         # 当前有仓位，以本地停止单止损
         # 持有多头仓位
@@ -243,16 +243,16 @@ class BollChannelStrategy01(CtaTemplate):
             self.sell(self.longStop, abs(self.pos), True)
 
             # 记录log
-            log = "-----" * 10 + "\n@on5minBar\n" + \
-                  "bar.datetime: {0}; pos: {1} ; close: {2}\n".format(bar.datetime, self.pos, bar.close) + \
-                  "intraTradeHigh: {0}\n".format(self.intraTradeHigh) + \
-                  "intraTradeLow: {0}\n".format(self.intraTradeLow)
-            "avgEntryPrice: {0}\n".format(self.avgEntryPrice) + \
-            "longStop: {0}\n".format(self.longStop) + \
-            "stopExit:{0}\n".format(self.stopExit)
-
-            self.writeCtaLog(log)
-            print(log)
+            # log = "-----" * 10 + "\n@on5minBar\n" + \
+            #       "bar.datetime: {0}; pos: {1} ; close: {2}\n".format(bar.datetime, self.pos, bar.close) + \
+            #       "intraTradeHigh: {0}\n".format(self.intraTradeHigh) + \
+            #       "intraTradeLow: {0}\n".format(self.intraTradeLow)
+            # "avgEntryPrice: {0}\n".format(self.avgEntryPrice) + \
+            # "longStop: {0}\n".format(self.longStop) + \
+            # "stopExit:{0}\n".format(self.stopExit)
+            #
+            # self.writeCtaLog(log)
+            # print(log)
     
         # 持有空头仓位
         elif self.pos < 0:
@@ -269,15 +269,15 @@ class BollChannelStrategy01(CtaTemplate):
             self.cover(self.shortStop, abs(self.pos), True)
 
             # 记录log
-            log = "-----" * 10 + "\n@on5minBar\n" + \
-                  "bar.datetime: {0}; pos: {1} ; close: {2}\n".format(bar.datetime, self.pos, bar.close) + \
-                  "intraTradeHigh: {0}\n".format(self.intraTradeHigh) + \
-                  "intraTradeLow: {0}\n".format(self.intraTradeLow) +\
-                  "avgEntryPrice: {0}\n".format(self.avgEntryPrice) + \
-                  "shortStop: {0}\n".format(self.longStop) + \
-                  "stopExit:{0}\n".format(self.stopExit)
-            self.writeCtaLog(log)
-            print(log)
+            # log = "-----" * 10 + "\n@on5minBar\n" + \
+            #       "bar.datetime: {0}; pos: {1} ; close: {2}\n".format(bar.datetime, self.pos, bar.close) + \
+            #       "intraTradeHigh: {0}\n".format(self.intraTradeHigh) + \
+            #       "intraTradeLow: {0}\n".format(self.intraTradeLow) +\
+            #       "avgEntryPrice: {0}\n".format(self.avgEntryPrice) + \
+            #       "shortStop: {0}\n".format(self.longStop) + \
+            #       "stopExit:{0}\n".format(self.stopExit)
+            # self.writeCtaLog(log)
+            # print(log)
             # 同步数据到数据库
         self.saveSyncData()
             # 发出状态更新事件
@@ -290,12 +290,12 @@ class BollChannelStrategy01(CtaTemplate):
         :return:
         '''
         # 记录log
-        log = "-----" * 10 + "\n@onOrder\n" + \
-              "orderTime: {0}; pos: {1} \n".format(order.orderTime, order.totalVolume) + \
-              "status {0}; vtOrderID: {1}\n".format(order.status, order.vtOrderID)+ \
-              "direction:{0}\n".format(order.direction)
-        self.writeCtaLog(log)
-        print(log)
+        # log = "-----" * 10 + "\n@onOrder\n" + \
+        #       "orderTime: {0}; pos: {1} \n".format(order.orderTime, order.totalVolume) + \
+        #       "status {0}; vtOrderID: {1}\n".format(order.status, order.vtOrderID)+ \
+        #       "direction:{0}\n".format(order.direction)
+        # self.writeCtaLog(log)
+        # print(log)
 
         # 对于开仓，记录相关价格
         if order.direction == DIRECTION_LONG and order.offset == OFFSET_OPEN:
