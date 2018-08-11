@@ -5,6 +5,16 @@
         "vtSymbol": "rb1810"
     },
     {
+        "name": "BollChannel01",
+        "className": "BollChannelStrategy01",
+        "vtSymbol": "rb1810"
+    },
+    {
+        "name": "BollingerBot",
+        "className": "BollingerBotStrategy01",
+        "vtSymbol": "rb1810"
+    },
+    {
         "name": "AvgBreak",
         "className": "AvgBreakStrategy",
         "vtSymbol": "rb1810"
