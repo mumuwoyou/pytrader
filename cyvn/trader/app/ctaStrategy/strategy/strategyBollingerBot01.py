@@ -187,7 +187,8 @@ class BollingerBotStrategy01(CtaTemplate):
             #       "{0} Buy : longEntry: {1};\n".format(bar.datetime, bar.close) + \
             #       " entryUp:{0}; maFilter:{1}; maFilter1:{2}; \n".format(self.entryUp, self.maFilter, self.maFilter1)
             # self.writeCtaLog(log)
-            # self.buySig = False
+            self.buySig = False
+            self.saveSyncData()
             # return
 
         if self.shortSig:
@@ -216,6 +217,7 @@ class BollingerBotStrategy01(CtaTemplate):
             # self.writeCtaLog(log)
 
             self.shortSig = False
+            self.saveSyncData()
             # return
 
         if self.sellSig:
@@ -242,6 +244,7 @@ class BollingerBotStrategy01(CtaTemplate):
             # self.avgEntryPrice = 0
             # self.stopExit = 0
             self.sellSig = False
+            self.saveSyncData()
             # return
 
         if self.coverSig:
@@ -268,8 +271,9 @@ class BollingerBotStrategy01(CtaTemplate):
             # self.avgEntryPrice = 0
             # self.stopExit = 0
             self.coverSig = False
+            self.saveSyncData()
             # return
-        self.saveSyncData()
+
         self.putEvent()
     #----------------------------------------------------------------------
     def onFiveBar(self, bar):
@@ -452,6 +456,7 @@ class BollingerBotStrategy01(CtaTemplate):
                 # self.writeCtaLog(log)
 
         # 发出状态更新事件
+        self.saveSyncData()
         self.putEvent()
 
     #----------------------------------------------------------------------
