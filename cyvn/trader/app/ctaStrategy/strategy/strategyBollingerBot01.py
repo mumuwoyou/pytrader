@@ -157,8 +157,8 @@ class BollingerBotStrategy01(CtaTemplate):
         # 观察周期1 Min,根据信号进行交易
         # 回测数据传送的bar.datetime，为bar的开始时间
         self.bm.updateBar(bar)
-        if not self.trading:
-            return
+        # if not self.trading:
+        #     return
 
 
         self.date = bar.date
@@ -280,8 +280,6 @@ class BollingerBotStrategy01(CtaTemplate):
         """收到5分钟K线"""
         # 策略周期5Min,生成交易信号
         # 保存K线数据
-        if not self.trading:
-            return
         self.am.updateBar(bar)
 
         if not self.am.inited:
