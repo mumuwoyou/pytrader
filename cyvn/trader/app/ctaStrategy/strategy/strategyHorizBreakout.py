@@ -109,6 +109,12 @@ class HorizBreakoutStrategy(CtaTemplate):
     def onTick(self, tick):
         """收到行情TICK推送（必须由用户继承实现）"""
         self.bg.updateTick(tick)
+
+        # 撤销之前发出的尚未成交的委托（包括限价单和停止单）
+        for orderID in self.orderList:
+            self.cancelOrder(orderID)
+        self.orderList = []
+
         self.lastTick = tick
         if self.lastTick:
             # 开多仓
