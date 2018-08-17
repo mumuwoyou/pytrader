@@ -213,6 +213,7 @@ class HorizBreakoutStrategy(CtaTemplate):
             # orderID = self.cover(bar.close + 5, abs(self.pos))
             # self.orderList.extend(orderID)
             self.targetPos = 0
+        self.targetPos = 0
         # 同步数据到数据库
         self.saveSyncData()
         # 发出状态更新事件
