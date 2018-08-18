@@ -270,8 +270,7 @@ class TargetPosTemplate(CtaTemplate):
         """设置目标仓位"""
         self.targetPos = targetPos
         
-        self.trade()
-        
+
     #----------------------------------------------------------------------
     def trade(self):
         """执行交易"""
