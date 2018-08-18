@@ -153,7 +153,7 @@ class CtpTdApi(TraderApi):
         self.sessionID = EMPTY_INT          # 会话编号
         
         self.posDict = {}
-        #symbolExchangeDict = {}        # 保存合约代码和交易所的印射关系
+        self.symbolExchangeDict = {}        # 保存合约代码和交易所的印射关系
         self.symbolSizeDict = {}            # 保存合约代码和合约大小的印射关系
 
         self.requireAuthentication = False
@@ -265,19 +265,19 @@ class CtpTdApi(TraderApi):
         """发单错误（柜台）"""
         # 推送委托信息
         #print(pInputOrder)
-        order = VtOrderData()
-        order.gatewayName = self.gatewayName
-        order.symbol = pInputOrder.InstrumentID.decode()
-        order.exchange = exchangeMapReverse.get(pInputOrder.ExchangeID.decode(), '')
-        order.vtSymbol = order.symbol.decode()
-        order.orderID = pInputOrder.OrderRef
-        order.vtOrderID = '.'.join([self.gatewayName, order.orderID])        
-        order.direction = directionMapReverse.get(pInputOrder.Direction, DIRECTION_UNKNOWN)
-        order.offset = offsetMapReverse.get(pInputOrder.CombOffsetFlag, OFFSET_UNKNOWN)
-        order.status = STATUS_REJECTED
-        order.price = pInputOrder.LimitPrice
-        order.totalVolume = pInputOrder.VolumeTotalOriginal
-        self.gateway.onOrder(order)
+        # order = VtOrderData()
+        # order.gatewayName = self.gatewayName
+        # order.symbol = pInputOrder.InstrumentID.decode()
+        # order.exchange = exchangeMapReverse.get(pInputOrder.ExchangeID.decode(), '')
+        # order.vtSymbol = order.symbol.decode()
+        # order.orderID = pInputOrder.OrderRef
+        # order.vtOrderID = '.'.join([self.gatewayName, order.orderID])
+        # order.direction = directionMapReverse.get(pInputOrder.Direction, DIRECTION_UNKNOWN)
+        # order.offset = offsetMapReverse.get(pInputOrder.CombOffsetFlag, OFFSET_UNKNOWN)
+        # order.status = STATUS_REJECTED
+        # order.price = pInputOrder.LimitPrice
+        # order.totalVolume = pInputOrder.VolumeTotalOriginal
+        # self.gateway.onOrder(order)
         
         # 推送错误信息
         err = VtErrorData()
@@ -310,7 +310,7 @@ class CtpTdApi(TraderApi):
         self.reqID += 1
         req = ApiStruct.QryInstrument()
         self.ReqQryInstrument(req, self.reqID)
-        
+
           
     #----------------------------------------------------------------------
     def OnRspQryInvestorPosition(self, pInvestorPosition, pRspInfo, nRequestID, bIsLast):
@@ -330,7 +330,7 @@ class CtpTdApi(TraderApi):
             pos.gatewayName = self.gatewayName
             pos.symbol = pInvestorPosition.InstrumentID.decode()
             pos.vtSymbol = pos.symbol
-            pos.direction = posiDirectionMapReverse.get(pInvestorPosition.PosiDirection.decode(), '')
+            pos.direction = posiDirectionMapReverse.get(str(pInvestorPosition.PosiDirection.decode()), '')
             pos.vtPositionName = '.'.join([pos.vtSymbol, pos.direction]) 
         
         # 针对上期所持仓的今昨分条返回（有昨仓、无今仓），读取昨仓数据
@@ -434,11 +434,14 @@ class CtpTdApi(TraderApi):
         #    contract.optionType = OPTION_PUT
 
         # 缓存代码和交易所的印射关系
-        symbolExchangeDict[contract.symbol] = contract.exchange
+        self.symbolExchangeDict[contract.symbol] = contract.exchange
         self.symbolSizeDict[contract.symbol] = contract.size
 
         # 推送
         self.gateway.onContract(contract)
+
+        # 缓存合约代码和交易所映射
+        symbolExchangeDict[contract.symbol] = contract.exchange
 
         if bIsLast:
             self.writeLog(text.CONTRACT_DATA_RECEIVED)
@@ -455,7 +458,7 @@ class CtpTdApi(TraderApi):
         err.errorMsg = pRspInfo.ErrorMsg.decode('gbk')
         self.gateway.onError(err)
         
-    #----------------------------------------------------------------------
+    #---------------------------------------   -------------------------------
     def OnRtnOrder(self, pOrder):
         """报单回报"""
         #print("OnRtnOrder:", pOrder,"\n")
@@ -469,7 +472,7 @@ class CtpTdApi(TraderApi):
         
         # 保存代码和报单号
         order.symbol = pOrder.InstrumentID.decode()
-        order.exchange = exchangeMapReverse.get(pOrder.ExchangeID.decode(), '')
+        order.exchange = exchangeMapReverse.get(str(pOrder.ExchangeID.decode()), '')
         order.vtSymbol = order.symbol #'.'.join([order.symbol, order.exchange])
         
         order.orderID = pOrder.OrderRef.decode()
@@ -534,22 +537,7 @@ class CtpTdApi(TraderApi):
         """发单错误回报（交易所）"""
         print("OnRspOrderAction:", pInputOrderAction, "\n")
 
-        # 推送委托信息
-        order = VtOrderData()
-        order.gatewayName = self.gatewayName
-        order.symbol = pInputOrderAction.InstrumentID.decode()
-        order.exchange = exchangeMapReverse.get(pInputOrderAction.ExchangeID.decode(), '')
-        order.vtSymbol = order.symbol
-        order.orderID = pInputOrderAction.OrderRef.decode()
-        order.vtOrderID = '.'.join([self.gatewayName, order.orderID])        
-        order.direction = directionMapReverse.get(pInputOrderAction.ActionFlag.decode(), DIRECTION_UNKNOWN)
-        order.offset = offsetMapReverse.get(pInputOrderAction.CombOffsetFlag.decode(), OFFSET_UNKNOWN)
-        order.status = STATUS_REJECTED
-        order.price = pInputOrderAction.LimitPrice
-        order.totalVolume = pInputOrderAction.VolumeTotalOriginal
-        self.gateway.onOrder(order)
-    
-        # 推送错误信息        
+        # 推送错误信息
         err = VtErrorData()
         err.gatewayName = self.gatewayName
         err.errorID = pRspInfo.ErrorID
@@ -566,8 +554,30 @@ class CtpTdApi(TraderApi):
         self.gateway.onError(err)
         
     #----------------------------------------------------------------------
-   
-        
+    def onErrRtnOrderInsert(self, pOrderInsert, pRspInfo):
+        """发单错误回报（交易所）"""
+        # 推送委托信息
+        order = VtOrderData()
+        order.gatewayName = self.gatewayName
+        order.symbol = pOrderInsert.InstrumentID.decode()
+        order.exchange = exchangeMapReverse.get(str(pOrderInsert.ExchangeID.decode()), '')
+        order.vtSymbol = order.symbol
+        order.orderID = pOrderInsert.OrderRef.decode()
+        order.vtOrderID = '.'.join([self.gatewayName, order.orderID])
+        order.direction = directionMapReverse.get(pOrderInsert.Direction.decode(), DIRECTION_UNKNOWN)
+        order.offset = offsetMapReverse.get(pOrderInsert.CombOffsetFlag.decode(), OFFSET_UNKNOWN)
+        order.status = STATUS_REJECTED
+        order.price = pOrderInsert.LimitPrice
+        order.totalVolume = pOrderInsert.VolumeTotalOriginal
+        self.gateway.onOrder(order)
+
+        # 推送错误信息
+        err = VtErrorData()
+        err.gatewayName = self.gatewayName
+        err.errorID = pRspInfo.ErrorID
+        err.errorMsg = pRspInfo.ErrorMsg.decode('gbk')
+        self.gateway.onError(err)
+
     #----------------------------------------------------------------------
     def connect(self, userID, password, brokerID, address, authCode, userProductInfo):
         """初始化连接"""
@@ -763,9 +773,7 @@ class PositionDetailBuffer(object):
             return copy(self.pos)
 
 """
- def OnRspUserLogin(self, pRspUserLogin, pRspInfo, nRequestID, bIsLast):
-    
-   
+    def OnRspUserLogin(self, pRspUserLogin, pRspInfo, nRequestID, bIsLast):
     def OnRspSubMarketData(self, pSpecificInstrument, pRspInfo, nRequestID, bIsLast):
     def OnRspUnSubMarketData(self, pSpecificInstrument, pRspInfo, nRequestID, bIsLast):
     def OnRspSubForQuoteRsp(self, pSpecificInstrument, pRspInfo, nRequestID, bIsLast):

@@ -8,14 +8,14 @@ import numpy as np
 import talib
 from cyvn.trader.vtObject import VtBarData
 from cyvn.trader.vtConstant import EMPTY_STRING
-from cyvn.trader.app.ctaStrategy.ctaTemplate import (CtaTemplate,
+from cyvn.trader.app.ctaStrategy.ctaTemplate import (TargetPosTemplate,
                                                      BarGenerator,
                                                      ArrayManager)
 from cyvn.trader.app.ctaStrategy.ctaBase import *
 
 
 ########################################################################
-class AvgBreakStrategy(CtaTemplate):
+class AvgBreakStrategy(TargetPosTemplate):
     """基于Adxr的交易策略"""
     className = 'AvgBreakStrategy'
     author = u'用Python的交易员'
@@ -35,7 +35,6 @@ class AvgBreakStrategy(CtaTemplate):
 
     model_classifier = None
 
-    targetPos = 0
 
     buyOrderIDList = []  # OCO委托买入开仓的委托号
     shortOrderIDList = []  # OCO委托卖出开仓的委托号
@@ -102,52 +101,13 @@ class AvgBreakStrategy(CtaTemplate):
     # ----------------------------------------------------------------------
     def onTick(self, tick):
         """收到行情TICK推送（必须由用户继承实现）"""
+        TargetPosTemplate.onTick(self, tick)
         self.bg.updateTick(tick)
-        # 撤销之前发出的尚未成交的委托（包括限价单和停止单）
-        for orderID in self.orderList:
-            self.cancelOrder(orderID)
-        self.orderList = []
-
-        self.lastTick = tick
-        if self.lastTick:
-            # 开多仓
-            if self.pos == 0 and self.targetPos == self.fixedSize:
-                orderID = self.buy(self.lastTick.askPrice1 + 2, self.fixedSize)
-                self.orderList.extend(orderID)
-                self.saveSyncData()
-            # 开空仓
-            if self.pos == 0 and self.targetPos == -self.fixedSize:
-                orderID = self.short(self.lastTick.bidPrice1 - 2, self.fixedSize)
-                self.orderList.extend(orderID)
-                self.saveSyncData()
-            # 平空开多
-            if self.pos < 0 and self.targetPos == self.fixedSize:
-                orderID = self.cover(self.lastTick.askPrice1 + 2, abs(self.pos))
-                self.orderList.extend(orderID)
-                orderID = self.buy(self.lastTick.askPrice1 + 2, self.fixedSize)
-                self.orderList.extend(orderID)
-                self.saveSyncData()
-            # 平多开空
-            if self.pos > 0 and self.targetPos == -self.fixedSize:
-                orderID = self.sell(self.lastTick.bidPrice1 - 2, abs(self.pos))
-                self.orderList.extend(orderID)
-                orderID = self.short(self.lastTick.bidPrice1 - 2, self.fixedSize)
-                self.orderList.extend(orderID)
-                self.saveSyncData()
-            # 平空
-            if self.pos < 0 and self.targetPos == 0:
-                orderID = self.cover(self.lastTick.askPrice1 + 2, abs(self.pos))
-                self.orderList.extend(orderID)
-                self.saveSyncData()
-            # 平多
-            if self.pos > 0 and self.targetPos == 0:
-                orderID = self.sell(self.lastTick.bidPrice1 - 2, abs(self.pos))
-                self.orderList.extend(orderID)
-                self.saveSyncData()
 
     # ----------------------------------------------------------------------
     def onBar(self, bar):
         """收到Bar推送（必须由用户继承实现）"""
+        TargetPosTemplate.onBar(self, bar)
         self.bg.updateBar(bar)
 
     # ---------------------------------------------------------------------
@@ -180,15 +140,15 @@ class AvgBreakStrategy(CtaTemplate):
         sellprice = long_avg - 2.5*myatr
         #做多
         if am.close[-1] > buyprice :
-            self.targetPos = self.fixedSize
+            self.setTargetPos(self.fixedSize)
         #做空
         if am.close[-1] < sellprice :
-            self.targetPos = -self.fixedSize
+            self.setTargetPos(-self.fixedSize)
         #平仓
         if self.pos > 0 and am.close[-1] < long_avg:
-            self .targetPos = 0
+            self .setTargetPos(0)
         if self.pos < 0 and am.close[-1] > long_avg:
-            self.targetPos = 0
+            self.setTargetPos(0)
         # 发出状态更新事件
         self.putEvent()
 

@@ -11,13 +11,13 @@ import talib
 
 from cyvn.trader.vtObject import VtBarData
 from cyvn.trader.vtConstant import EMPTY_STRING
-from cyvn.trader.app.ctaStrategy.ctaTemplate import (CtaTemplate,
+from cyvn.trader.app.ctaStrategy.ctaTemplate import (TargetPosTemplate,
                                                      BarGenerator,
                                                      ArrayManager)
 
 
 ########################################################################
-class HorizBreakoutStrategy(CtaTemplate):
+class HorizBreakoutStrategy(TargetPosTemplate):
     """基于Adxr的交易策略"""
     className = 'AdxrStrategy'
     author = u'用Python的交易员'
@@ -38,9 +38,6 @@ class HorizBreakoutStrategy(CtaTemplate):
     buy_price = 0
     sell_price = 0
 
-
-
-    targetPos = 0
 
     buyOrderIDList = []                 # OCO委托买入开仓的委托号
     shortOrderIDList = []               # OCO委托卖出开仓的委托号
@@ -108,53 +105,13 @@ class HorizBreakoutStrategy(CtaTemplate):
     #----------------------------------------------------------------------
     def onTick(self, tick):
         """收到行情TICK推送（必须由用户继承实现）"""
+        TargetPosTemplate.onTick(self, tick)
         self.bg.updateTick(tick)
-
-        # 撤销之前发出的尚未成交的委托（包括限价单和停止单）
-        for orderID in self.orderList:
-            self.cancelOrder(orderID)
-        self.orderList = []
-
-        self.lastTick = tick
-        if self.lastTick:
-            # 开多仓
-            if self.pos == 0 and self.targetPos == self.fixedSize:
-                orderID = self.buy(self.lastTick.askPrice1 + 2, self.fixedSize)
-                self.orderList.extend(orderID)
-                self.saveSyncData()
-            #开空仓
-            if self.pos == 0 and self.targetPos == -self.fixedSize:
-                orderID = self.short(self.lastTick.bidPrice1 - 2, self.fixedSize)
-                self.orderList.extend(orderID)
-                self.saveSyncData()
-            #平空开多
-            if self.pos < 0 and self.targetPos == self.fixedSize:
-                orderID = self.cover(self.lastTick.askPrice1 + 2, abs(self.pos))
-                self.orderList.extend(orderID)
-                orderID = self.buy(self.lastTick.askPrice1 + 2, self.fixedSize)
-                self.orderList.extend(orderID)
-                self.saveSyncData()
-            #平多开空
-            if self.pos > 0 and self.targetPos == -self.fixedSize:
-                orderID = self.sell(self.lastTick.bidPrice1 - 2, abs(self.pos))
-                self.orderList.extend(orderID)
-                orderID = self.short(self.lastTick.bidPrice1 - 2, self.fixedSize)
-                self.orderList.extend(orderID)
-                self.saveSyncData()
-            #平空
-            if self.pos < 0 and self.targetPos == 0:
-                orderID = self.cover(self.lastTick.askPrice1 + 2, abs(self.pos))
-                self.orderList.extend(orderID)
-                self.saveSyncData()
-            #平多
-            if self.pos > 0 and self.targetPos == 0:
-                orderID = self.sell(self.lastTick.bidPrice1 - 2, abs(self.pos))
-                self.orderList.extend(orderID)
-                self.saveSyncData()
 
     #----------------------------------------------------------------------
     def onBar(self, bar):
         """收到Bar推送（必须由用户继承实现）"""
+        TargetPosTemplate.onBar(self, bar)
         self.bg.updateBar(bar)
 
     #----------------------------------------------------------------------
@@ -182,17 +139,17 @@ class HorizBreakoutStrategy(CtaTemplate):
         # 多头
         if vibrate and am.openArray[-1] + am.highArray[-1] + am.lowArray[-1] + am.closeArray[-1]  > 4*h_high :
             if self.pos == 0:
-                # orderID = self.buy(bar.close+ 5, self.fixedSize)
-                # self.orderList.extend(orderID)
-                self.targetPos = self.fixedSize
+                #orderID = self.buy(bar.close + 5, self.fixedSize)
+                #self.orderList.extend(orderID)
+                self.setTargetPos(self.fixedSize)
                 self.buy_price = am.close[-1]
                 self.buy_high = am.high[-1]
         # 空头
         if vibrate and am.openArray[-1] + am.highArray[-1] + am.lowArray[-1] + am.closeArray[-1] < 4*l_low:
             if self.pos == 0:
-                # orderID = self.short(bar.close -5, self.fixedSize)
-                # self.orderList.extend(orderID)
-                self.targetPos = -self.fixedSize
+                #orderID = self.short(bar.close -5, self.fixedSize)
+                #self.orderList.extend(orderID)
+                self.setTargetPos(-self.fixedSize)
                 self.sell_price = am.close[-1]
                 self.sell_low = am.low[-1]
 
@@ -204,16 +161,16 @@ class HorizBreakoutStrategy(CtaTemplate):
         # 平多头
         if self.pos > 0 and  ((2*am.close[-1] < self.buy_price + self.buy_high
                   and self.buy_high > self.buy_price + 40)  or am.close[-1] < l_low):
-            # orderID = self.sell(bar.close - 5, abs(self.pos))
-            # self.orderList.extend(orderID)
-            self.targetPos = 0
+            #orderID = self.sell(bar.close - 5, abs(self.pos))
+            #self.orderList.extend(orderID)
+            self.setTargetPos(0)
         #平空头
         if self.pos < 0 and ((2*am.close[-1] > self.sell_price + self.sell_low
                     and self.sell_low < self.sell_price  - 40) or am.close[-1] >h_high):
-            # orderID = self.cover(bar.close + 5, abs(self.pos))
-            # self.orderList.extend(orderID)
-            self.targetPos = 0
-        self.targetPos = 0
+            #orderID = self.cover(bar.close + 5, abs(self.pos))
+            #self.orderList.extend(orderID)
+            self.setTargetPos(0)
+
         # 同步数据到数据库
         self.saveSyncData()
         # 发出状态更新事件
