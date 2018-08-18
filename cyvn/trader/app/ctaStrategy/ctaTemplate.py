@@ -340,8 +340,10 @@ class TargetPosTemplate(CtaTemplate):
                     l = self.short(shortPrice, abs(posChange))
             self.orderList.extend(l)
 
-            # 同步数据到数据库
-            self.saveSyncData()
+        # 同步数据到数据库
+        self.saveSyncData()
+        time.sleep(5)
+
     
     
 ########################################################################
