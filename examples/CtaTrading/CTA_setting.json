@@ -10,6 +10,11 @@
         "vtSymbol": "rb1810"
     },
     {
+        "name": "BasicLSTM",
+        "className": "DeepLSTMStrategy",
+        "vtSymbol": "ag1812"
+    },
+    {
         "name": "AvgBreak",
         "className": "AvgBreakStrategy",
         "vtSymbol": "rb1810"

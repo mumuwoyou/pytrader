@@ -82,7 +82,7 @@ class DrEngineManager(QtWidgets.QWidget):
         # 日志监控
         self.logMonitor = QtWidgets.QTextEdit()
         self.logMonitor.setReadOnly(True)
-        self.logMonitor.setMinimumHeight(600)
+        self.logMonitor.setMinimumHeight(300)
         
         # 设置布局
         grid = QtWidgets.QGridLayout()

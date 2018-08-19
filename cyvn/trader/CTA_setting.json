@@ -10,9 +10,9 @@
         "vtSymbol": "rb1810"
     },
     {
-        "name": "BollingerBot",
-        "className": "BollingerBotStrategy01",
-        "vtSymbol": "rb1810"
+        "name": "BasicLSTM",
+        "className": "DeepLSTMStrategy",
+        "vtSymbol": "ag1812"
     },
     {
         "name": "AvgBreak",
