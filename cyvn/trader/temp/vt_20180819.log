@@ -1,0 +1,166 @@
+2018-08-19 22:11:26,815  INFO: CTP	行情服务器连接成功
+2018-08-19 22:11:26,816  INFO: CTP	交易服务器连接成功
+2018-08-19 22:11:26,831  INFO: CTP	行情服务器登录完成
+2018-08-19 22:11:26,837  INFO: CTP	交易服务器登录完成
+2018-08-19 22:11:26,892  INFO: CTP	结算信息确认完成
+2018-08-19 22:11:27,007  INFO: CTP	交易合约信息获取完成
+2018-08-19 22:11:29,171  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-19 22:11:38,513  INFO: CTA_STRATEGY	CTA引擎启动成功
+2018-08-19 22:11:40,391  INFO: CTA_STRATEGY	策略加载成功
+2018-08-19 22:11:44,553  INFO: CTA_STRATEGY	BasicLSTM:BasicLSTM策略初始化
+2018-08-19 22:11:44,580  INFO: CTA_STRATEGY	策略BasicLSTM触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyBasicLSTM.py", line 87, in onInit
+    tmp = fix_data(u'data/AG88.csv')
+  File "/home/linlin/pytrader/comm/base.py", line 17, in fix_data
+    tmp = pd.read_csv(path, encoding="gbk", engine='python')
+  File "/home/linlin/anaconda3/envs/py35/lib/python3.5/site-packages/pandas/io/parsers.py", line 646, in parser_f
+    return _read(filepath_or_buffer, kwds)
+  File "/home/linlin/anaconda3/envs/py35/lib/python3.5/site-packages/pandas/io/parsers.py", line 389, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/home/linlin/anaconda3/envs/py35/lib/python3.5/site-packages/pandas/io/parsers.py", line 730, in __init__
+    self._make_engine(self.engine)
+  File "/home/linlin/anaconda3/envs/py35/lib/python3.5/site-packages/pandas/io/parsers.py", line 929, in _make_engine
+    self._engine = klass(self.f, **self.options)
+  File "/home/linlin/anaconda3/envs/py35/lib/python3.5/site-packages/pandas/io/parsers.py", line 1799, in __init__
+    memory_map=self.memory_map)
+  File "/home/linlin/anaconda3/envs/py35/lib/python3.5/site-packages/pandas/io/common.py", line 330, in _get_handle
+    f = open(path, mode, encoding=encoding)
+FileNotFoundError: [Errno 2] 没有那个文件或目录: 'data/AG88.csv'
+
+2018-08-19 22:13:28,230  INFO: CTP	行情服务器连接成功
+2018-08-19 22:13:28,231  INFO: CTP	交易服务器连接成功
+2018-08-19 22:13:28,245  INFO: CTP	行情服务器登录完成
+2018-08-19 22:13:28,249  INFO: CTP	交易服务器登录完成
+2018-08-19 22:13:28,279  INFO: CTP	结算信息确认完成
+2018-08-19 22:13:28,379  INFO: CTP	交易合约信息获取完成
+2018-08-19 22:13:30,472  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-19 22:13:34,061  INFO: CTA_STRATEGY	CTA引擎启动成功
+2018-08-19 22:13:35,774  INFO: CTA_STRATEGY	策略加载成功
+2018-08-19 22:13:40,528  INFO: CTA_STRATEGY	BasicLSTM:BasicLSTM策略初始化
+2018-08-19 22:13:46,339  WARNING: The `skip_connections` argument will be deprecated. Please use snt.SkipConnectionCore instead.
+2018-08-19 22:13:54,093  INFO: Restoring parameters from /QuantPython/RqAlphaMod/Model_Saver/ResidualPonderDNC_4.ckpt
+2018-08-19 22:15:37,280  INFO: CTA_STRATEGY	BasicLSTM:BasicLSTM策略启动
+2018-08-19 22:16:36,993  INFO: CTP	行情服务器连接成功
+2018-08-19 22:16:36,998  INFO: CTP	交易服务器连接成功
+2018-08-19 22:16:37,005  INFO: CTP	行情服务器登录完成
+2018-08-19 22:16:37,013  INFO: CTP	交易服务器登录完成
+2018-08-19 22:16:37,072  INFO: CTP	结算信息确认完成
+2018-08-19 22:16:37,363  INFO: CTP	交易合约信息获取完成
+2018-08-19 22:16:39,241  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-19 22:16:49,880  INFO: CTA_STRATEGY	CTA引擎启动成功
+2018-08-19 22:16:52,190  INFO: CTA_STRATEGY	策略加载成功
+2018-08-19 22:16:57,801  INFO: CTA_STRATEGY	BasicLSTM:BasicLSTM策略初始化
+2018-08-19 22:17:03,114  WARNING: The `skip_connections` argument will be deprecated. Please use snt.SkipConnectionCore instead.
+2018-08-19 22:17:11,687  INFO: Restoring parameters from models/DNCoreDeepLSTM_NADM_saver_1.ckpt
+2018-08-19 23:00:25,179  INFO: CTP	行情服务器连接成功
+2018-08-19 23:00:25,181  INFO: CTP	交易服务器连接成功
+2018-08-19 23:00:25,197  INFO: CTP	行情服务器登录完成
+2018-08-19 23:00:25,199  INFO: CTP	交易服务器登录完成
+2018-08-19 23:00:25,229  INFO: CTP	结算信息确认完成
+2018-08-19 23:00:25,333  INFO: CTP	交易合约信息获取完成
+2018-08-19 23:00:28,128  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-19 23:00:40,078  INFO: CTA_STRATEGY	CTA引擎启动成功
+2018-08-19 23:00:41,804  INFO: CTA_STRATEGY	策略加载成功
+2018-08-19 23:00:48,401  INFO: CTA_STRATEGY	BasicLSTM:BasicLSTM策略初始化
+2018-08-19 23:00:54,166  INFO: CTA_STRATEGY	策略BasicLSTM触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyDeepLSTM.py", line 124, in onInit
+    l2_coefficient=5e-3)
+  File "/home/linlin/pytrader/cyvn/comm/DeepLSTM.py", line 52, in __init__
+    num_write_heads=num_writes)
+  File "/home/linlin/pytrader/cyvn/comm/DNCore.py", line 1107, in __init__
+    custom_getter=custom_getter)
+  File "/home/linlin/anaconda3/envs/py35/lib/python3.5/site-packages/tensorflow/python/util/deprecation.py", line 316, in new_func
+    return func(*args, **kwargs)
+TypeError: __init__() got an unexpected keyword argument 'custom_getter'
+
+2018-08-19 23:09:06,652  INFO: CTP	行情服务器连接成功
+2018-08-19 23:09:06,656  INFO: CTP	交易服务器连接成功
+2018-08-19 23:09:06,668  INFO: CTP	行情服务器登录完成
+2018-08-19 23:09:06,672  INFO: CTP	交易服务器登录完成
+2018-08-19 23:09:06,704  INFO: CTP	结算信息确认完成
+2018-08-19 23:09:06,806  INFO: CTP	交易合约信息获取完成
+2018-08-19 23:09:08,895  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-19 23:09:10,635  INFO: CTA_STRATEGY	CTA引擎启动成功
+2018-08-19 23:09:14,220  INFO: CTA_STRATEGY	策略加载成功
+2018-08-19 23:09:16,352  INFO: CTA_STRATEGY	BasicLSTM:BasicLSTM策略初始化
+2018-08-19 23:09:22,625  INFO: CTA_STRATEGY	策略BasicLSTM触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyDeepLSTM.py", line 124, in onInit
+    l2_coefficient=5e-3)
+  File "/home/linlin/pytrader/cyvn/comm/DeepLSTM.py", line 52, in __init__
+    num_write_heads=num_writes)
+  File "/home/linlin/pytrader/cyvn/comm/DNCore.py", line 1107, in __init__
+    custom_getter=custom_getter)
+  File "/home/linlin/anaconda3/envs/py35/lib/python3.5/site-packages/tensorflow/python/util/deprecation.py", line 316, in new_func
+    return func(*args, **kwargs)
+TypeError: __init__() got an unexpected keyword argument 'custom_getter'
+
+2018-08-19 23:14:46,794  INFO: CTP	交易服务器连接成功
+2018-08-19 23:14:46,797  INFO: CTP	行情服务器连接成功
+2018-08-19 23:14:46,809  INFO: CTP	交易服务器登录完成
+2018-08-19 23:14:46,818  INFO: CTP	行情服务器登录完成
+2018-08-19 23:14:46,834  INFO: CTP	结算信息确认完成
+2018-08-19 23:14:46,933  INFO: CTP	交易合约信息获取完成
+2018-08-19 23:14:49,007  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-19 23:15:02,739  INFO: CTA_STRATEGY	CTA引擎启动成功
+2018-08-19 23:15:04,528  INFO: CTA_STRATEGY	策略加载成功
+2018-08-19 23:15:08,407  INFO: CTA_STRATEGY	BasicLSTM:BasicLSTM策略初始化
+2018-08-19 23:15:13,992  INFO: CTA_STRATEGY	策略BasicLSTM触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyDeepLSTM.py", line 124, in onInit
+    l2_coefficient=5e-3)
+  File "/home/linlin/pytrader/cyvn/comm/DeepLSTM.py", line 52, in __init__
+    num_write_heads=num_writes)
+  File "/home/linlin/pytrader/cyvn/comm/DNCore.py", line 1107, in __init__
+    custom_getter=custom_getter)
+  File "/home/linlin/anaconda3/envs/py35/lib/python3.5/site-packages/tensorflow/python/util/deprecation.py", line 316, in new_func
+    return func(*args, **kwargs)
+TypeError: __init__() got an unexpected keyword argument 'custom_getter'
+
+2018-08-19 23:17:42,478  INFO: CTP	行情服务器连接成功
+2018-08-19 23:17:42,479  INFO: CTP	交易服务器连接成功
+2018-08-19 23:17:42,495  INFO: CTP	行情服务器登录完成
+2018-08-19 23:17:42,498  INFO: CTP	交易服务器登录完成
+2018-08-19 23:17:42,530  INFO: CTP	结算信息确认完成
+2018-08-19 23:17:42,634  INFO: CTP	交易合约信息获取完成
+2018-08-19 23:17:44,694  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-19 23:17:46,853  INFO: CTA_STRATEGY	CTA引擎启动成功
+2018-08-19 23:17:52,375  INFO: CTA_STRATEGY	策略加载成功
+2018-08-19 23:17:57,284  INFO: CTA_STRATEGY	BasicLSTM:BasicLSTM策略初始化
+2018-08-19 23:18:03,165  WARNING: The `skip_connections` argument will be deprecated. Please use snt.SkipConnectionCore instead.
+2018-08-19 23:18:10,497  INFO: Restoring parameters from /QuantPython/RqAlphaMod/Model_Saver/ResidualPonderDNC_4.ckpt
+2018-08-19 23:19:48,049  INFO: CTA_STRATEGY	BasicLSTM:BasicLSTM策略启动
+2018-08-19 23:20:50,028  INFO: CTP	交易服务器连接成功
+2018-08-19 23:20:50,029  INFO: CTP	行情服务器连接成功
+2018-08-19 23:20:50,046  INFO: CTP	行情服务器登录完成
+2018-08-19 23:20:50,047  INFO: CTP	交易服务器登录完成
+2018-08-19 23:20:50,081  INFO: CTP	结算信息确认完成
+2018-08-19 23:20:50,183  INFO: CTP	交易合约信息获取完成
+2018-08-19 23:20:52,263  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-19 23:21:03,693  INFO: CTA_STRATEGY	CTA引擎启动成功
+2018-08-19 23:21:05,502  INFO: CTA_STRATEGY	策略加载成功
+2018-08-19 23:21:10,495  INFO: CTA_STRATEGY	BasicLSTM:BasicLSTM策略初始化
+2018-08-19 23:21:15,941  INFO: CTA_STRATEGY	策略BasicLSTM触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyDeepLSTM.py", line 124, in onInit
+    l2_coefficient=5e-3)
+  File "/home/linlin/pytrader/cyvn/comm/DeepLSTM.py", line 52, in __init__
+    num_write_heads=num_writes)
+  File "/home/linlin/pytrader/cyvn/comm/DNCore.py", line 1107, in __init__
+    custom_getter=custom_getter)
+  File "/home/linlin/anaconda3/envs/py35/lib/python3.5/site-packages/tensorflow/python/util/deprecation.py", line 316, in new_func
+    return func(*args, **kwargs)
+TypeError: __init__() got an unexpected keyword argument 'custom_getter'
+

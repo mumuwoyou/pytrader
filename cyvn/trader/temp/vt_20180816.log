@@ -1,0 +1,740 @@
+2018-08-16 20:51:26,867  INFO: CTP	行情服务器连接成功
+2018-08-16 20:51:26,868  INFO: CTP	交易服务器连接成功
+2018-08-16 20:51:26,887  INFO: CTP	行情服务器登录完成
+2018-08-16 20:51:26,890  INFO: CTP	交易服务器登录完成
+2018-08-16 20:51:26,910  INFO: CTP	结算信息确认完成
+2018-08-16 20:51:27,053  INFO: CTP	交易合约信息获取完成
+2018-08-16 20:51:28,970  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-16 21:13:34,416  INFO: CTP	交易服务器连接成功
+2018-08-16 21:13:34,419  INFO: CTP	行情服务器连接成功
+2018-08-16 21:13:34,435  INFO: CTP	交易服务器登录完成
+2018-08-16 21:13:34,443  INFO: CTP	行情服务器登录完成
+2018-08-16 21:13:34,471  INFO: CTP	结算信息确认完成
+2018-08-16 21:13:34,589  INFO: CTP	交易合约信息获取完成
+2018-08-16 21:13:36,511  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-16 21:37:26,813  INFO: CTP	交易服务器连接成功
+2018-08-16 21:37:26,814  INFO: CTP	行情服务器连接成功
+2018-08-16 21:37:26,834  INFO: CTP	交易服务器登录完成
+2018-08-16 21:37:26,837  INFO: CTP	行情服务器登录完成
+2018-08-16 21:37:26,870  INFO: CTP	结算信息确认完成
+2018-08-16 21:37:27,038  INFO: CTP	交易合约信息获取完成
+2018-08-16 21:37:28,964  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-16 22:16:11,053  INFO: CTP	行情服务器连接成功
+2018-08-16 22:16:11,055  INFO: CTP	交易服务器连接成功
+2018-08-16 22:16:11,072  INFO: CTP	行情服务器登录完成
+2018-08-16 22:16:11,077  INFO: CTP	交易服务器登录完成
+2018-08-16 22:16:11,118  INFO: CTP	结算信息确认完成
+2018-08-16 22:16:11,662  INFO: CTP	交易合约信息获取完成
+2018-08-16 22:16:12,076  INFO: MAIN_ENGINE	MongoDB连接失败
+2018-08-16 22:16:19,578  INFO: CTA_STRATEGY	CTA引擎启动成功
+2018-08-16 22:18:45,321  INFO: CTP	行情服务器连接成功
+2018-08-16 22:18:45,322  INFO: CTP	交易服务器连接成功
+2018-08-16 22:18:45,348  INFO: CTP	交易服务器登录完成
+2018-08-16 22:18:45,349  INFO: CTP	行情服务器登录完成
+2018-08-16 22:18:45,385  INFO: CTP	结算信息确认完成
+2018-08-16 22:18:45,570  INFO: CTP	交易合约信息获取完成
+2018-08-16 22:18:47,507  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-16 22:18:50,556  INFO: CTA_STRATEGY	CTA引擎启动成功
+2018-08-16 22:18:52,942  INFO: CTA_STRATEGY	策略加载成功
+2018-08-16 22:18:57,975  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略初始化
+2018-08-16 22:20:46,589  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略启动
+2018-08-16 22:26:27,256  INFO: CTP	交易服务器连接成功
+2018-08-16 22:26:27,257  INFO: CTP	行情服务器连接成功
+2018-08-16 22:26:27,280  INFO: CTP	交易服务器登录完成
+2018-08-16 22:26:27,316  INFO: CTP	结算信息确认完成
+2018-08-16 22:26:27,434  INFO: CTP	交易合约信息获取完成
+2018-08-16 22:26:27,500  INFO: CTP	行情服务器登录完成
+2018-08-16 22:26:29,385  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-16 22:35:00,398  INFO: CTP	行情服务器连接成功
+2018-08-16 22:35:00,399  INFO: CTP	交易服务器连接成功
+2018-08-16 22:35:00,421  INFO: CTP	交易服务器登录完成
+2018-08-16 22:35:00,422  INFO: CTP	行情服务器登录完成
+2018-08-16 22:35:00,463  INFO: CTP	结算信息确认完成
+2018-08-16 22:35:00,583  INFO: CTP	交易合约信息获取完成
+2018-08-16 22:35:02,623  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-16 22:35:05,378  INFO: CTA_STRATEGY	CTA引擎启动成功
+2018-08-16 22:35:09,146  INFO: CTA_STRATEGY	策略加载成功
+2018-08-16 22:35:09,237  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 114, in onTick
+    if self.pos == 0 and self.targetPos == self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:09,956  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 114, in onTick
+    if self.pos == 0 and self.targetPos == self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:10,442  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 114, in onTick
+    if self.pos == 0 and self.targetPos == self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:10,984  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 114, in onTick
+    if self.pos == 0 and self.targetPos == self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:11,257  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 114, in onTick
+    if self.pos == 0 and self.targetPos == self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:11,734  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 114, in onTick
+    if self.pos == 0 and self.targetPos == self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:12,210  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 114, in onTick
+    if self.pos == 0 and self.targetPos == self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:12,807  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 114, in onTick
+    if self.pos == 0 and self.targetPos == self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:13,239  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 114, in onTick
+    if self.pos == 0 and self.targetPos == self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:13,801  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 114, in onTick
+    if self.pos == 0 and self.targetPos == self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:14,442  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 114, in onTick
+    if self.pos == 0 and self.targetPos == self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:14,954  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 114, in onTick
+    if self.pos == 0 and self.targetPos == self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:15,213  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 114, in onTick
+    if self.pos == 0 and self.targetPos == self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:15,738  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 114, in onTick
+    if self.pos == 0 and self.targetPos == self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:16,465  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 114, in onTick
+    if self.pos == 0 and self.targetPos == self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:16,956  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 114, in onTick
+    if self.pos == 0 and self.targetPos == self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:17,479  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 114, in onTick
+    if self.pos == 0 and self.targetPos == self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:17,948  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 114, in onTick
+    if self.pos == 0 and self.targetPos == self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:18,236  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 114, in onTick
+    if self.pos == 0 and self.targetPos == self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:18,972  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 114, in onTick
+    if self.pos == 0 and self.targetPos == self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:19,232  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 114, in onTick
+    if self.pos == 0 and self.targetPos == self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:19,817  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 114, in onTick
+    if self.pos == 0 and self.targetPos == self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:20,438  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 114, in onTick
+    if self.pos == 0 and self.targetPos == self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:21,220  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 114, in onTick
+    if self.pos == 0 and self.targetPos == self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:21,956  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 114, in onTick
+    if self.pos == 0 and self.targetPos == self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:22,469  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 114, in onTick
+    if self.pos == 0 and self.targetPos == self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:22,903  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化
+2018-08-16 22:35:22,990  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 114, in onTick
+    if self.pos == 0 and self.targetPos == self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:23,458  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 114, in onTick
+    if self.pos == 0 and self.targetPos == self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:23,745  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 114, in onTick
+    if self.pos == 0 and self.targetPos == self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:24,218  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 114, in onTick
+    if self.pos == 0 and self.targetPos == self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:24,809  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:25,455  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:25,747  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:27,397  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:27,416  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:27,720  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:28,737  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:29,461  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:29,957  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:30,244  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:30,749  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:31,208  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:32,253  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:32,939  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:33,279  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:33,754  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:34,216  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:34,979  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:35,450  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:36,478  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:36,731  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:37,229  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:37,963  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:38,247  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:38,755  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:39,239  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:40,457  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:40,741  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:41,482  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:41,745  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:42,229  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:42,909  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:43,456  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:43,962  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:44,452  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:44,956  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:45,460  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:46,448  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:47,397  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:47,719  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:48,230  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:49,448  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:49,742  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:50,305  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:50,779  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:51,226  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:51,729  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:52,227  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:52,955  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:53,437  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:53,736  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:54,470  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:54,753  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:35:55,247  INFO: CTA_STRATEGY	策略AvgBreak触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 574, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 131, in onTick
+    if self.pos > 0 and self.targetPos == -self.fixedSize:
+AttributeError: 'AvgBreakStrategy' object has no attribute 'targetPos'
+
+2018-08-16 22:37:16,974  INFO: CTP	行情服务器连接成功
+2018-08-16 22:37:16,974  INFO: CTP	交易服务器连接成功
+2018-08-16 22:37:16,997  INFO: CTP	交易服务器登录完成
+2018-08-16 22:37:16,997  INFO: CTP	行情服务器登录完成
+2018-08-16 22:37:17,051  INFO: CTP	结算信息确认完成
+2018-08-16 22:37:17,172  INFO: CTP	交易合约信息获取完成
+2018-08-16 22:37:19,150  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-16 22:37:22,527  INFO: CTA_STRATEGY	CTA引擎启动成功
+2018-08-16 22:37:24,388  INFO: CTA_STRATEGY	策略加载成功
+2018-08-16 22:37:31,356  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化
+2018-08-16 22:37:36,553  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略启动

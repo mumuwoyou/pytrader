@@ -11,7 +11,7 @@
     },
     {
         "name": "BasicLSTM",
-        "className": "DeepLSTMStrategy",
+        "className": "BasicLSTMStrategy",
         "vtSymbol": "ag1812"
     },
     {

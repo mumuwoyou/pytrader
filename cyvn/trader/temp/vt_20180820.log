@@ -1,0 +1,24 @@
+2018-08-20 06:44:23,720  INFO: CTP	行情服务器连接成功
+2018-08-20 06:44:23,726  INFO: CTP	交易服务器连接成功
+2018-08-20 06:44:23,744  INFO: CTP	行情服务器登录完成
+2018-08-20 06:44:23,747  INFO: CTP	交易服务器登录完成
+2018-08-20 06:44:23,781  INFO: CTP	结算信息确认完成
+2018-08-20 06:44:23,945  INFO: CTP	交易合约信息获取完成
+2018-08-20 06:44:26,022  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-20 06:44:30,209  INFO: CTA_STRATEGY	CTA引擎启动成功
+2018-08-20 06:44:32,169  INFO: CTA_STRATEGY	策略加载成功
+2018-08-20 06:44:35,765  INFO: CTA_STRATEGY	BasicLSTM:BasicLSTM策略初始化
+2018-08-20 06:44:41,540  INFO: CTA_STRATEGY	策略BasicLSTM触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyDeepLSTM.py", line 124, in onInit
+    l2_coefficient=5e-3)
+  File "/home/linlin/pytrader/cyvn/comm/DeepLSTM.py", line 52, in __init__
+    num_write_heads=num_writes)
+  File "/home/linlin/pytrader/cyvn/comm/DNCore.py", line 1107, in __init__
+    custom_getter=custom_getter)
+  File "/home/linlin/anaconda3/envs/py35/lib/python3.5/site-packages/tensorflow/python/util/deprecation.py", line 316, in new_func
+    return func(*args, **kwargs)
+TypeError: __init__() got an unexpected keyword argument 'custom_getter'
+
