@@ -7,15 +7,15 @@ import functools
 import tensorflow as tf
 import numpy as np
 
-from sonnet.python.modules import basic
-from sonnet.python.modules import rnn_core
-from sonnet.python.ops import nest
+from cyvn.sonnet.python.modules import basic
+from cyvn.sonnet.python.modules import rnn_core
+from cyvn.sonnet.python.ops import nest
 
-from sonnet.python.modules.base import AbstractModule
-from sonnet.python.modules.basic import BatchApply, Linear, BatchFlatten
-from sonnet.python.modules.rnn_core import RNNCore
-from sonnet.python.modules.gated_rnn import LSTM
-from sonnet.python.modules.basic_rnn import DeepRNN
+from cyvn.sonnet.python.modules.base import AbstractModule
+from cyvn.sonnet.python.modules.basic import BatchApply, Linear, BatchFlatten
+from cyvn.sonnet.python.modules.rnn_core import RNNCore
+from cyvn.sonnet.python.modules.gated_rnn import LSTM
+from cyvn.sonnet.python.modules.basic_rnn import DeepRNN
 
 def _nested_add(nested_a, nested_b):
     """Add two arbitrarily nested `Tensors`."""

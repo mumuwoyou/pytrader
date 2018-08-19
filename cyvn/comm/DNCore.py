@@ -15,11 +15,11 @@
 import numpy as np
 import tensorflow as tf
 
-from sonnet.python.modules.base import AbstractModule
-from sonnet.python.modules.basic import BatchApply, Linear, BatchFlatten
-from sonnet.python.modules.rnn_core import RNNCore
-from sonnet.python.modules.gated_rnn import LSTM
-from sonnet.python.modules.basic_rnn import DeepRNN
+from cyvn.sonnet.python.modules.base import AbstractModule
+from cyvn.sonnet.python.modules.basic import BatchApply, Linear, BatchFlatten
+from cyvn.sonnet.python.modules.rnn_core import RNNCore
+from cyvn.sonnet.python.modules.gated_rnn import LSTM
+from cyvn.sonnet.python.modules.basic_rnn import DeepRNN
 
 
 # ## Access

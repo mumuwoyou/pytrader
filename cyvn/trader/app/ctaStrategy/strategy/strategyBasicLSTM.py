@@ -4,18 +4,13 @@
 注意事项：作者不对交易盈利做任何保证，策略代码仅供参考
 """
 
-
-import numpy as np
-import talib
-from cyvn.trader.vtObject import VtBarData
-from cyvn.trader.vtConstant import EMPTY_STRING
 from cyvn.trader.app.ctaStrategy.ctaTemplate import (TargetPosTemplate,
                                                      BarGenerator,
                                                      ArrayManager)
 from cyvn.trader.app.ctaStrategy.ctaBase import *
-from  comm.TAF import get_factors
-from comm.base import *
-from comm.BasicLSTM import *
+from cyvn.comm.TAF import get_factors
+from cyvn.comm.base import *
+from cyvn.comm.BasicLSTM import *
 
 
 ########################################################################

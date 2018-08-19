@@ -1,0 +1,86 @@
+2018-08-19 22:19:14,835  INFO: 启动CTA策略运行子进程
+2018-08-19 22:19:14,836  INFO: 事件引擎创建成功
+2018-08-19 22:19:14,838  INFO: 主引擎创建成功
+2018-08-19 22:19:14,838  INFO: 注册日志事件监听
+2018-08-19 22:19:15,078  INFO: CTP	行情服务器连接成功
+2018-08-19 22:19:15,081  INFO: CTP	交易服务器连接成功
+2018-08-19 22:19:15,123  INFO: CTP	行情服务器登录完成
+2018-08-19 22:19:15,123  INFO: CTP	交易服务器登录完成
+2018-08-19 22:19:15,159  INFO: CTP	结算信息确认完成
+2018-08-19 22:19:15,269  INFO: CTP	交易合约信息获取完成
+2018-08-19 22:19:17,292  INFO: 连接CTP接口
+2018-08-19 22:19:17,293  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-19 22:22:07,510  INFO: 启动CTA策略运行子进程
+2018-08-19 22:22:07,510  INFO: 事件引擎创建成功
+2018-08-19 22:22:07,512  INFO: 主引擎创建成功
+2018-08-19 22:22:07,512  INFO: 注册日志事件监听
+2018-08-19 22:22:07,555  INFO: CTP	交易服务器连接成功
+2018-08-19 22:22:07,556  INFO: CTP	行情服务器连接成功
+2018-08-19 22:22:07,572  INFO: CTP	交易服务器登录完成
+2018-08-19 22:22:07,573  INFO: CTP	行情服务器登录完成
+2018-08-19 22:22:07,604  INFO: CTP	结算信息确认完成
+2018-08-19 22:22:07,708  INFO: CTP	交易合约信息获取完成
+2018-08-19 22:22:09,792  INFO: 连接CTP接口
+2018-08-19 22:22:09,793  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-19 22:23:26,175  INFO: 启动CTA策略运行子进程
+2018-08-19 22:23:26,176  INFO: 事件引擎创建成功
+2018-08-19 22:23:26,178  INFO: 主引擎创建成功
+2018-08-19 22:23:26,178  INFO: 注册日志事件监听
+2018-08-19 22:23:26,229  INFO: CTP	行情服务器连接成功
+2018-08-19 22:23:26,230  INFO: CTP	交易服务器连接成功
+2018-08-19 22:23:26,255  INFO: CTP	行情服务器登录完成
+2018-08-19 22:23:26,255  INFO: CTP	交易服务器登录完成
+2018-08-19 22:23:26,287  INFO: CTP	结算信息确认完成
+2018-08-19 22:23:26,407  INFO: CTP	交易合约信息获取完成
+2018-08-19 22:23:28,557  INFO: 连接CTP接口
+2018-08-19 22:23:28,558  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-19 22:23:38,577  INFO: CTA策略载入成功
+2018-08-19 22:23:38,578  INFO: CTA_STRATEGY	BasicLSTM:BasicLSTM策略初始化
+2018-08-19 22:23:38,614  INFO: CTA_STRATEGY	策略BasicLSTM触发异常已停止
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 576, in callStrategyFunc
+    func()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyDeepLSTM.py", line 87, in onInit
+    tmp = fix_data(u'data/AG88.csv')
+  File "/home/linlin/pytrader/comm/base.py", line 17, in fix_data
+    tmp = pd.read_csv(path, encoding="gbk", engine='python')
+  File "/home/linlin/anaconda3/envs/py35/lib/python3.5/site-packages/pandas/io/parsers.py", line 646, in parser_f
+    return _read(filepath_or_buffer, kwds)
+  File "/home/linlin/anaconda3/envs/py35/lib/python3.5/site-packages/pandas/io/parsers.py", line 389, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/home/linlin/anaconda3/envs/py35/lib/python3.5/site-packages/pandas/io/parsers.py", line 730, in __init__
+    self._make_engine(self.engine)
+  File "/home/linlin/anaconda3/envs/py35/lib/python3.5/site-packages/pandas/io/parsers.py", line 929, in _make_engine
+    self._engine = klass(self.f, **self.options)
+  File "/home/linlin/anaconda3/envs/py35/lib/python3.5/site-packages/pandas/io/parsers.py", line 1799, in __init__
+    memory_map=self.memory_map)
+  File "/home/linlin/anaconda3/envs/py35/lib/python3.5/site-packages/pandas/io/common.py", line 330, in _get_handle
+    f = open(path, mode, encoding=encoding)
+FileNotFoundError: [Errno 2] No such file or directory: 'data/AG88.csv'
+
+2018-08-19 22:23:38,906  INFO: CTA_STRATEGY	BollChannel01:BollChannel01策略初始化
+2018-08-19 22:24:59,248  INFO: 启动CTA策略运行子进程
+2018-08-19 22:24:59,248  INFO: 事件引擎创建成功
+2018-08-19 22:24:59,250  INFO: 主引擎创建成功
+2018-08-19 22:24:59,250  INFO: 注册日志事件监听
+2018-08-19 22:24:59,328  INFO: CTP	行情服务器连接成功
+2018-08-19 22:24:59,329  INFO: CTP	交易服务器连接成功
+2018-08-19 22:24:59,342  INFO: CTP	行情服务器登录完成
+2018-08-19 22:24:59,349  INFO: CTP	交易服务器登录完成
+2018-08-19 22:24:59,380  INFO: CTP	结算信息确认完成
+2018-08-19 22:24:59,493  INFO: CTP	交易合约信息获取完成
+2018-08-19 22:25:01,538  INFO: 连接CTP接口
+2018-08-19 22:25:01,538  INFO: MAIN_ENGINE	MongoDB连接成功
+2018-08-19 22:25:11,564  INFO: CTA策略载入成功
+2018-08-19 22:25:11,567  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略初始化
+2018-08-19 22:25:12,715  INFO: CTA_STRATEGY	BollChannel01:BollChannel01策略初始化
+2018-08-19 22:25:38,494  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略初始化
+2018-08-19 22:26:52,235  INFO: CTA_STRATEGY	BasicLSTM:BasicLSTM策略初始化
+2018-08-19 22:26:58,013  WARNING: The `skip_connections` argument will be deprecated. Please use snt.SkipConnectionCore instead.
+2018-08-19 22:27:05,331  INFO: Restoring parameters from models/DNCoreDeepLSTM_NADM_saver_1.ckpt
+2018-08-19 22:27:25,157  INFO: CTA策略初始化成功
+2018-08-19 22:27:25,159  INFO: CTA策略启动成功
+2018-08-19 22:27:25,159  INFO: CTA_STRATEGY	AvgBreak:AvgBreak策略启动
+2018-08-19 22:27:25,160  INFO: CTA_STRATEGY	BollChannel01:BollChannel01策略启动
+2018-08-19 22:27:25,160  INFO: CTA_STRATEGY	HorizBreakout:HorizBreakout策略启动
+2018-08-19 22:27:25,160  INFO: CTA_STRATEGY	BasicLSTM:BasicLSTM策略启动
