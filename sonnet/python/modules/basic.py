@@ -43,10 +43,24 @@ def merge_leading_dims(tensor, n_dims=2):
 
   Returns:
     The input tensor, with its first dimensions merged.
+
+  Raises:
+    ValueError: If the rank of `tensor` is not well-defined.
   """
   tensor = tf.convert_to_tensor(tensor)
   tensor_shape_static = tensor.get_shape()
+
+  # Check if the rank of the input tensor is well-defined.
+  if tensor_shape_static.dims is None:
+    raise ValueError("Can't merge leading dimensions of tensor of unknown "
+                     "rank.")
   tensor_shape_list = tensor_shape_static.as_list()
+
+  # We can only merge the n_dims leading dimensions if the rank of the given
+  # tensor is sufficiently large.
+  if n_dims > len(tensor_shape_list):
+    return tensor
+
   if tensor_shape_static.is_fully_defined():
     new_shape = (
         [np.prod(tensor_shape_list[:n_dims])] + tensor_shape_list[n_dims:])
@@ -61,7 +75,7 @@ def merge_leading_dims(tensor, n_dims=2):
   result = tf.reshape(tensor, new_size)
 
   # We need to set the result size of this, as otherwise we won't be able to
-  # pass to e.g. a Linear.
+  # pass to e.g. a Linear. Here we need to know at least the rank of the tensor.
   result.set_shape([None] + tensor_shape_list[n_dims:])
   return result
 
@@ -902,6 +916,10 @@ class BatchApply(base.AbstractModule):
   connects the provided module, then splits the leading dimension of the
   result to match the input.
 
+  Input tensors whose rank is smaller than the number of dimensions to collapse
+  (e.g. all scalar values, which are tensors of rank 0), are passed unaltered to
+  the provided module.
+
   This is useful for applying some module to each timestep of a Time x Batch x N
   tensor. If a module is hard coded to only support 2D (Batch x N) then the
   full 3D Tensor cannot be provided. BatchApply will 'merge' the first two
@@ -1159,12 +1177,16 @@ class MergeDims(base.AbstractModule):
   For example, merging dimensions 1, 2 and 3 together can be performed by
   calling:
 
+  ```python
   output = MergeDims(start=1, size=3)(x)
+  ```
 
   A nested list of tensors can be merged:
 
+  ```python
   x = [tf.random_uniform(shape=[5, 5]), [tf.random_uniform(shape=[3, 3, 3])]]
   output = MergeDims(start=0, size=2)(x)
+  ```
   """
 
   def __init__(self, start, size, name="merge_dims"):

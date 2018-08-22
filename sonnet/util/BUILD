@@ -1,5 +1,5 @@
 # Description:
-#   Utilities for cyvn.cyvn.sonnet.
+#   Utilities for Sonnet.
 
 package(default_visibility = ["//visibility:public"])
 
@@ -11,7 +11,7 @@ py_binary(
     name = "migrate_checkpoint",
     srcs = ["migrate_checkpoint.py"],
     deps = [
-        "//cyvn.cyvn.sonnet",  # build_cleaner:keep
+        "//sonnet",  # build_cleaner:keep
         # tensorflow dep,
     ],
 )

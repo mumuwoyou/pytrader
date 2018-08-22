@@ -1,8 +1,5 @@
 # Description:
 #   Sonnet: DeepMind abstractions for Neural Networks in TensorFlow.
-load("//sonnet:tensorflow.bzl", "tf_custom_op_library")
-load("//sonnet:tensorflow.bzl", "tf_gen_op_wrapper_py")
-load("//sonnet:tensorflow.bzl", "tf_custom_op_py_library")
 
 licenses(["notice"])  # Apache 2.0 License
 
@@ -30,6 +27,21 @@ py_library(
         ":base",
         ":nest",
         ":util",
+        # tensorflow dep,
+    ],
+)
+
+py_library(
+    name = "custom_getters",
+    srcs = [
+        "custom_getters/__init__.py",
+        "custom_getters/context.py",
+        "custom_getters/non_trainable.py",
+        "custom_getters/restore_initializer.py",
+        "custom_getters/stop_gradient.py",
+    ],
+    srcs_version = "PY2AND3",
+    deps = [
         # tensorflow dep,
     ],
 )
@@ -107,39 +119,7 @@ py_library(
     deps = [
         ":initializers",
         ":nest",
-        "//sonnet/python:resampler",
         # tensorflow dep,
-    ],
-)
-
-py_library(
-    name = "resampler",
-    srcs = ["ops/resampler.py"],
-    data = ["//sonnet/python:ops/_resampler.so"],
-    srcs_version = "PY2AND3",
-    deps = ["//sonnet/python:resampler_py_wrapper"],
-)
-
-tf_custom_op_library(
-    name = "ops/_resampler.so",
-    srcs = [
-        "//sonnet/cc:ops/resampler.cc",
-        "//sonnet/cc/kernels:resampler_op.cc",
-        "//sonnet/cc/kernels:resampler_op.h",
-    ],
-    gpu_srcs = [
-        "//sonnet/cc/kernels:resampler_op_gpu.cu.cc",
-        "//sonnet/cc/kernels:resampler_op.h",
-    ],
-)
-
-tf_gen_op_wrapper_py(
-    name = "resampler_py_wrapper",
-    out = "ops/gen_resampler.py",
-    hidden = [],
-    require_shape_functions = True,
-    deps = [
-        "//sonnet/cc:resampler_op_lib",
     ],
 )
 
@@ -223,17 +203,38 @@ py_test(
     ],
 )
 
-py_test(
-    name = "resampler_test",
-    size = "small",
-    srcs = ["ops/resampler_test.py"],
-    srcs_version = "PY2AND3",
-    tags = [
-        "nomsan",  # Relies on the precompiled library libcuda, which is incompatible with MSan.
-        "requires-gpu-sm35",
-    ],
+custom_getters_tests = [
+    (
+        "context_test",
+        "small",
+        [],
+    ),
+    (
+        "non_trainable_test",
+        "small",
+        [],
+    ),
+    (
+        "restore_initializer_test",
+        "small",
+        [],
+    ),
+    (
+        "stop_gradient_test",
+        "small",
+        [],
+    ),
+]
+
+[py_test(
+    name = test_name,
+    size = test_size,
+    srcs = ["custom_getters/%s.py" % test_name],
+    tags = test_tags,
     deps = [
+        # numpy dep,
         "//sonnet",
         "//sonnet/testing/parameterized",
+        # tensorflow dep,
     ],
-)
+) for test_name, test_size, test_tags in custom_getters_tests]

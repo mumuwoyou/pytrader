@@ -4,7 +4,7 @@
 注意事项：作者不对交易盈利做任何保证，策略代码仅供参考
 """
 
-from cyvn.trader.app.ctaStrategy.ctaTemplate import (TargetPosTemplate,
+from cyvn.trader.app.ctaStrategy.ctaTemplate import (CtaTemplate,
                                                      BarGenerator,
                                                      ArrayManager)
 from cyvn.trader.app.ctaStrategy.ctaBase import *
@@ -14,7 +14,7 @@ from cyvn.comm.DeepLSTM import *
 
 
 ########################################################################
-class DeepLSTMStrategy(TargetPosTemplate):
+class DeepLSTMStrategy(CtaTemplate):
     """基于Adxr的交易策略"""
     className = 'DeepLSTMStrategy'
     author = u'用Python的交易员'
@@ -34,7 +34,7 @@ class DeepLSTMStrategy(TargetPosTemplate):
     model_classifier = None
 
     flag  = 0
-
+    targetPos = 0
 
 
     buyOrderIDList = []                 # OCO委托买入开仓的委托号
@@ -65,7 +65,7 @@ class DeepLSTMStrategy(TargetPosTemplate):
         """Constructor"""
         super(DeepLSTMStrategy, self).__init__(ctaEngine, setting)
 
-        self.bg = BarGenerator(self.onBar, 15, self.onFifteenBar)  # 创建K线合成器对象
+        self.bg = BarGenerator(self.onBar, 5, self.onFiveBar)  # 创建K线合成器对象
         self.am = ArrayManager(size=200)
 
         self.buyOrderIDList = []
@@ -113,7 +113,6 @@ class DeepLSTMStrategy(TargetPosTemplate):
         targets = dense_to_one_hot(targets['labels'])
         targets = np.expand_dims(targets, axis=1)
 
-
         a = Classifier_DNCoreDeepLSTM(
             inputs,
             targets,
@@ -123,7 +122,7 @@ class DeepLSTMStrategy(TargetPosTemplate):
             learning_rate=1e-3,
             l2_coefficient=5e-3)
 
-        a.restore_trainable_variables("models/DNCoreDeepLSTM_NADM_saver_1.ckpt")
+        a.restore_trainable_variables('models/DNCoreDeepLSTM_NADM_saver_1.ckpt')
         self.model_classifier = a
 
         # 载入历史数据，并采用回放计算的方式初始化策略数值
@@ -150,18 +149,46 @@ class DeepLSTMStrategy(TargetPosTemplate):
     #----------------------------------------------------------------------
     def onTick(self, tick):
         """收到行情TICK推送（必须由用户继承实现）"""
-        TargetPosTemplate.onTick(self, tick)
         self.bg.updateTick(tick)
 
     #----------------------------------------------------------------------
     def onBar(self, bar):
         """收到Bar推送（必须由用户继承实现）"""
-        TargetPosTemplate.onBar(self, bar)
         self.bg.updateBar(bar)
+        if self.targetPos > 0:
+            if self.pos == 0:
+                orderID = self.buy(bar.close + 5, self.fixedSize)
+                self.orderList.extend(orderID)
+            if self.pos < 0:
+                orderID = self.cover(bar.close + 5, abs(self.pos))
+                self.orderList.extend(orderID)
+                time.sleep(2)
+                orderID = self.buy(bar.close + 5, self.fixedSize)
+                self.orderList.extend(orderID)
+
+            if self.targetPos < 0:
+                if self.pos == 0:
+                    orderID = self.short(bar.close - 5, self.fixedSize)
+                    self.orderList.extend(orderID)
+                if self.pos > 0:
+                    orderID = self.sell(bar.close - 5, abs(self.pos))
+                    self.orderList.extend(orderID)
+                    time.sleep(2)
+                    orderID = self.short(bar.close - 5, self.fixedSize)
+                    self.orderList.extend(orderID)
+
+            if self.targetPos == 0:
+                if self.pos > 0:
+                    orderID = self.sell(bar.close - 5, abs(self.pos))
+                    self.orderList.extend(orderID)
+                if self.pos < 0:
+                    orderID = self.cover(bar.close + 5, abs(self.pos))
+                    self.orderList.extend(orderID)
+        self.putEvent()
 
     #---------------------------------------------------------------------
-    def onFifteenBar(self, bar):
-        """收到15分钟K线"""
+    def onFiveBar(self, bar):
+        """收到5分钟K线"""
 
      # 同步数据到数据库
         self.saveSyncData()
@@ -200,15 +227,15 @@ class DeepLSTMStrategy(TargetPosTemplate):
 
         #沽空
         if flag == 0:
-            self.setTargetPos(-self.fixedSize)
+            self.targetPos = -self.fixedSize
 
         #沽多
         if flag == 2:
-            self.setTargetPos(self.fixedSize)
+            self.targetPos = self.fixedSize
 
         #震荡
         if flag == 1:
-             self.setTargetPos(0)
+             self.targetPos = 0
 
         # 发出状态更新事件
         self.putEvent()

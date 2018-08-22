@@ -4,7 +4,7 @@
 注意事项：作者不对交易盈利做任何保证，策略代码仅供参考
 """
 
-from cyvn.trader.app.ctaStrategy.ctaTemplate import (TargetPosTemplate,
+from cyvn.trader.app.ctaStrategy.ctaTemplate import (CtaTemplate,
                                                      BarGenerator,
                                                      ArrayManager)
 from cyvn.trader.app.ctaStrategy.ctaBase import *
@@ -14,7 +14,7 @@ from cyvn.comm.BasicLSTM import *
 
 
 ########################################################################
-class BasicLSTMStrategy(TargetPosTemplate):
+class BasicLSTMStrategy(CtaTemplate):
     """基于Adxr的交易策略"""
     className = 'BasicLSTMStrategy'
     author = u'用Python的交易员'
@@ -34,8 +34,7 @@ class BasicLSTMStrategy(TargetPosTemplate):
     model_classifier = None
 
     flag  = 0
-
-
+    targetPos = 0
 
     buyOrderIDList = []                 # OCO委托买入开仓的委托号
     shortOrderIDList = []               # OCO委托卖出开仓的委托号
@@ -65,7 +64,7 @@ class BasicLSTMStrategy(TargetPosTemplate):
         """Constructor"""
         super(BasicLSTMStrategy, self).__init__(ctaEngine, setting)
 
-        self.bg = BarGenerator(self.onBar, 15, self.onFifteenBar)  # 创建K线合成器对象
+        self.bg = BarGenerator(self.onBar, 5, self.onFiveBar)  # 创建K线合成器对象
         self.am = ArrayManager(size=200)
 
         self.buyOrderIDList = []
@@ -149,18 +148,46 @@ class BasicLSTMStrategy(TargetPosTemplate):
     #----------------------------------------------------------------------
     def onTick(self, tick):
         """收到行情TICK推送（必须由用户继承实现）"""
-        TargetPosTemplate.onTick(self, tick)
         self.bg.updateTick(tick)
 
     #----------------------------------------------------------------------
     def onBar(self, bar):
         """收到Bar推送（必须由用户继承实现）"""
-        TargetPosTemplate.onBar(self, bar)
         self.bg.updateBar(bar)
+        if self.targetPos > 0:
+            if self.pos == 0:
+                orderID = self.buy(bar.close + 5, self.fixedSize)
+                self.orderList.extend(orderID)
+            if self.pos < 0:
+                orderID = self.cover(bar.close + 5, abs(self.pos))
+                self.orderList.extend(orderID)
+                # time.sleep(1)
+                # orderID = self.buy(bar.close + 5, self.fixedSize)
+                # self.orderList.extend(orderID)
+
+            if self.targetPos < 0:
+                if self.pos == 0:
+                    orderID = self.short(bar.close - 5, self.fixedSize)
+                    self.orderList.extend(orderID)
+                if self.pos > 0:
+                    orderID = self.sell(bar.close - 5, abs(self.pos))
+                    self.orderList.extend(orderID)
+                    # time.sleep(1)
+                    # orderID = self.short(bar.close - 5, self.fixedSize)
+                    # self.orderList.extend(orderID)
+
+            if self.targetPos == 0:
+                if self.pos > 0:
+                    orderID = self.sell(bar.close - 5, abs(self.pos))
+                    self.orderList.extend(orderID)
+                if self.pos < 0:
+                    orderID = self.cover(bar.close + 5, abs(self.pos))
+                    self.orderList.extend(orderID)
+        self.putEvent()
     
     #---------------------------------------------------------------------
-    def onFifteenBar(self, bar):
-        """收到15分钟K线"""
+    def onFiveBar(self, bar):
+        """收到5分钟K线"""
 
      # 同步数据到数据库
         self.saveSyncData()
@@ -199,16 +226,13 @@ class BasicLSTMStrategy(TargetPosTemplate):
 
         #沽空
         if flag == 0:
-            self.setTargetPos(-self.fixedSize)
-
+            self.targetPos = -self.fixedSize
         #沽多
         if flag == 2:
-            self.setTargetPos(self.fixedSize)
-
+            self.targetPos = self.fixedSize
         #震荡
         if flag == 1:
-             self.setTargetPos(0)
-
+            self.targetPos = 0
         # 发出状态更新事件
         self.putEvent()
 

@@ -332,7 +332,7 @@ class Conv2D(base.AbstractModule, base.Transposable):
           incompatible with the shape of the weights.
       base.UnderspecifiedError: If the input tensor has an unknown
           `input_channels`.
-      TypeError: If input Tensor dtype is not `tf.float32`.
+      TypeError: If input Tensor dtype is not compatible with `tf.float32`.
     """
     # Handle input whose shape is unknown during graph creation.
     self._input_shape = tuple(inputs.get_shape().as_list())
@@ -354,7 +354,7 @@ class Conv2D(base.AbstractModule, base.Transposable):
 
     self._input_channels = input_channels
 
-    if inputs.dtype != tf.float32:
+    if not tf.float32.is_compatible_with(inputs.dtype):
       raise TypeError(
           "Input must have dtype tf.float32, but dtype was {}".format(
               inputs.dtype))
@@ -365,10 +365,7 @@ class Conv2D(base.AbstractModule, base.Transposable):
         self._input_channels,
         self.output_channels)
 
-    if self._data_format == DATA_FORMAT_NHWC:
-      bias_shape = (self.output_channels,)
-    else:
-      bias_shape = (1, self.output_channels, 1, 1)
+    bias_shape = (self.output_channels,)
 
     if "w" not in self._initializers:
       self._initializers["w"] = create_weight_initializer(weight_shape[:3])
@@ -409,7 +406,7 @@ class Conv2D(base.AbstractModule, base.Transposable):
                                 initializer=self._initializers["b"],
                                 partitioner=self._partitioners.get("b", None),
                                 regularizer=self._regularizers.get("b", None))
-      outputs += self._b
+      outputs = tf.nn.bias_add(outputs, self._b, data_format=self._data_format)
 
     return outputs
 
@@ -428,7 +425,7 @@ class Conv2D(base.AbstractModule, base.Transposable):
   @property
   def stride(self):
     """Returns the stride."""
-    # Backwards compatability with old stride format.
+    # Backwards compatibility with old stride format.
 
     return (1,) + self._stride + (1,)
 
@@ -718,7 +715,7 @@ class Conv2DTranspose(base.AbstractModule, base.Transposable):
           dimensions; or if the input tensor has an unknown `input_channels`; or
           or if `output_shape` is an iterable and is not in the format
           `(out_height, out_width)`.
-      TypeError: If input Tensor dtype is not `tf.float32`.
+      TypeError: If input Tensor dtype is not compatible with `tf.float32`.
     """
     # Handle input whose shape is unknown during graph creation.
     self._input_shape = tuple(inputs.get_shape().as_list())
@@ -737,7 +734,7 @@ class Conv2DTranspose(base.AbstractModule, base.Transposable):
       raise base.IncompatibleShapeError(
           "Number of input channels must be known at module build time")
 
-    if inputs.dtype != tf.float32:
+    if not tf.float32.is_compatible_with(inputs.dtype):
       raise TypeError("Input must have dtype tf.float32, but dtype was " +
                       inputs.dtype)
 
@@ -755,10 +752,7 @@ class Conv2DTranspose(base.AbstractModule, base.Transposable):
     weight_shape = (self._kernel_shape[0], self._kernel_shape[1],
                     self.output_channels, input_channels)
 
-    if self._data_format == DATA_FORMAT_NHWC:
-      bias_shape = (self.output_channels,)
-    else:
-      bias_shape = (1, self.output_channels, 1, 1)
+    bias_shape = (self.output_channels,)
 
     if "w" not in self._initializers:
       fan_in_shape = weight_shape[:2] + (weight_shape[3],)
@@ -801,7 +795,7 @@ class Conv2DTranspose(base.AbstractModule, base.Transposable):
                                 initializer=self._initializers["b"],
                                 partitioner=self._partitioners.get("b", None),
                                 regularizer=self._regularizers.get("b", None))
-      outputs += self._b
+      outputs = tf.nn.bias_add(outputs, self._b, data_format=self._data_format)
 
     # Recover output tensor shape value and pass it to set_shape in order to
     # enable shape inference.
@@ -1049,7 +1043,7 @@ class Conv1D(base.AbstractModule, base.Transposable):
           incompatible with the shape of the weights.
       base.UnderspecifiedError: If the input tensor has an unknown
           `input_channels`.
-      TypeError: If input Tensor dtype is not `tf.float32`.
+      TypeError: If input Tensor dtype is not compatible with `tf.float32`.
     """
     # Handle input whose shape is unknown during graph creation.
     self._input_shape = tuple(inputs.get_shape().as_list())
@@ -1065,7 +1059,7 @@ class Conv1D(base.AbstractModule, base.Transposable):
     else:
       input_channels = self._input_shape[2]
 
-    if inputs.dtype != tf.float32:
+    if not tf.float32.is_compatible_with(inputs.dtype):
       raise TypeError(
           "Input must have dtype tf.float32, but dtype was {}".format(
               inputs.dtype))
@@ -1098,7 +1092,7 @@ class Conv1D(base.AbstractModule, base.Transposable):
                                 initializer=self._initializers["b"],
                                 partitioner=self._partitioners.get("b", None),
                                 regularizer=self._regularizers.get("b", None))
-      outputs += self._b
+      outputs = tf.nn.bias_add(outputs, self._b)
 
     return outputs
 
@@ -1123,7 +1117,7 @@ class Conv1D(base.AbstractModule, base.Transposable):
   @property
   def stride(self):
     """Returns the stride."""
-    # Backwards compatability with old stride format.
+    # Backwards compatibility with old stride format.
 
     return (1,) + self._stride + (1,)
 
@@ -1336,7 +1330,7 @@ class Conv1DTranspose(base.AbstractModule, base.Transposable):
           `input_channels`.
       base.IncompatibleShapeError: If `output_shape` is not an integer or
           iterable of length 1.
-      TypeError: If input Tensor dtype is not tf.float32.
+      TypeError: If input Tensor dtype is not compatible with `tf.float32`.
     """
     # Handle input whose shape is unknown during graph creation.
     self._input_shape = tuple(inputs.get_shape().as_list())
@@ -1362,7 +1356,7 @@ class Conv1DTranspose(base.AbstractModule, base.Transposable):
       raise base.IncompatibleShapeError(
           "Output shape must be specified as (output_length)")
 
-    if inputs.dtype != tf.float32:
+    if not tf.float32.is_compatible_with(inputs.dtype):
       raise TypeError("Input must have dtype tf.float32, but dtype was {}"
                       .format(inputs.dtype))
 
@@ -1409,7 +1403,7 @@ class Conv1DTranspose(base.AbstractModule, base.Transposable):
                                 initializer=self._initializers["b"],
                                 partitioner=self._partitioners.get("b", None),
                                 regularizer=self._regularizers.get("b", None))
-      outputs += self._b
+      outputs = tf.nn.bias_add(outputs, self._b)
 
     # Remove the superfluous height dimension to return a 3D tensor.
     outputs = tf.squeeze(outputs, [1])
@@ -1637,7 +1631,7 @@ class CausalConv1D(Conv1D):
           incompatible with the shape of the weights.
       base.UnderspecifiedError: If the input tensor has an unknown
           `input_channels`.
-      TypeError: If input Tensor dtype is not `tf.float32`.
+      TypeError: If input Tensor dtype is not compatible with `tf.float32`.
     """
     # Handle input whose shape is unknown during graph creation.
     self._input_shape = tuple(inputs.get_shape().as_list())
@@ -1654,7 +1648,7 @@ class CausalConv1D(Conv1D):
     else:
       input_channels = self._input_shape[2]
 
-    if inputs.dtype != tf.float32:
+    if not tf.float32.is_compatible_with(inputs.dtype):
       raise TypeError("Input must have dtype tf.float32, but dtype was {}".
                       format(inputs.dtype))
 
@@ -1692,7 +1686,7 @@ class CausalConv1D(Conv1D):
           initializer=self._initializers["b"],
           partitioner=self._partitioners.get("b", None),
           regularizer=self._regularizers.get("b", None))
-      outputs += self._b
+      outputs = tf.nn.bias_add(outputs, self._b)
 
     return outputs
 
@@ -1797,7 +1791,7 @@ class InPlaneConv2D(base.AbstractModule):
           invocations.
       base.IncompatibleShapeError: If the input tensor has the wrong number
           of dimensions; or if the input tensor has an unknown `input_channels`.
-      TypeError: If input Tensor dtype is not tf.float32.
+      TypeError: If input Tensor dtype is not compatible with `tf.float32`.
     """
 
     # Handle input whose shape is unknown during graph creation.
@@ -1814,7 +1808,7 @@ class InPlaneConv2D(base.AbstractModule):
 
     self._input_channels = self._input_shape[3]
 
-    if inputs.dtype != tf.float32:
+    if not tf.float32.is_compatible_with(inputs.dtype):
       raise TypeError("Input must have dtype tf.float32, but dtype was " +
                       inputs.dtype.name)
 
@@ -1849,7 +1843,7 @@ class InPlaneConv2D(base.AbstractModule):
                                 initializer=self._initializers["b"],
                                 partitioner=self._partitioners.get("b", None),
                                 regularizer=self._regularizers.get("b", None))
-      outputs += self._b
+      outputs = tf.nn.bias_add(outputs, self._b)
 
     return outputs
 
@@ -2063,7 +2057,7 @@ class DepthwiseConv2D(base.AbstractModule):
           invocations.
       base.IncompatibleShapeError: If the input tensor has the wrong number
           of dimensions; or if the input tensor has an unknown `input_channels`.
-      TypeError: If input Tensor dtype is not `tf.float32`.
+      TypeError: If input Tensor dtype is not compatible with `tf.float32`.
     """
 
     # Handle input whose shape is unknown during graph creation.
@@ -2079,7 +2073,7 @@ class DepthwiseConv2D(base.AbstractModule):
           "Number of input channels must be known at module build time")
     self._input_channels = self._input_shape[3]
 
-    if inputs.dtype != tf.float32:
+    if not tf.float32.is_compatible_with(inputs.dtype):
       raise TypeError("Input must have dtype tf.float32, but dtype was " +
                       inputs.dtype.name)
 
@@ -2118,7 +2112,7 @@ class DepthwiseConv2D(base.AbstractModule):
                                 initializer=self._initializers["b"],
                                 partitioner=self._partitioners.get("b", None),
                                 regularizer=self._regularizers.get("b", None))
-      outputs += self._b
+      outputs = tf.nn.bias_add(outputs, self._b)
 
     return outputs
 
@@ -2342,7 +2336,7 @@ class SeparableConv2D(base.AbstractModule):
           overparameterized.
       base.IncompatibleShapeError: If the input tensor has the wrong number
           of dimensions; or if the input tensor has an unknown `input_channels`.
-      TypeError: If input Tensor dtype is not tf.float32.
+      TypeError: If input Tensor dtype is not compatible with `tf.float32`.
     """
 
     # Handle input whose shape is unknown during graph creation.
@@ -2359,7 +2353,7 @@ class SeparableConv2D(base.AbstractModule):
 
     self._input_channels = self._input_shape[3]
 
-    if inputs.dtype != tf.float32:
+    if not tf.float32.is_compatible_with(inputs.dtype):
       raise TypeError("Input must have dtype tf.float32, but dtype was " +
                       inputs.dtype.name)
 
@@ -2405,7 +2399,7 @@ class SeparableConv2D(base.AbstractModule):
                                 initializer=self._initializers["b"],
                                 partitioner=self._partitioners.get("b", None),
                                 regularizer=self._regularizers.get("b", None))
-      outputs += self._b
+      outputs = tf.nn.bias_add(outputs, self._b)
 
     return outputs
 
@@ -2623,7 +2617,7 @@ class Conv3D(base.AbstractModule):
           of dimensions.
       base.UnderspecifiedError: If the input tensor has an unknown
           `input_channels`.
-      TypeError: If input Tensor dtype is not `tf.float32`.
+      TypeError: If input Tensor dtype is not compatible with `tf.float32`.
     """
     # Handle input whose shape is unknown during graph creation.
     self._input_shape = tuple(inputs.get_shape().as_list())
@@ -2639,7 +2633,7 @@ class Conv3D(base.AbstractModule):
     else:
       input_channels = self._input_shape[4]
 
-    if inputs.dtype != tf.float32:
+    if not tf.float32.is_compatible_with(inputs.dtype):
       raise TypeError(
           "Input must have dtype tf.float32, but dtype was {}".format(
               inputs.dtype))
@@ -2674,7 +2668,7 @@ class Conv3D(base.AbstractModule):
                                 initializer=self._initializers["b"],
                                 partitioner=self._partitioners.get("b", None),
                                 regularizer=self._regularizers.get("b", None))
-      outputs += self._b
+      outputs = tf.nn.bias_add(outputs, self._b)
 
     return outputs
 
@@ -2699,7 +2693,7 @@ class Conv3D(base.AbstractModule):
   @property
   def stride(self):
     """Returns the stride."""
-    # Backwards compatability with old stride format.
+    # Backwards compatibility with old stride format.
 
     return (1,) + self._stride + (1,)
 
@@ -2912,7 +2906,7 @@ class Conv3DTranspose(base.AbstractModule, base.Transposable):
           dimensions; or if the input tensor has an unknown `input_channels`; or
           or if `output_shape` is an iterable and is not in the format
           `(out_height, out_width)`.
-      TypeError: If input Tensor dtype is not `tf.float32`.
+      TypeError: If input Tensor dtype is not compatible with `tf.float32`.
     """
     # Handle input whose shape is unknown during graph creation.
     self._input_shape = tuple(inputs.get_shape().as_list())
@@ -2927,7 +2921,7 @@ class Conv3DTranspose(base.AbstractModule, base.Transposable):
           "Number of input channels must be known at module build time")
     input_channels = self._input_shape[4]
 
-    if inputs.dtype != tf.float32:
+    if not tf.float32.is_compatible_with(inputs.dtype):
       raise TypeError("Input must have dtype tf.float32, but dtype was " +
                       inputs.dtype)
 
@@ -2983,7 +2977,7 @@ class Conv3DTranspose(base.AbstractModule, base.Transposable):
                                 initializer=self._initializers["b"],
                                 partitioner=self._partitioners.get("b", None),
                                 regularizer=self._regularizers.get("b", None))
-      outputs += self._b
+      outputs = tf.nn.bias_add(outputs, self._b)
 
     # Recover output tensor shape value and pass it to set_shape in order to
     # enable shape inference.

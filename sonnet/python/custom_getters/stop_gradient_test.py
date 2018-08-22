@@ -1,4 +1,4 @@
-# Copyright 2017 The cyvn.cyvn.sonnet Authors. All Rights Reserved.
+# Copyright 2017 The Sonnet Authors. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,14 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ============================================================================
-"""Tests for cyvn.cyvn.sonnet.python.modules.custom_getters.stop_gradient."""
+"""Tests for sonnet.python.modules.custom_getters.stop_gradient."""
 
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-import cyvn.cyvn.sonnet as snt
-from cyvn.cyvn.sonnet.testing import parameterized
+import sonnet as snt
+from sonnet.testing import parameterized
 import tensorflow as tf
 
 _CONV_NET_2D_KWARGS = {

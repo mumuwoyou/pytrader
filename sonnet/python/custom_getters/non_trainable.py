@@ -1,4 +1,4 @@
-# Copyright 2017 The cyvn.cyvn.sonnet Authors. All Rights Reserved.
+# Copyright 2017 The Sonnet Authors. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ def non_trainable(getter, *args, **kwargs):
   nothing. Similarly if the variable is reused after being created by this
   custom getter it will still be non-trainable, even if `trainable=True`.
 
-  When used with a cyvn.cyvn.sonnet module, the module must be constructed inside the
+  When used with a Sonnet module, the module must be constructed inside the
   variable scope with the custom getter. Just building the module inside said
   variable scope will not use the custom getter.
 

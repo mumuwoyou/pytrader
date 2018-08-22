@@ -29,7 +29,6 @@ import six
 import tensorflow as tf
 
 from tensorflow.python.ops import variable_scope as variable_scope_ops
-from tensorflow.python.util import deprecation
 
 
 def get_variable_scope_name(value):
@@ -113,7 +112,7 @@ def _check_nested_callables(dictionary, object_name):
       dictionary or a callable.
   """
   for key, entry in six.iteritems(dictionary):
-    if isinstance(entry, dict):
+    if hasattr(entry, "items"):
       _check_nested_callables(entry, object_name)
     elif not callable(entry):
       raise TypeError(
@@ -140,22 +139,12 @@ def check_initializers(initializers, keys):
 
   Raises:
     KeyError: If an initializer is provided for a key not in `keys`.
-    TypeError: If a provided initializer is not a callable function, or if the
-      dict of initializers is not in fact a dict.
+    TypeError: If a provided initializer is not a callable function.
   """
   if initializers is None:
     return {}
 
   keys = set(keys)
-
-  # If the user is creating modules that nests other modules, then it is
-  # possible that they might not nest the initializer dictionaries correctly. If
-  # that is the case, then we might find that initializers is not a dict here.
-  # We raise a helpful exception in this case.
-  if not issubclass(type(initializers), dict):
-    raise TypeError("A dict of initializers was expected, but not "
-                    "given. You should double-check that you've nested the "
-                    "initializers for any sub-modules correctly.")
 
   if not set(initializers) <= keys:
     extra_keys = set(initializers) - keys
@@ -235,15 +224,6 @@ def check_regularizers(regularizers, keys):
     return {}
 
   keys = set(keys)
-
-  # If the user is creating modules that nests other modules, then it is
-  # possible that they might not nest the regularizer dictionaries correctly. If
-  # that is the case, then we might find that regularizers is not a dict here.
-  # We raise a helpful exception in this case.
-  if not issubclass(type(regularizers), dict):
-    raise TypeError("A dict of regularizers was expected, but not "
-                    "given. You should double-check that you've nested the "
-                    "regularizers for any sub-modules correctly.")
 
   if not set(regularizers) <= keys:
     extra_keys = set(regularizers) - keys
@@ -413,7 +393,7 @@ def get_normalized_variable_map(scope_or_module,
   else:
     single_vars, grouped_vars = _get_sliced_variables(variables)
 
-  var_map = {var.name[prefix_length:]: var for var in single_vars}
+  var_map = {var.op.name[prefix_length:]: var for var in single_vars}
   for full_name, var_group in grouped_vars.items():
     name = full_name[prefix_length:]
     if name in var_map:
@@ -423,13 +403,8 @@ def get_normalized_variable_map(scope_or_module,
   return var_map
 
 
-@deprecation.deprecated_arg_values(
-    "2017-08-01",
-    "Start using group_sliced_variables=True. This may break your checkpoints "
-    "if they contain sliced (partitioned) variables",
-    group_sliced_variables=False)
 def get_saver(scope, collections=(tf.GraphKeys.GLOBAL_VARIABLES,),  # pylint: disable=redefined-outer-name
-              context=None, group_sliced_variables=True):
+              context=None, **kwargs):
   """Builds a `tf.train.Saver` for the scope or module, with normalized names.
 
   The names of the variables are normalized to remove the scope prefix.
@@ -443,9 +418,7 @@ def get_saver(scope, collections=(tf.GraphKeys.GLOBAL_VARIABLES,),  # pylint: di
         which includes moving averages variables as well as trainable variables.
     context: Scope or module, identical to or parent of `scope`. If given, this
         will be used as the stripped prefix.
-    group_sliced_variables: Boolean, if set to True, sliced variables are
-       grouped together in the returned map; if set to False, each partition of
-       a sliced variable is a separate (key, value) pair.
+    **kwargs: Extra keyword arguments to pass to tf.train.Saver.
 
   Returns:
     A `tf.train.Saver` object for Variables in the scope or module.
@@ -453,11 +426,9 @@ def get_saver(scope, collections=(tf.GraphKeys.GLOBAL_VARIABLES,),  # pylint: di
 
   variable_map = {}
   for collection in collections:
-    variable_map.update(get_normalized_variable_map(
-        scope, collection, context,
-        group_sliced_variables))
+    variable_map.update(get_normalized_variable_map(scope, collection, context))
 
-  return tf.train.Saver(var_list=variable_map)
+  return tf.train.Saver(var_list=variable_map, **kwargs)
 
 
 def has_variable_scope(obj):
@@ -476,7 +447,7 @@ def _format_table(rows, join_lines=True):
 
 
 def variable_map_items(variable_map):
-  """Returns an iterator over (string, variable) pairs in the variable map.
+  """Yields an iterator over (string, variable) pairs in the variable map.
 
   In general, variable maps map variable names to either a `tf.Variable`, or
   list of `tf.Variable`s (in case of sliced variables).
@@ -501,8 +472,7 @@ def _get_vars_to_collections(variables):
   if isinstance(variables, dict):
     variables = list(v for _, v in variable_map_items(variables))
   for graph in set(v.graph for v in variables):
-
-    for collection_name in list(graph._collections):  # pylint: disable=protected-access
+    for collection_name in list(graph.collections):
       entries = set(entry for entry in graph.get_collection(collection_name)
                     if isinstance(entry, tf.Variable))
       # For legacy reasons, tf.GraphKeys.GLOBAL_VARIABLES == "variables".
@@ -519,11 +489,14 @@ def format_variables(variables, join_lines=True):
   rows = []
   rows.append(("Variable", "Shape", "Type", "Collections", "Device"))
   var_to_collections = _get_vars_to_collections(variables)
-  for var in sorted(variables, key=lambda var: var.name):
-    shape = "x".join(str(dim) for dim in var.get_shape().as_list())
+  for var in sorted(variables, key=lambda var: var.op.name):
+    if var.get_shape().is_fully_defined():
+      shape = "x".join(str(dim) for dim in var.get_shape().as_list())
+    else:
+      shape = "undefined"
     dtype = repr(var.dtype.base_dtype).replace("tf.", "")
     coll = ", ".join(sorted(var_to_collections[var]))
-    rows.append((var.name, shape, dtype, coll, var.device))
+    rows.append((var.op.name, shape, dtype, coll, var.device))
   return _format_table(rows, join_lines)
 
 
@@ -538,7 +511,7 @@ def format_variable_map(variable_map, join_lines=True):
     shape = "x".join(str(dim) for dim in var.get_shape().as_list())
     dtype = repr(var.dtype.base_dtype).replace("tf.", "")
     coll = ", ".join(sorted(var_to_collections[var]))
-    rows.append((key, var.name, shape, dtype, coll, var.device))
+    rows.append((key, var.op.name, shape, dtype, coll, var.device))
   return _format_table(rows, join_lines)
 
 
@@ -589,8 +562,8 @@ def reuse_variables(method):
   module = MyModule("my_module_name")
   input_tensor = tf.zeros(shape=(5,))
 
-  # This creates the variable "my_module_name/x:0"
-  # and op "my_module_name/add_x/add:0"
+  # This creates the variable "my_module_name/x"
+  # and op "my_module_name/add_x/add"
   output = module.add_x(input_tensor)
   ```
 

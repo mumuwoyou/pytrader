@@ -8,16 +8,17 @@
 from __future__ import division
 import numpy as np
 import talib
+import time
 
 from cyvn.trader.vtObject import VtBarData
 from cyvn.trader.vtConstant import EMPTY_STRING
-from cyvn.trader.app.ctaStrategy.ctaTemplate import (TargetPosTemplate,
+from cyvn.trader.app.ctaStrategy.ctaTemplate import (CtaTemplate,
                                                      BarGenerator,
                                                      ArrayManager)
 
 
 ########################################################################
-class HorizBreakoutStrategy(TargetPosTemplate):
+class HorizBreakoutStrategy(CtaTemplate):
     """基于Adxr的交易策略"""
     className = 'AdxrStrategy'
     author = u'用Python的交易员'
@@ -37,7 +38,7 @@ class HorizBreakoutStrategy(TargetPosTemplate):
     sell_low = 0
     buy_price = 0
     sell_price = 0
-
+    targetPos = 0
 
     buyOrderIDList = []                 # OCO委托买入开仓的委托号
     shortOrderIDList = []               # OCO委托卖出开仓的委托号
@@ -105,22 +106,54 @@ class HorizBreakoutStrategy(TargetPosTemplate):
     #----------------------------------------------------------------------
     def onTick(self, tick):
         """收到行情TICK推送（必须由用户继承实现）"""
-        TargetPosTemplate.onTick(self, tick)
         self.bg.updateTick(tick)
+
+        self.putEvent()
 
     #----------------------------------------------------------------------
     def onBar(self, bar):
         """收到Bar推送（必须由用户继承实现）"""
-        TargetPosTemplate.onBar(self, bar)
         self.bg.updateBar(bar)
-
-    #----------------------------------------------------------------------
-    def onMyBar(self, bar):
-        """收到30分钟K线"""
         # 撤销之前发出的尚未成交的委托（包括限价单和停止单）
         for orderID in self.orderList:
             self.cancelOrder(orderID)
         self.orderList = []
+
+        if self.targetPos > 0:
+            if self.pos == 0:
+                orderID = self.buy(bar.close + 5, self.fixedSize)
+                self.orderList.extend(orderID)
+            if self.pos < 0:
+                orderID = self.cover(bar.close + 5, abs(self.pos))
+                self.orderList.extend(orderID)
+                # time.sleep(1)
+                # orderID = self.buy(bar.close + 5, self.fixedSize)
+                # self.orderList.extend(orderID)
+
+            if self.targetPos < 0:
+                if self.pos == 0:
+                    orderID = self.short(bar.close - 5, self.fixedSize)
+                    self.orderList.extend(orderID)
+                if self.pos > 0:
+                    orderID = self.sell(bar.close - 5, abs(self.pos))
+                    self.orderList.extend(orderID)
+                    # time.sleep(1)
+                    # orderID = self.short(bar.close - 5, self.fixedSize)
+                    # self.orderList.extend(orderID)
+
+            if self.targetPos == 0:
+                if self.pos > 0:
+                    orderID = self.sell(bar.close - 5, abs(self.pos))
+                    self.orderList.extend(orderID)
+                if self.pos < 0:
+                    orderID = self.cover(bar.close + 5, abs(self.pos))
+                    self.orderList.extend(orderID)
+
+
+
+    #----------------------------------------------------------------------
+    def onMyBar(self, bar):
+        """收到30分钟K线"""
 
         # 保存K线数据
         am = self.am
@@ -138,38 +171,56 @@ class HorizBreakoutStrategy(TargetPosTemplate):
         # 判断是否要进行交易
         # 多头
         if vibrate and am.openArray[-1] + am.highArray[-1] + am.lowArray[-1] + am.closeArray[-1]  > 4*h_high :
-            if self.pos == 0:
-                #orderID = self.buy(bar.close + 5, self.fixedSize)
-                #self.orderList.extend(orderID)
-                self.setTargetPos(self.fixedSize)
-                self.buy_price = am.close[-1]
-                self.buy_high = am.high[-1]
+            # if self.pos == 0:
+            #     orderID = self.buy(bar.close + 5, self.fixedSize)
+            #     self.orderList.extend(orderID)
+            #     self.buy_price = am.close[-1]
+            #     self.buy_high = am.high[-1]
+            # if self.pos < 0:
+            #     orderID = self.cover(bar.close + 5, abs(self.pos))
+            #     self.orderList.extend(orderID)
+            #     time.sleep(2)
+            #     orderID = self.buy(bar.close + 5, self.fixedSize)
+            #     self.orderList.extend(orderID)
+            #     self.buy_price = am.close[-1]
+            #     self.buy_high = am.high[-1]
+            self.targetPos = self.fixedSize
+
+
         # 空头
         if vibrate and am.openArray[-1] + am.highArray[-1] + am.lowArray[-1] + am.closeArray[-1] < 4*l_low:
-            if self.pos == 0:
-                #orderID = self.short(bar.close -5, self.fixedSize)
-                #self.orderList.extend(orderID)
-                self.setTargetPos(-self.fixedSize)
-                self.sell_price = am.close[-1]
-                self.sell_low = am.low[-1]
+            # if self.pos == 0:
+            #     orderID = self.short(bar.close -5, self.fixedSize)
+            #     self.orderList.extend(orderID)
+            #     self.sell_price = am.close[-1]
+            #     self.sell_low = am.low[-1]
+            # if self.pos > 0:
+            #     orderID = self.sell(bar.close - 5, abs(self.pos))
+            #     self.orderList.extend(orderID)
+            #     time.sleep(2)
+            #     orderID = self.short(bar.close - 5, self.fixedSize)
+            #     self.orderList.extend(orderID)
+            #     self.sell_price = am.close[-1]
+            #     self.sell_low = am.low[-1]
+            self.targetPos = -self.fixedSize
 
         if self.pos > 0 and am.high[-1] > self.buy_high:
             self.buy_high = am.high[-1]
-
         if self.pos < 0 and am.low[-1] < self.sell_low:
             self.sell_low = am.low[-1]
+
         # 平多头
         if self.pos > 0 and  ((2*am.close[-1] < self.buy_price + self.buy_high
                   and self.buy_high > self.buy_price + 40)  or am.close[-1] < l_low):
-            #orderID = self.sell(bar.close - 5, abs(self.pos))
-            #self.orderList.extend(orderID)
-            self.setTargetPos(0)
+            # orderID = self.sell(bar.close - 5, abs(self.pos))
+            # self.orderList.extend(orderID)
+            self.targetPos = 0
         #平空头
         if self.pos < 0 and ((2*am.close[-1] > self.sell_price + self.sell_low
                     and self.sell_low < self.sell_price  - 40) or am.close[-1] >h_high):
-            #orderID = self.cover(bar.close + 5, abs(self.pos))
-            #self.orderList.extend(orderID)
-            self.setTargetPos(0)
+            # orderID = self.cover(bar.close + 5, abs(self.pos))
+            # self.orderList.extend(orderID)
+            self.targetPos = 0
 
         # 同步数据到数据库
         self.saveSyncData()

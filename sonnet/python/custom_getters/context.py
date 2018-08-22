@@ -1,4 +1,4 @@
-# Copyright 2017 The cyvn.cyvn.sonnet Authors. All Rights Reserved.
+# Copyright 2017 The Sonnet Authors. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ from __future__ import print_function
 class Context(object):
   """Contextually switching a custom getter on.
 
-  Example usage, once cyvn.cyvn.sonnet modules accept a custom_getter argument:
+  Example usage, once Sonnet modules accept a custom_getter argument:
 
     custom_getter = snt.custom_getters.Context(snt.custom_getters.stop_gradient)
     lin = snt.Linear(10, custom_getter=custom_getter)

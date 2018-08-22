@@ -1,4 +1,4 @@
-# Copyright 2017 The cyvn.cyvn.sonnet Authors. All Rights Reserved.
+# Copyright 2017 The Sonnet Authors. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -33,7 +33,7 @@ def stop_gradient(getter, *args, **kwargs):
   module being `None`. By default, the variables will still be in the trainable
   variables collection.
 
-  When used with a cyvn.cyvn.sonnet module, the module must be constructed inside the
+  When used with a Sonnet module, the module must be constructed inside the
   variable scope with the custom getter. Just building the module inside said
   variable scope will not use the custom getter.
 
