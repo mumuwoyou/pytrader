@@ -10,13 +10,13 @@ from  cyvn.trader.app.ctaStrategy.ctaBase import DAILY_DB_NAME
 def getcvs():
     import  os
     os.getcwd()
-    with open("~/.rqalpha/bundle/futures.bcolz/__attrs__") as f:
+    with open("/home/linlin/.rqalpha/bundle/futures.bcolz/__attrs__") as f:
         drSetting = json.load(f)
     if 'line_map' in drSetting:
                     lm= drSetting['line_map']
-                    if 'AG88' in lm:
-                        lines = lm['AG88']
-    data = bcolz.open(rootdir="~/.rqalpha/bundle/futures.bcolz", mode='a')
+                    if 'RB88' in lm:
+                        lines = lm['RB88']
+    data = bcolz.open(rootdir="/home/linlin/.rqalpha/bundle/futures.bcolz", mode='a')
     save = data.todataframe(columns= ['date', 'open', 'close','high', 'low', 'volume','open_interest'])
     s = save.iloc[lines[0]:lines[1]]
     s.to_csv('futures.cvs')
@@ -28,7 +28,7 @@ def loadDayTxt(fileName, dbName, symbol):
     import pandas as pd
     import pymongo
 
-    from vnpy.trader.vtObject import VtBarData
+    from cyvn.trader.vtObject import VtBarData
 
     getcvs()
 
@@ -38,7 +38,7 @@ def loadDayTxt(fileName, dbName, symbol):
     # 锁定集合，并创建索引
 
 
-    client = pymongo.MongoClient('localhost',
+    client = pymongo.MongoClient('149.28.56.155',
                                             27017,
                                             username = 'root',
                                             password = 'll159582',
@@ -48,9 +48,9 @@ def loadDayTxt(fileName, dbName, symbol):
 
     # 读取数据和插入到数据库
 
-    reader = csv.DictReader(file(fileName, 'r',))
-
-    for d in reader:
+    reader = csv.DictReader(open(fileName, 'r',))
+    rows = [row for row in reader]
+    for d in rows[-200:-1]:
         bar = VtBarData()
         bar.vtSymbol = symbol
         bar.symbol = symbol
@@ -68,10 +68,11 @@ def loadDayTxt(fileName, dbName, symbol):
 
         flt = {'datetime': bar.datetime}
         collection.update_one(flt, {'$set':bar.__dict__}, upsert=True)
+        print(bar.date)
 
 
     print (u'插入完毕，耗时：%s' % (time()-start))
 
 
 if __name__ == '__main__':
-    loadDayTxt('futures.cvs', DAILY_DB_NAME, 'ag1812')
+    loadDayTxt('futures.cvs', DAILY_DB_NAME, 'rb1901')
