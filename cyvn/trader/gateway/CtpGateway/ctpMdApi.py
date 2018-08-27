@@ -165,8 +165,8 @@ class CtpMdApi(MdApi):
 
 
         if not pDepthMarketData.Volume and pDepthMarketData.InstrumentID:
-            self.writeLog(u'忽略成交量为0的无效单合约tick数据:')
-            self.writeLog(pDepthMarketData)
+            #self.writeLog(u'忽略成交量为0的无效单合约tick数据:')
+            #self.writeLog(pDepthMarketData)
             return
 
         if not self.connectionStatus:
