@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
-import hashlib, os, sys, tempfile, time, datetime
+import hashlib, os, sys, tempfile, time
+from datetime import datetime, timedelta
 import logging
 from cyvn.ctp.futures import ApiStruct, MdApi
 from cyvn.trader.vtObject import *
@@ -8,7 +9,7 @@ from cyvn.trader.gateway.CtpGateway.language import text
 from cyvn.trader.vtConstant import *
 
 # 夜盘交易时间段分隔判断
-NIGHT_TRADING = datetime.datetime(1900, 1, 1, 20).time()
+NIGHT_TRADING = datetime(1900, 1, 1, 20).time()
 
 # 全局字典, key:symbol, value:exchange
 symbolExchangeDict = {}
@@ -162,9 +163,15 @@ class CtpMdApi(MdApi):
         #print('OnRtnDepthMarketData:', pDepthMarketData)
         """行情推送"""
 
-        symbol = pDepthMarketData.InstrumentID.decode()
-        if symbol not in symbolExchangeDict:
+
+        if not pDepthMarketData.Volume and pDepthMarketData.InstrumentID:
+            self.writeLog(u'忽略成交量为0的无效单合约tick数据:')
+            self.writeLog(pDepthMarketData)
             return
+
+        if not self.connectionStatus:
+            self.connectionStatus = True
+
 
         
         # 创建对象
@@ -172,8 +179,10 @@ class CtpMdApi(MdApi):
         tick.gatewayName = self.gatewayName
         
         tick.symbol = str(pDepthMarketData.InstrumentID.decode())
-        tick.exchange = symbolExchangeDict[tick.symbol]
+        #tick.exchange = symbolExchangeDict[tick.symbol]
         #tick.exchange = str(pDepthMarketData.ExchangeID.decode()) #exchangeMapReverse.get(pDepthMarketData.ExchangeID, u'未知')
+        tick.exchange = str(exchangeMapReverse.get(pDepthMarketData.ExchangeID.decode(), u'未知'))
+
         tick.vtSymbol = tick.symbol #'.'.join([tick.symbol, EXCHANGE_UNKNOWN])
 
         tick.lastPrice = pDepthMarketData.LastPrice
@@ -183,7 +192,25 @@ class CtpMdApi(MdApi):
         
         # 这里由于交易所夜盘时段的交易日数据有误，所以选择本地获取
         #tick.date = pDepthMarketData.TradingDay
-        tick.date = pDepthMarketData.TradingDay.decode() #time.now().strftime('%Y%m%d')   
+        tick.date = pDepthMarketData.TradingDay.decode() #time.now().strftime('%Y%m%d')
+
+        # # 先根据交易日期，生成时间
+        # tick.datetime = datetime.strptime(tick.date + ' ' + tick.time, '%Y%m%d %H:%M:%S.%f')
+        # # 修正时间
+        # if tick.datetime.hour >= 20:
+        #     if tick.datetime.isoweekday() == 1:
+        #         # 交易日是星期一，实际时间应该是星期五
+        #         tick.datetime = tick.datetime - timedelta(days=3)
+        #         tick.date = tick.datetime.strftime('%Y-%m-%d')
+        #     else:
+        #         # 第二天
+        #         tick.datetime = tick.datetime - timedelta(days=1)
+        #         tick.date = tick.datetime.strftime('%Y-%m-%d')
+        # elif tick.datetime.hour < 8 and tick.datetime.isoweekday() == 1:
+        #     # 如果交易日是星期一，并且时间是早上8点前 => 星期六
+        #     tick.datetime = tick.datetime + timedelta(days=2)
+        #     tick.date = tick.datetime.strftime('%Y-%m-%d')
+
         
         tick.openPrice = pDepthMarketData.OpenPrice
         tick.highPrice = pDepthMarketData.HighestPrice
@@ -198,7 +225,7 @@ class CtpMdApi(MdApi):
         tick.bidVolume1 = pDepthMarketData.BidVolume1
         tick.askPrice1 = pDepthMarketData.AskPrice1
         tick.askVolume1 = pDepthMarketData.AskVolume1
-        tick.datetime = datetime.datetime.strptime(' '.join([tick.date, tick.time]), '%Y%m%d %H:%M:%S.%f')
+        tick.datetime = datetime.strptime(' '.join([tick.date, tick.time]), '%Y%m%d %H:%M:%S.%f')
 
         # 大商所日期转换
         if tick.exchange is EXCHANGE_DCE:

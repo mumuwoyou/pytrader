@@ -2,21 +2,21 @@
     {
         "name": "HorizBreakout",
         "className": "HorizBreakoutStrategy",
-        "vtSymbol": "rb1810"
+        "vtSymbol": "rb1901"
     },
     {
         "name": "BollChannel01",
         "className": "BollChannelStrategy01",
-        "vtSymbol": "rb1810"
+        "vtSymbol": "rb1901"
     },
     {
-        "name": "BasicLSTM",
-        "className": "BasicLSTMStrategy",
+        "name": "DeepLSTM",
+        "className": "DeepLSTMStrategy",
         "vtSymbol": "ag1812"
     },
     {
         "name": "AvgBreak",
         "className": "AvgBreakStrategy",
-        "vtSymbol": "rb1810"
+        "vtSymbol": "rb1901"
     }
 ]

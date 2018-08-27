@@ -35,10 +35,13 @@ class BasicCell(QtWidgets.QTableWidgetItem):
     #----------------------------------------------------------------------
     def setContent(self, text):
         """设置内容"""
-        if text == '0' or text == '0.0':
+        if text == '0' or text == '0.0' or type(text) == type(None):
             self.setText('')
+        elif isinstance(text, float):
+            f_str = str("%.8f" % text)
+            self.setText(floatToStr(f_str))
         else:
-            self.setText(text)
+            self.setText(str(text))
 
 
 ########################################################################

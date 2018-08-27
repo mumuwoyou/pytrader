@@ -56,6 +56,14 @@ class CtaTemplate(object):
         """Constructor"""
         self.ctaEngine = ctaEngine
 
+        # 委托单状态
+        self.entrust = 0  # 0 表示没有委托，1 表示存在多仓的委托，-1 表示存在空仓的委托
+
+        # 保存委托单编号和相关委托单的字典
+        # key为委托单编号
+        # value为该合约相关的委托单
+        self.uncompletedOrders = {}
+
         # 设置策略的参数
         if setting:
             d = self.__dict__
@@ -104,24 +112,89 @@ class CtaTemplate(object):
         raise NotImplementedError
     
     #----------------------------------------------------------------------
-    def buy(self, price, volume, stop=False):
+    def buy(self, price, volume, stop=False, orderTime=None):
         """买开"""
         return self.sendOrder(CTAORDER_BUY, price, volume, stop)
+        # if orderTime is None:
+        #     orderTime = datetime.now()
+        #
+        # orderID = self.sendOrder(CTAORDER_BUY, price, volume, stop)
+        # if orderID !='':
+        #     self.entrust = 1                            # 委托状态
+        #     d = {'DIRECTION': DIRECTION_LONG, 'OFFSET': OFFSET_OPEN,
+        #          'Volume': volume, 'TradedVolume': EMPTY_INT,
+        #          'Price': price, 'OrderTime': orderTime}
+        #
+        #     self.uncompletedOrders[orderID] = d
+        #     return orderID
+        # else:
+        #     # 交易停止时发单返回空字符串
+        #     return ''
+
     
     #----------------------------------------------------------------------
-    def sell(self, price, volume, stop=False):
+    def sell(self, price, volume, stop=False, orderTime=None):
         """卖平"""
-        return self.sendOrder(CTAORDER_SELL, price, volume, stop)       
+        return self.sendOrder(CTAORDER_SELL, price, volume, stop)
+        # if orderTime is None:
+        #     orderTime = datetime.now()
+        #
+        # orderID = self.sendOrder(CTAORDER_SELL, price, volume, stop)
+        # if orderID !='':
+        #     self.entrust = -1                           # 置当前策略的委托单状态
+        #     # 记录委托单
+        #     d = {'DIRECTION': DIRECTION_SHORT,'OFFSET': OFFSET_CLOSE,
+        #          'Volume': volume, 'TradedVolume': EMPTY_INT,
+        #          'Price': price, 'OrderTime': orderTime}
+        #
+        #     self.uncompletedOrders[orderID] = d
+        #     return orderID
+        # else:
+        #     # 交易停止时发单返回空字符串
+        #     return ''
+
 
     #----------------------------------------------------------------------
-    def short(self, price, volume, stop=False):
+    def short(self, price, volume, stop=False, orderTime=None):
         """卖开"""
-        return self.sendOrder(CTAORDER_SHORT, price, volume, stop)          
- 
+        return self.sendOrder(CTAORDER_SHORT, price, volume, stop)
+        # if orderTime is None:
+        #     orderTime = datetime.now()
+        #
+        # orderID = self.sendOrder(CTAORDER_SHORT, price, volume, stop)
+        # if orderID != '':
+        #     self.entrust = -1  # 委托状态
+        #     d = {'DIRECTION': DIRECTION_SHORT, 'OFFSET': OFFSET_OPEN,
+        #          'Volume': volume, 'TradedVolume': EMPTY_INT,
+        #          'Price': price, 'OrderTime': orderTime}
+        #
+        #     self.uncompletedOrders[orderID] = d
+        #     return orderID
+        # else:
+        #     # 交易停止时发单返回空字符串
+        #     return ''
+        #
     #----------------------------------------------------------------------
-    def cover(self, price, volume, stop=False):
+    def cover(self, price, volume, stop=False, orderTime=None):
         """买平"""
         return self.sendOrder(CTAORDER_COVER, price, volume, stop)
+        # if orderTime is None:
+        #     orderTime = datetime.now()
+        #
+        # orderID = self.sendOrder(CTAORDER_COVER, price, volume, stop)
+        #
+        # if orderID !='':
+        #     self.entrust = 1                           # 置当前策略的委托单状态
+        #     # 记录委托单
+        #     d ={'DIRECTION': DIRECTION_LONG, 'OFFSET': OFFSET_CLOSE,
+        #          'Volume': volume, 'TradedVolume': EMPTY_INT,
+        #          'Price': price, 'OrderTime': orderTime}
+        #
+        #     self.uncompletedOrders[orderID] = d
+        #     return orderID
+        # else:
+        #     # 交易停止时发单返回空字符串
+        #     return ''
         
     #----------------------------------------------------------------------
     def sendOrder(self, orderType, price, volume, stop=False):

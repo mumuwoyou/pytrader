@@ -265,19 +265,19 @@ class CtpTdApi(TraderApi):
         """发单错误（柜台）"""
         # 推送委托信息
         #print(pInputOrder)
-        # order = VtOrderData()
-        # order.gatewayName = self.gatewayName
-        # order.symbol = pInputOrder.InstrumentID.decode()
-        # order.exchange = exchangeMapReverse.get(pInputOrder.ExchangeID.decode(), '')
-        # order.vtSymbol = order.symbol.decode()
-        # order.orderID = pInputOrder.OrderRef
-        # order.vtOrderID = '.'.join([self.gatewayName, order.orderID])
-        # order.direction = directionMapReverse.get(pInputOrder.Direction, DIRECTION_UNKNOWN)
-        # order.offset = offsetMapReverse.get(pInputOrder.CombOffsetFlag, OFFSET_UNKNOWN)
-        # order.status = STATUS_REJECTED
-        # order.price = pInputOrder.LimitPrice
-        # order.totalVolume = pInputOrder.VolumeTotalOriginal
-        # self.gateway.onOrder(order)
+        order = VtOrderData()
+        order.gatewayName = self.gatewayName
+        order.symbol = pInputOrder.InstrumentID.decode()
+        order.exchange = exchangeMapReverse.get(pInputOrder.ExchangeID.decode(), '')
+        order.vtSymbol = order.symbol.decode()
+        order.orderID = pInputOrder.OrderRef
+        order.vtOrderID = '.'.join([self.gatewayName, order.orderID])
+        order.direction = directionMapReverse.get(pInputOrder.Direction, DIRECTION_UNKNOWN)
+        order.offset = offsetMapReverse.get(pInputOrder.CombOffsetFlag, OFFSET_UNKNOWN)
+        order.status = STATUS_REJECTED
+        order.price = pInputOrder.LimitPrice
+        order.totalVolume = pInputOrder.VolumeTotalOriginal
+        self.gateway.onOrder(order)
         
         # 推送错误信息
         err = VtErrorData()
@@ -338,8 +338,8 @@ class CtpTdApi(TraderApi):
             pos.ydPosition = pInvestorPosition.Position
             
         # 计算成本
-        size = self.symbolSizeDict[pos.symbol]
-        cost = pos.price * pos.position * size
+        #size = self.symbolSizeDict[pos.symbol]
+        cost = pos.price * pos.position #* size
         
         # 汇总总仓
         pos.position += pInvestorPosition.Position
