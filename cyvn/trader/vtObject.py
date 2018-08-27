@@ -40,12 +40,14 @@ class VtTickData(VtBaseData):
         self.time = EMPTY_STRING                # 时间 11:20:56.5
         self.date = EMPTY_STRING                # 日期 20151009
         self.datetime = None                    # python的datetime时间对象
+        self.tradingDay = EMPTY_STRING
         
         # 常规行情
         self.openPrice = EMPTY_FLOAT            # 今日开盘价
         self.highPrice = EMPTY_FLOAT            # 今日最高价
         self.lowPrice = EMPTY_FLOAT             # 今日最低价
         self.preClosePrice = EMPTY_FLOAT
+        self.preOpenInterest = EMPTY_INT
         
         self.upperLimit = EMPTY_FLOAT           # 涨停价
         self.lowerLimit = EMPTY_FLOAT           # 跌停价
@@ -346,6 +348,21 @@ class VtCancelOrderReq(object):
         self.orderID = EMPTY_STRING             # 报单号
         self.frontID = EMPTY_STRING             # 前置机号
         self.sessionID = EMPTY_STRING           # 会话号
+
+##########################################################################
+class VtSignalData(VtBaseData):
+    """信号数据类"""
+
+    # ----------------------------------------------------------------------
+    def __init__(self):
+        super(VtSignalData, self).__init__()
+        self.time = datetime.now().strftime('%X:%f')
+        self.source = EMPTY_STRING  # 来源
+        self.symbol = EMPTY_STRING  # 合约信息
+        self.direction = EMPTY_STRING   #信号方向
+        self.price = EMPTY_FLOAT    # 信号价格
+        self.level = EMPTY_INT      # 0 普通信号，1，强信号
+
 
 
 ########################################################################
