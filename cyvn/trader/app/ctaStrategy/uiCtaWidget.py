@@ -5,7 +5,6 @@ CTA模块相关的GUI控制组件
 '''
 
 
-
 from cyvn.trader.eventEngine import Event
 from cyvn.trader.vtEvent import *
 from cyvn.trader.uiBasicWidget import QtGui, QtCore, QtWidgets, BasicCell
@@ -62,7 +61,7 @@ class CtaValueMonitor(QtWidgets.QTableWidget):
 ########################################################################
 class CtaStrategyManager(QtWidgets.QGroupBox):
     """策略管理组件"""
-    signal = QtCore.pyqtSignal(type(Event()))
+    signal = QtCore.Signal(type(Event()))
 
     #----------------------------------------------------------------------
     def __init__(self, ctaEngine, eventEngine, name, parent=None):
@@ -157,7 +156,7 @@ class CtaStrategyManager(QtWidgets.QGroupBox):
 ########################################################################
 class CtaEngineManager(QtWidgets.QWidget):
     """CTA引擎管理组件"""
-    signal = QtCore.pyqtSignal(type(Event()))
+    signal = QtCore.Signal(type(Event()))
 
     #----------------------------------------------------------------------
     def __init__(self, ctaEngine, eventEngine, parent=None):
