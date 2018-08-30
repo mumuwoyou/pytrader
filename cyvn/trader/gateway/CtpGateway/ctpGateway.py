@@ -204,6 +204,14 @@ class CtpGateway(VtGateway):
         """设置是否要启动循环查询"""
         self.qryEnabled = qryEnabled
 
+    # ----------------------------------------------------------------------
+    def writeLog(self, content):
+        """发出日志"""
+        log = VtLogData()
+        log.gatewayName = self.gatewayName
+        log.logContent = content
+        self.onLog(log)
+
 
 
 
