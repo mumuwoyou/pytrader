@@ -144,8 +144,7 @@ class HorizBreakoutStrategy(CtaTemplate):
                 orderID = self.cover(bar.close + 5, abs(self.pos))
                 self.orderList.extend(orderID)
 
-
-
+        self.putEvent()
 
     #----------------------------------------------------------------------
     def onMyBar(self, bar):
