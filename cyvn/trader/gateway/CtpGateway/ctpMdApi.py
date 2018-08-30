@@ -195,7 +195,7 @@ class CtpMdApi(MdApi):
         #tick.date = pDepthMarketData.TradingDay.decode() #time.now().strftime('%Y%m%d')
 
         # 先根据交易日期，生成时间
-        tick.datetime = datetime.strptime(tick.date + ' ' + tick.time, '%Y%m%d %H:%M:%S.%f')
+        tick.datetime = datetime.strptime(tick.date + ' ' + tick.time, '%H:%M:%S.%f')
         # 修正时间
         if tick.datetime.hour >= 20:
             if tick.datetime.isoweekday() == 1:
