@@ -590,19 +590,19 @@ class DataEngine(object):
             self.detailDict[vtSymbol] = detail
             
             # 设置持仓细节的委托转换模式
-            contract = self.getContract(vtSymbol)
+        contract = self.getContract(vtSymbol)
             
-            if contract:
-                detail.exchange = contract.exchange
+        if contract:
+            detail.exchange = contract.exchange
                 
                 # 上期所合约
-                if contract.exchange == EXCHANGE_SHFE:
-                    detail.mode = detail.MODE_SHFE
+            if contract.exchange == EXCHANGE_SHFE:
+                detail.mode = detail.MODE_SHFE
                 
                 # 检查是否有平今惩罚
-                for productID in self.tdPenaltyList:
-                    if str(productID) in contract.symbol:
-                        detail.mode = detail.MODE_TDPENALTY
+            for productID in self.tdPenaltyList:
+                if str(productID) in contract.symbol:
+                    detail.mode = detail.MODE_TDPENALTY
                 
         return detail
     
@@ -861,13 +861,13 @@ class PositionDetail(object):
     #----------------------------------------------------------------------
     def updatePosition(self, pos):
         """持仓更新"""
-        if pos.direction is DIRECTION_LONG:
+        if pos.direction == DIRECTION_LONG:
             self.longPos = pos.position
             self.longYd = pos.ydPosition
             self.longTd = self.longPos - self.longYd
             self.longPnl = pos.positionProfit
             self.longPrice = pos.price
-        elif pos.direction is DIRECTION_SHORT:
+        elif pos.direction == DIRECTION_SHORT:
             self.shortPos = pos.position
             self.shortYd = pos.ydPosition
             self.shortTd = self.shortPos - self.shortYd

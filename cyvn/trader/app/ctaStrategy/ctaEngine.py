@@ -13,7 +13,7 @@ from collections import OrderedDict
 from datetime import datetime, timedelta
 from copy import copy
 
-from cyvn.event import Event
+from cyvn.trader.eventEngine import Event
 from cyvn.trader.vtEvent import *
 from cyvn.trader.vtConstant import *
 from cyvn.trader.vtObject import VtTickData, VtBarData
@@ -650,6 +650,5 @@ class CtaEngine(object):
         if contract:
             return contract.priceTick
         return 0
-
-
-
+        
+        
