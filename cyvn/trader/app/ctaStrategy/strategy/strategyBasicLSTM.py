@@ -161,9 +161,9 @@ class BasicLSTMStrategy(CtaTemplate):
             if self.pos < 0:
                 orderID = self.cover(bar.close + 5, abs(self.pos))
                 self.orderList.extend(orderID)
-                # time.sleep(1)
-                # orderID = self.buy(bar.close + 5, self.fixedSize)
-                # self.orderList.extend(orderID)
+                time.sleep(2)
+                orderID = self.buy(bar.close + 5, self.fixedSize)
+                self.orderList.extend(orderID)
 
             if self.targetPos < 0:
                 if self.pos == 0:
@@ -172,9 +172,9 @@ class BasicLSTMStrategy(CtaTemplate):
                 if self.pos > 0:
                     orderID = self.sell(bar.close - 5, abs(self.pos))
                     self.orderList.extend(orderID)
-                    # time.sleep(1)
-                    # orderID = self.short(bar.close - 5, self.fixedSize)
-                    # self.orderList.extend(orderID)
+                    time.sleep(2)
+                    orderID = self.short(bar.close - 5, self.fixedSize)
+                    self.orderList.extend(orderID)
 
             if self.targetPos == 0:
                 if self.pos > 0:
