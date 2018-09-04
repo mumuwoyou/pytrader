@@ -10,6 +10,7 @@
 from __future__ import division
 import numpy as np
 import talib
+import time
 
 from cyvn.trader.vtObject import VtBarData
 from cyvn.trader.vtConstant import EMPTY_STRING
@@ -29,6 +30,7 @@ class AdxrStrategy(CtaTemplate):
     initDays =  20           # 初始化数据所用的天数
     fixedSize = 1           # 每次交易的数量
     aPeriod = 8          # 窗口数
+    targetPos = 0
 
     # 策略变量
 
@@ -58,6 +60,7 @@ class AdxrStrategy(CtaTemplate):
     varList = ['inited',
                'trading',
                'pos',
+               'targetPos',
                'fastMa',
                'middleMa',
                'slowMa',
@@ -116,6 +119,42 @@ class AdxrStrategy(CtaTemplate):
     def onBar(self, bar):
         """收到Bar推送（必须由用户继承实现）"""
         self.bg.updateBar(bar)
+
+        for orderID in self.orderList:
+            self.cancelOrder(orderID)
+            self.orderList = []
+
+        if self.targetPos > 0:
+            if self.pos == 0:
+                orderID = self.buy(bar.close + 5, self.fixedSize)
+                self.orderList.extend(orderID)
+            if self.pos < 0:
+                orderID = self.cover(bar.close + 5, abs(self.pos))
+                self.orderList.extend(orderID)
+                time.sleep(2)
+                orderID = self.buy(bar.close + 5, self.fixedSize)
+                self.orderList.extend(orderID)
+
+        if self.targetPos < 0:
+            if self.pos == 0:
+                orderID = self.short(bar.close - 5, self.fixedSize)
+                self.orderList.extend(orderID)
+            if self.pos > 0:
+                orderID = self.sell(bar.close - 5, abs(self.pos))
+                self.orderList.extend(orderID)
+                time.sleep(2)
+                orderID = self.short(bar.close - 5, self.fixedSize)
+                self.orderList.extend(orderID)
+
+        if self.targetPos == 0:
+            if self.pos > 0:
+                orderID = self.sell(bar.close - 5, abs(self.pos))
+                self.orderList.extend(orderID)
+            if self.pos < 0:
+                orderID = self.cover(bar.close + 5, abs(self.pos))
+                self.orderList.extend(orderID)
+
+        self.putEvent()
     
     #----------------------------------------------------------------------
     def onFifteenBar(self, bar):
@@ -169,22 +208,26 @@ class AdxrStrategy(CtaTemplate):
                 # 这里为了保证成交，选择超价5个整指数点下单
                 orderID = self.cover(bar.close + 5, abs(self.pos))
                 self.orderList.extend(orderID)
+                time.sleep(2)
                 orderID = self.buy(bar.close + 5, self.fixedSize)
                 self.orderList.extend(orderID)
             if self.pos == 0:
                 orderID = self.buy(bar.close + 5, self.fixedSize)
                 self.orderList.extend(orderID)
+            self.targetPos = self.fixedSize
 
         # 空头
         if self.adxr > 30 and self.mdi > self.pdi and self.fastMa < self.middleMa < self.slowMa:
             if self.pos > 0:
                 orderID = self.sell(bar.close - 5, abs(self.pos))
                 self.orderList.extend(orderID)
+                time.sleep(2)
                 orderID = self.short(bar.close - 5, self.fixedSize)
                 self.orderList.extend(orderID)
             if self.pos == 0:
                 orderID = self.short(bar.close - 5, self.fixedSize)
                 self.orderList.extend(orderID)
+            self.targetPos = -self.fixedSize
 
         # 同步数据到数据库
         self.saveSyncData()
