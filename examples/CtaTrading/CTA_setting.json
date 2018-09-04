@@ -9,11 +9,6 @@
         "className": "BollChannelStrategy01",
         "vtSymbol": "rb1901"
     },
-     {
-        "name": "Adxr",
-        "className": "AdxrStrategy",
-        "vtSymbol": "rb1901"
-    },
     {
         "name": "BasicLSTM",
         "className": "BasicLSTMStrategy",
