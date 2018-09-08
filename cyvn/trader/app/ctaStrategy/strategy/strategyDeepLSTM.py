@@ -162,7 +162,7 @@ class DeepLSTMStrategy(CtaTemplate):
             if self.pos < 0:
                 orderID = self.cover(bar.close + 5, abs(self.pos))
                 self.orderList.extend(orderID)
-                time.sleep(2)
+                time.sleep(10)
                 orderID = self.buy(bar.close + 5, self.fixedSize)
                 self.orderList.extend(orderID)
 
@@ -173,7 +173,7 @@ class DeepLSTMStrategy(CtaTemplate):
                 if self.pos > 0:
                     orderID = self.sell(bar.close - 5, abs(self.pos))
                     self.orderList.extend(orderID)
-                    time.sleep(2)
+                    time.sleep(10)
                     orderID = self.short(bar.close - 5, self.fixedSize)
                     self.orderList.extend(orderID)
 
