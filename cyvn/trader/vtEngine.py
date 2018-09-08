@@ -733,7 +733,7 @@ class LogEngine(object, metaclass=VtSingleton):
     #----------------------------------------------------------------------
     def processLogEvent(self, event):
         """处理日志事件"""
-        print("loging")
+        #print("loging")
         log = event.dict_['data']
         function = self.levelFunctionDict[log.logLevel]     # 获取日志级别对应的处理函数
         msg = '\t'.join([log.gatewayName, log.logContent])
