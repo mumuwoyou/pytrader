@@ -404,6 +404,51 @@ class BasicMonitor(QtWidgets.QTableWidget):
         except IOError:
             pass
 
+    def saveToCsv(self, path=EMPTY_STRING):
+        """保存表格内容到CSV文件"""
+
+        # 获取想要保存的文件名
+        if not path:
+            # 先隐藏右键菜单
+            self.menu.close()
+
+            # 获取想要保存的文件名
+            path = QtWidgets.QFileDialog.getSaveFileName(self, vtText.SAVE_DATA, '', 'CSV(*.csv)')
+            if len(path) < 1:
+                return
+            path = path[0]
+        log = VtLogData()
+        log.gatewayName = u'-'
+
+        try:
+            if not os.path.exists(path):
+                with open(path, 'w', encoding='utf8') as f:
+                    writer = csv.writer(f)
+
+                    # 保存标签
+                    headers = [header for header in self.headerList]
+                    writer.writerow(headers)
+
+                    # 保存每行内容
+                    for row in range(self.rowCount()):
+                        rowdata = []
+                        for column in range(self.columnCount()):
+                            item = self.item(row, column)
+                            if item is not None:
+                                rowdata.append(item.text())
+                            else:
+                                rowdata.append('')
+                        writer.writerow(rowdata)
+
+                log.logContent = u'数据保存至:{0}'.format(path)
+
+        except IOError:
+            log.logContent = u'文件IO失败:{0}'.format(path)
+
+            event1 = Event(type_=EVENT_LOG)
+            event1.dict_['data'] = log
+            self.eventEngine.put(event1)
+
     #----------------------------------------------------------------------
     def initMenu(self):
         """初始化右键菜单"""

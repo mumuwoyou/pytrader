@@ -52,7 +52,7 @@ class MainWindow(QtWidgets.QMainWindow):
         widgetLogM, dockLogM = self.createDock(LogMonitor, vtText.LOG, QtCore.Qt.BottomDockWidgetArea)
         widgetErrorM, dockErrorM = self.createDock(ErrorMonitor, vtText.ERROR, QtCore.Qt.BottomDockWidgetArea)
         widgetTradeM, dockTradeM = self.createDock(TradeMonitor, vtText.TRADE, QtCore.Qt.BottomDockWidgetArea)
-        widgetOrderM, dockOrderM = self.createDock(OrderMonitor, vtText.ORDER, QtCore.Qt.RightDockWidgetArea)
+        self.widgetOrderM, dockOrderM = self.createDock(OrderMonitor, vtText.ORDER, QtCore.Qt.RightDockWidgetArea)
         widgetWorkingOrderM, dockWorkingOrderM = self.createDock(WorkingOrderMonitor, vtText.WORKING_ORDER, QtCore.Qt.BottomDockWidgetArea)
         widgetPositionM, dockPositionM = self.createDock(PositionMonitor, vtText.POSITION, QtCore.Qt.BottomDockWidgetArea)
         widgetPositionDetailM, dockPositionDetailM = self.createDock(PositionDetailMonitor, vtText.POSITIONDETAIL, QtCore.Qt.BottomDockWidgetArea)
@@ -162,7 +162,7 @@ class MainWindow(QtWidgets.QMainWindow):
         dt = datetime.now()
 
         today = datetime.now().strftime('%y%m%d')
-        if dt.hour == 15 and dt.minute == 16:
+        if dt.hour == 15 and dt.minute == 16 and dt.second == 0:
             self.orderSaveDate = today
             self.mainEngine.writeLog(u'保存所有委托记录')
             orders_folder = os.path.abspath(os.path.join(os.getcwd(), 'orders'))
@@ -178,11 +178,11 @@ class MainWindow(QtWidgets.QMainWindow):
                 self.widgetOrderM.saveToCsv(path=orderfile)
 
         if dt.hour == 20 or dt.hour == 8:
-            if dt.minute == 50:
+            if dt.minute == 50 and dt.second == 0:
                 self.mainEngine.dbConnect()
                 self.mainEngine.connect('CTP')
 
-            if dt.minute == 52:
+            if dt.minute == 52 and dt.second == 0:
                     appDetail = self.appDetailList[0]
                     appName = appDetail['appName']
                     try:
