@@ -23,7 +23,7 @@ from cyvn.trader.uiMainWindow import MainWindow
 from cyvn.trader.gateway.CtpGateway.ctpGateway import CtpGateway
 
 # 加载上层应用
-from cyvn.trader.app import (ctaStrategy,dataRecorder,riskManager)
+from cyvn.trader.app import (ctaStrategy)
 
 
 # ----------------------------------------------------------------------
@@ -42,8 +42,8 @@ def main():
     me.addGateway('CTP')
 
     # 添加上层应用
-    me.addApp(riskManager)
-    me.addApp(dataRecorder)
+    #me.addApp(riskManager)
+    #me.addApp(dataRecorder)
     me.addApp(ctaStrategy)
     #me.addApp(spreadTrading)
 

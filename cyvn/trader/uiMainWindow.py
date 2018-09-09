@@ -6,6 +6,8 @@ import traceback
 from cyvn.trader.vtFunction import loadIconPath
 from cyvn.trader.vtGlobal import globalSetting
 from cyvn.trader.uiBasicWidget import *
+from  datetime import time
+from time import sleep
 
 
 ########################################################################
@@ -26,6 +28,8 @@ class MainWindow(QtWidgets.QMainWindow):
         self.gatewayNameList = [d['gatewayName'] for d in l]        
         
         self.widgetDict = {}    # 用来保存子窗口的字典
+        self.connected = False
+        self.runCtaTrading = False
         
         # 获取主引擎中的上层应用信息
         self.appDetailList = self.mainEngine.getAllAppDetails()
@@ -154,7 +158,44 @@ class MainWindow(QtWidgets.QMainWindow):
         if self.sbCount == self.sbTrigger:
             self.sbCount = 0
             self.statusLabel.setText(self.getCpuMemory())
-    
+
+        dt = datetime.now()
+
+        today = datetime.now().strftime('%y%m%d')
+        if dt.hour == 15 and dt.minute == 16:
+            self.orderSaveDate = today
+            self.mainEngine.writeLog(u'保存所有委托记录')
+            orders_folder = os.path.abspath(os.path.join(os.getcwd(), 'orders'))
+
+            if not os.path.isdir(orders_folder):
+                os.mkdir(orders_folder)
+
+            orderfile = os.path.abspath(os.path.join(orders_folder, '{}.csv'.format(self.orderSaveDate)))
+
+            if os.path.exists(orderfile):
+                return
+            else:
+                self.widgetOrderM.saveToCsv(path=orderfile)
+
+        if dt.hour == 20 or dt.hour == 8:
+            if dt.minute == 50:
+                self.mainEngine.dbConnect()
+                self.mainEngine.connect('CTP')
+
+            if dt.minute == 52:
+                    appDetail = self.appDetailList[0]
+                    appName = appDetail['appName']
+                    try:
+                        self.widgetDict[appName].show()
+                    except KeyError:
+                        appEngine = self.mainEngine.getApp(appName)
+                        self.widgetDict[appName] = appDetail['appWidget'](appEngine, self.eventEngine)
+                        self.widgetDict[appName].showMaximized()
+                    self.widgetDict[appName].load()
+                    self.widgetDict[appName].initAll()
+                    self.widgetDict[appName].startAll()
+
+
     #----------------------------------------------------------------------
     def getCpuMemory(self):
         """获取CPU和内存状态信息"""
