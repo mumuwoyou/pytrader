@@ -1,0 +1,243 @@
+CRITICAL  [2018-08-27 14:14:00,322][vtEngine.py:496] 加载策略配置{'className': 'HorizBreakoutStrategy', 'vtSymbol': 'rb1901', 'name': 'HorizBreakout'}:异常name 'Event' is not defined，Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 1600, in loadSetting
+    self.loadStrategy(setting)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 908, in loadStrategy
+    self.writeCtaLog(u'添加合约{}与策略{}的匹配目录'.format(symbol,strategy.name))
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 655, in writeCtaLog
+    event = Event(type_=EVENT_CTA_LOG)
+NameError: name 'Event' is not defined
+
+CRITICAL  [2018-08-27 14:14:00,325][vtEngine.py:496] 加载策略配置异常:name 'sys' is not defined,Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 1600, in loadSetting
+    self.loadStrategy(setting)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 908, in loadStrategy
+    self.writeCtaLog(u'添加合约{}与策略{}的匹配目录'.format(symbol,strategy.name))
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 655, in writeCtaLog
+    event = Event(type_=EVENT_CTA_LOG)
+NameError: name 'Event' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 1602, in loadSetting
+    self.writeCtaCritical(u'加载策略配置{}:异常{}，{}'.format(setting, str(ex), traceback.format_exc()))
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 736, in writeCtaCritical
+    self.mainEngine.writeCritical(content)
+  File "/home/linlin/pytrader/cyvn/trader/vtEngine.py", line 497, in writeCritical
+    print(content, file=sys.stderr)
+NameError: name 'sys' is not defined
+
+CRITICAL  [2018-08-27 14:14:42,126][vtEngine.py:497] 加载策略配置{'vtSymbol': 'rb1901', 'name': 'HorizBreakout', 'className': 'HorizBreakoutStrategy'}:异常name 'Event' is not defined，Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 1600, in loadSetting
+    self.loadStrategy(setting)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 908, in loadStrategy
+    self.writeCtaLog(u'添加合约{}与策略{}的匹配目录'.format(symbol,strategy.name))
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 655, in writeCtaLog
+    event = Event(type_=EVENT_CTA_LOG)
+NameError: name 'Event' is not defined
+
+CRITICAL  [2018-08-27 14:14:42,128][vtEngine.py:497] 加载策略配置{'vtSymbol': 'rb1901', 'name': 'BollChannel01', 'className': 'BollChannelStrategy01'}:异常name 'Event' is not defined，Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 1600, in loadSetting
+    self.loadStrategy(setting)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 908, in loadStrategy
+    self.writeCtaLog(u'添加合约{}与策略{}的匹配目录'.format(symbol,strategy.name))
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 655, in writeCtaLog
+    event = Event(type_=EVENT_CTA_LOG)
+NameError: name 'Event' is not defined
+
+CRITICAL  [2018-08-27 14:14:42,130][vtEngine.py:497] 加载策略配置{'vtSymbol': 'ag1812', 'name': 'BasicLSTM', 'className': 'BasicLSTMStrategy'}:异常name 'Event' is not defined，Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 1600, in loadSetting
+    self.loadStrategy(setting)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 908, in loadStrategy
+    self.writeCtaLog(u'添加合约{}与策略{}的匹配目录'.format(symbol,strategy.name))
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 655, in writeCtaLog
+    event = Event(type_=EVENT_CTA_LOG)
+NameError: name 'Event' is not defined
+
+CRITICAL  [2018-08-27 14:14:42,132][vtEngine.py:497] 加载策略配置{'vtSymbol': 'rb1901', 'name': 'AvgBreak', 'className': 'AvgBreakStrategy'}:异常name 'Event' is not defined，Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 1600, in loadSetting
+    self.loadStrategy(setting)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 908, in loadStrategy
+    self.writeCtaLog(u'添加合约{}与策略{}的匹配目录'.format(symbol,strategy.name))
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 655, in writeCtaLog
+    event = Event(type_=EVENT_CTA_LOG)
+NameError: name 'Event' is not defined
+
+CRITICAL  [2018-08-27 14:36:00,000][vtEngine.py:497] 策略BollChannel01触发异常已停止.Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 1790, in callStrategyFunc
+    func()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyBollChannel01.py", line 101, in onInit
+    initData = self.loadBar(self.initDays)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaTemplate.py", line 248, in loadBar
+    return self.ctaEngine.loadBar(self.barDbName, self.vtSymbol, days)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 626, in loadBar
+    bar = CtaBarData()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaBase.py", line 110, in __init__
+    self.color = COLOR_EQUAL  # k 线颜色,COLOR_RED，COLOR_BLUE,COLOR_EQUAL
+NameError: name 'COLOR_EQUAL' is not defined
+
+CRITICAL  [2018-08-27 14:36:14,380][vtEngine.py:497] 策略BasicLSTM触发异常已停止.Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 1790, in callStrategyFunc
+    func()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyBasicLSTM.py", line 128, in onInit
+    initData = self.loadBar(self.initDays)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaTemplate.py", line 248, in loadBar
+    return self.ctaEngine.loadBar(self.barDbName, self.vtSymbol, days)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 626, in loadBar
+    bar = CtaBarData()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaBase.py", line 110, in __init__
+    self.color = COLOR_EQUAL  # k 线颜色,COLOR_RED，COLOR_BLUE,COLOR_EQUAL
+NameError: name 'COLOR_EQUAL' is not defined
+
+CRITICAL  [2018-08-27 14:38:15,599][vtEngine.py:497] 策略HorizBreakout触发异常已停止.Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 1788, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 111, in onTick
+    self.putEvent()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaTemplate.py", line 259, in putEvent
+    self.ctaEngine.putStrategyEvent(self.name)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 1781, in putStrategyEvent
+    self.mainEngine.qryStatus()
+AttributeError: 'MainEngine' object has no attribute 'qryStatus'
+
+CRITICAL  [2018-08-27 14:38:16,231][vtEngine.py:497] 策略HorizBreakout触发异常已停止.Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 1788, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 111, in onTick
+    self.putEvent()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaTemplate.py", line 259, in putEvent
+    self.ctaEngine.putStrategyEvent(self.name)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 1781, in putStrategyEvent
+    self.mainEngine.qryStatus()
+AttributeError: 'MainEngine' object has no attribute 'qryStatus'
+
+CRITICAL  [2018-08-27 14:38:18,937][vtEngine.py:497] 策略AvgBreak触发异常已停止.Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 1790, in callStrategyFunc
+    func()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 83, in onInit
+    initData = self.loadBar(self.initDays)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaTemplate.py", line 248, in loadBar
+    return self.ctaEngine.loadBar(self.barDbName, self.vtSymbol, days)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 626, in loadBar
+    bar = CtaBarData()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaBase.py", line 110, in __init__
+    self.color = COLOR_EQUAL  # k 线颜色,COLOR_RED，COLOR_BLUE,COLOR_EQUAL
+NameError: name 'COLOR_EQUAL' is not defined
+
+CRITICAL  [2018-08-27 14:38:41,059][vtEngine.py:497] 策略BasicLSTM触发异常已停止.Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 1790, in callStrategyFunc
+    func()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyBasicLSTM.py", line 128, in onInit
+    initData = self.loadBar(self.initDays)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaTemplate.py", line 248, in loadBar
+    return self.ctaEngine.loadBar(self.barDbName, self.vtSymbol, days)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 626, in loadBar
+    bar = CtaBarData()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaBase.py", line 110, in __init__
+    self.color = COLOR_EQUAL  # k 线颜色,COLOR_RED，COLOR_BLUE,COLOR_EQUAL
+NameError: name 'COLOR_EQUAL' is not defined
+
+CRITICAL  [2018-08-27 14:38:54,592][vtEngine.py:497] 策略HorizBreakout触发异常已停止.Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 1790, in callStrategyFunc
+    func()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 88, in onInit
+    initData = self.loadBar(self.initDays)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaTemplate.py", line 248, in loadBar
+    return self.ctaEngine.loadBar(self.barDbName, self.vtSymbol, days)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 626, in loadBar
+    bar = CtaBarData()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaBase.py", line 110, in __init__
+    self.color = COLOR_EQUAL  # k 线颜色,COLOR_RED，COLOR_BLUE,COLOR_EQUAL
+NameError: name 'COLOR_EQUAL' is not defined
+
+CRITICAL  [2018-08-27 14:39:05,303][vtEngine.py:497] 策略BollChannel01触发异常已停止.Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 1790, in callStrategyFunc
+    func()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyBollChannel01.py", line 101, in onInit
+    initData = self.loadBar(self.initDays)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaTemplate.py", line 248, in loadBar
+    return self.ctaEngine.loadBar(self.barDbName, self.vtSymbol, days)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 626, in loadBar
+    bar = CtaBarData()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaBase.py", line 110, in __init__
+    self.color = COLOR_EQUAL  # k 线颜色,COLOR_RED，COLOR_BLUE,COLOR_EQUAL
+NameError: name 'COLOR_EQUAL' is not defined
+
+CRITICAL  [2018-08-27 14:43:48,483][vtEngine.py:526] 策略HorizBreakout触发异常已停止.Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 1788, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 111, in onTick
+    self.putEvent()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaTemplate.py", line 259, in putEvent
+    self.ctaEngine.putStrategyEvent(self.name)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 1781, in putStrategyEvent
+    self.mainEngine.qryStatus()
+  File "/home/linlin/pytrader/cyvn/trader/vtEngine.py", line 133, in qryStatus
+    gw_status_dict[k] = g.checkStatus()
+AttributeError: 'CtpGateway' object has no attribute 'checkStatus'
+
+CRITICAL  [2018-08-27 14:43:48,986][vtEngine.py:526] 策略HorizBreakout触发异常已停止.Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 1788, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 111, in onTick
+    self.putEvent()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaTemplate.py", line 259, in putEvent
+    self.ctaEngine.putStrategyEvent(self.name)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 1781, in putStrategyEvent
+    self.mainEngine.qryStatus()
+  File "/home/linlin/pytrader/cyvn/trader/vtEngine.py", line 133, in qryStatus
+    gw_status_dict[k] = g.checkStatus()
+AttributeError: 'CtpGateway' object has no attribute 'checkStatus'
+
+CRITICAL  [2018-08-27 14:43:50,500][vtEngine.py:526] 策略AvgBreak触发异常已停止.Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 1790, in callStrategyFunc
+    func()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 83, in onInit
+    initData = self.loadBar(self.initDays)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaTemplate.py", line 248, in loadBar
+    return self.ctaEngine.loadBar(self.barDbName, self.vtSymbol, days)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 626, in loadBar
+    bar = CtaBarData()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaBase.py", line 110, in __init__
+    self.color = COLOR_EQUAL  # k 线颜色,COLOR_RED，COLOR_BLUE,COLOR_EQUAL
+NameError: name 'COLOR_EQUAL' is not defined
+
+CRITICAL  [2018-08-27 14:44:14,920][vtEngine.py:526] 策略HorizBreakout触发异常已停止.Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 1790, in callStrategyFunc
+    func()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 88, in onInit
+    initData = self.loadBar(self.initDays)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaTemplate.py", line 248, in loadBar
+    return self.ctaEngine.loadBar(self.barDbName, self.vtSymbol, days)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 626, in loadBar
+    bar = CtaBarData()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaBase.py", line 110, in __init__
+    self.color = COLOR_EQUAL  # k 线颜色,COLOR_RED，COLOR_BLUE,COLOR_EQUAL
+NameError: name 'COLOR_EQUAL' is not defined
+
+CRITICAL  [2018-08-27 14:44:28,656][vtEngine.py:526] 策略BollChannel01触发异常已停止.Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 1790, in callStrategyFunc
+    func()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyBollChannel01.py", line 101, in onInit
+    initData = self.loadBar(self.initDays)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaTemplate.py", line 248, in loadBar
+    return self.ctaEngine.loadBar(self.barDbName, self.vtSymbol, days)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 626, in loadBar
+    bar = CtaBarData()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaBase.py", line 110, in __init__
+    self.color = COLOR_EQUAL  # k 线颜色,COLOR_RED，COLOR_BLUE,COLOR_EQUAL
+NameError: name 'COLOR_EQUAL' is not defined
+
+CRITICAL  [2018-08-27 14:44:45,213][vtEngine.py:526] 策略BasicLSTM触发异常已停止.Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 1790, in callStrategyFunc
+    func()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyBasicLSTM.py", line 128, in onInit
+    initData = self.loadBar(self.initDays)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaTemplate.py", line 248, in loadBar
+    return self.ctaEngine.loadBar(self.barDbName, self.vtSymbol, days)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 626, in loadBar
+    bar = CtaBarData()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaBase.py", line 110, in __init__
+    self.color = COLOR_EQUAL  # k 线颜色,COLOR_RED，COLOR_BLUE,COLOR_EQUAL
+NameError: name 'COLOR_EQUAL' is not defined
+

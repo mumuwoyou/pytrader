@@ -626,7 +626,7 @@ class CtpTdApi(TraderApi):
     def authenticate(self):
         """申请验证"""
         if self.userID and self.brokerID and self.authCode and self.userProductInfo:
-            ApiStruct.ReqAuthenticate(UserID = self.userID, BrokerID = self.brokerID,
+            req = ApiStruct.ReqAuthenticate(UserID = self.userID, BrokerID = self.brokerID,
                  AuthCode = self.authCode, UserProductInfo = self.userProductInfo)
             self.reqID +=1
             self.ReqAuthenticate(req, self.reqID)
@@ -636,6 +636,8 @@ class CtpTdApi(TraderApi):
         """查询账户"""
         self.reqID += 1
         req = ApiStruct.QryTradingAccount()
+        req.BrokerID = self.brokerID
+        req.InvestorID = self.userID
         self.ReqQryTradingAccount(req, self.reqID)
         
     #----------------------------------------------------------------------
@@ -651,7 +653,6 @@ class CtpTdApi(TraderApi):
     def qryPositionDetail(self):
         """查询持仓明细"""
         self.reqID += 1
-        req = {}
         req = ApiStruct.QryInvestorPositionDetail()
         req.BrokerID = self.brokerID
         req.InvestorID = self.userID

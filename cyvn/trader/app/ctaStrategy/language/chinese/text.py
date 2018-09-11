@@ -3,8 +3,6 @@
 INIT = u'初始化'
 START = u'启动'
 STOP = u'停止'
-FORCEINIT = u'强制初始化'
-
 
 CTA_ENGINE_STARTED = u'CTA引擎启动成功'
 

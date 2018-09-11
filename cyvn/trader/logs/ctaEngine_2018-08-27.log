@@ -1,0 +1,263 @@
+INFO  [2018-08-27 14:17:39,367][ctaEngine.py:663] 添加合约rb1901与策略HorizBreakout的匹配目录
+INFO  [2018-08-27 14:17:39,368][ctaEngine.py:663] 向gateway订阅合约rb1901
+INFO  [2018-08-27 14:17:39,370][ctaEngine.py:663] 添加合约rb1901与策略BollChannel01的匹配目录
+INFO  [2018-08-27 14:17:39,371][ctaEngine.py:663] 向gateway订阅合约rb1901
+INFO  [2018-08-27 14:17:39,373][ctaEngine.py:663] 添加合约ag1812与策略BasicLSTM的匹配目录
+INFO  [2018-08-27 14:17:39,374][ctaEngine.py:663] 向gateway订阅合约ag1812
+INFO  [2018-08-27 14:17:39,376][ctaEngine.py:663] 添加合约rb1901与策略AvgBreak的匹配目录
+INFO  [2018-08-27 14:17:39,377][ctaEngine.py:663] 向gateway订阅合约rb1901
+INFO  [2018-08-27 14:17:39,398][ctaEngine.py:663] 已成功订阅rb1901，从待订阅清单中移除
+INFO  [2018-08-27 14:22:44,338][ctaEngine.py:663] 添加合约rb1901与策略HorizBreakout的匹配目录
+INFO  [2018-08-27 14:22:44,340][ctaEngine.py:663] 向gateway订阅合约rb1901
+INFO  [2018-08-27 14:22:44,342][ctaEngine.py:663] 添加合约rb1901与策略BollChannel01的匹配目录
+INFO  [2018-08-27 14:22:44,343][ctaEngine.py:663] 向gateway订阅合约rb1901
+INFO  [2018-08-27 14:22:44,344][ctaEngine.py:663] 添加合约ag1812与策略BasicLSTM的匹配目录
+INFO  [2018-08-27 14:22:44,345][ctaEngine.py:663] 向gateway订阅合约ag1812
+INFO  [2018-08-27 14:22:44,347][ctaEngine.py:663] 添加合约rb1901与策略AvgBreak的匹配目录
+INFO  [2018-08-27 14:22:44,348][ctaEngine.py:663] 向gateway订阅合约rb1901
+INFO  [2018-08-27 14:22:44,370][ctaEngine.py:663] 已成功订阅rb1901，从待订阅清单中移除
+INFO  [2018-08-27 14:28:36,586][ctaEngine.py:663] 添加合约rb1901与策略HorizBreakout的匹配目录
+INFO  [2018-08-27 14:28:36,587][ctaEngine.py:663] 向gateway订阅合约rb1901
+INFO  [2018-08-27 14:28:36,590][ctaEngine.py:663] 添加合约rb1901与策略BollChannel01的匹配目录
+INFO  [2018-08-27 14:28:36,593][ctaEngine.py:663] 向gateway订阅合约rb1901
+INFO  [2018-08-27 14:28:36,594][ctaEngine.py:663] 添加合约ag1812与策略BasicLSTM的匹配目录
+INFO  [2018-08-27 14:28:36,595][ctaEngine.py:663] 向gateway订阅合约ag1812
+INFO  [2018-08-27 14:28:36,600][ctaEngine.py:663] 添加合约rb1901与策略AvgBreak的匹配目录
+INFO  [2018-08-27 14:28:36,602][ctaEngine.py:663] 向gateway订阅合约rb1901
+INFO  [2018-08-27 14:28:36,615][ctaEngine.py:663] 已成功订阅rb1901，从待订阅清单中移除
+INFO  [2018-08-27 14:31:28,526][ctaEngine.py:663] 添加合约rb1901与策略HorizBreakout的匹配目录
+INFO  [2018-08-27 14:31:28,528][ctaEngine.py:663] 向gateway订阅合约rb1901
+INFO  [2018-08-27 14:31:28,529][ctaEngine.py:663] 添加合约rb1901与策略BollChannel01的匹配目录
+INFO  [2018-08-27 14:31:28,531][ctaEngine.py:663] 向gateway订阅合约rb1901
+INFO  [2018-08-27 14:31:28,532][ctaEngine.py:663] 添加合约ag1812与策略BasicLSTM的匹配目录
+INFO  [2018-08-27 14:31:28,534][ctaEngine.py:663] 向gateway订阅合约ag1812
+INFO  [2018-08-27 14:31:28,535][ctaEngine.py:663] 添加合约rb1901与策略AvgBreak的匹配目录
+INFO  [2018-08-27 14:31:28,537][ctaEngine.py:663] 向gateway订阅合约rb1901
+INFO  [2018-08-27 14:31:28,556][ctaEngine.py:663] 已成功订阅rb1901，从待订阅清单中移除
+INFO  [2018-08-27 14:32:48,900][ctaEngine.py:663] 添加合约rb1901与策略HorizBreakout的匹配目录
+INFO  [2018-08-27 14:32:48,901][ctaEngine.py:663] 向gateway订阅合约rb1901
+INFO  [2018-08-27 14:32:48,903][ctaEngine.py:663] 添加合约rb1901与策略BollChannel01的匹配目录
+INFO  [2018-08-27 14:32:48,904][ctaEngine.py:663] 向gateway订阅合约rb1901
+INFO  [2018-08-27 14:32:48,906][ctaEngine.py:663] 添加合约ag1812与策略BasicLSTM的匹配目录
+INFO  [2018-08-27 14:32:48,906][ctaEngine.py:663] 向gateway订阅合约ag1812
+INFO  [2018-08-27 14:32:48,911][ctaEngine.py:663] 添加合约rb1901与策略AvgBreak的匹配目录
+INFO  [2018-08-27 14:32:48,912][ctaEngine.py:663] 向gateway订阅合约rb1901
+INFO  [2018-08-27 14:32:48,933][ctaEngine.py:663] 已成功订阅rb1901，从待订阅清单中移除
+INFO  [2018-08-27 14:35:50,797][ctaEngine.py:696] 添加合约rb1901与策略HorizBreakout的匹配目录
+INFO  [2018-08-27 14:35:50,799][ctaEngine.py:696] 向gateway订阅合约rb1901
+INFO  [2018-08-27 14:35:50,800][ctaEngine.py:696] 添加合约rb1901与策略BollChannel01的匹配目录
+INFO  [2018-08-27 14:35:50,801][ctaEngine.py:696] 向gateway订阅合约rb1901
+INFO  [2018-08-27 14:35:50,803][ctaEngine.py:696] 添加合约ag1812与策略BasicLSTM的匹配目录
+INFO  [2018-08-27 14:35:50,804][ctaEngine.py:696] 向gateway订阅合约ag1812
+INFO  [2018-08-27 14:35:50,805][ctaEngine.py:696] 添加合约rb1901与策略AvgBreak的匹配目录
+INFO  [2018-08-27 14:35:50,806][ctaEngine.py:696] 向gateway订阅合约rb1901
+INFO  [2018-08-27 14:35:50,823][ctaEngine.py:696] 已成功订阅rb1901，从待订阅清单中移除
+INFO  [2018-08-27 14:35:51,872][ctaEngine.py:696] BollChannel01:BollChannel01策略初始化
+INFO  [2018-08-27 14:36:00,000][ctaEngine.py:696] 策略BollChannel01触发异常已停止.Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 1790, in callStrategyFunc
+    func()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyBollChannel01.py", line 101, in onInit
+    initData = self.loadBar(self.initDays)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaTemplate.py", line 248, in loadBar
+    return self.ctaEngine.loadBar(self.barDbName, self.vtSymbol, days)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 626, in loadBar
+    bar = CtaBarData()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaBase.py", line 110, in __init__
+    self.color = COLOR_EQUAL  # k 线颜色,COLOR_RED，COLOR_BLUE,COLOR_EQUAL
+NameError: name 'COLOR_EQUAL' is not defined
+
+INFO  [2018-08-27 14:36:00,006][ctaEngine.py:696] BasicLSTM:BasicLSTM策略初始化
+INFO  [2018-08-27 14:36:14,379][ctaEngine.py:696] 策略BasicLSTM触发异常已停止.Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 1790, in callStrategyFunc
+    func()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyBasicLSTM.py", line 128, in onInit
+    initData = self.loadBar(self.initDays)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaTemplate.py", line 248, in loadBar
+    return self.ctaEngine.loadBar(self.barDbName, self.vtSymbol, days)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 626, in loadBar
+    bar = CtaBarData()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaBase.py", line 110, in __init__
+    self.color = COLOR_EQUAL  # k 线颜色,COLOR_RED，COLOR_BLUE,COLOR_EQUAL
+NameError: name 'COLOR_EQUAL' is not defined
+
+INFO  [2018-08-27 14:36:14,382][ctaEngine.py:696] HorizBreakout:HorizBreakout策略初始化
+INFO  [2018-08-27 14:38:15,561][ctaEngine.py:696] 添加合约rb1901与策略HorizBreakout的匹配目录
+INFO  [2018-08-27 14:38:15,562][ctaEngine.py:696] 向gateway订阅合约rb1901
+INFO  [2018-08-27 14:38:15,564][ctaEngine.py:696] 添加合约rb1901与策略BollChannel01的匹配目录
+INFO  [2018-08-27 14:38:15,565][ctaEngine.py:696] 向gateway订阅合约rb1901
+INFO  [2018-08-27 14:38:15,567][ctaEngine.py:696] 添加合约ag1812与策略BasicLSTM的匹配目录
+INFO  [2018-08-27 14:38:15,568][ctaEngine.py:696] 向gateway订阅合约ag1812
+INFO  [2018-08-27 14:38:15,569][ctaEngine.py:696] 添加合约rb1901与策略AvgBreak的匹配目录
+INFO  [2018-08-27 14:38:15,570][ctaEngine.py:696] 向gateway订阅合约rb1901
+INFO  [2018-08-27 14:38:15,594][ctaEngine.py:696] 已成功订阅rb1901，从待订阅清单中移除
+INFO  [2018-08-27 14:38:15,598][ctaEngine.py:696] 策略HorizBreakout触发异常已停止.Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 1788, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 111, in onTick
+    self.putEvent()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaTemplate.py", line 259, in putEvent
+    self.ctaEngine.putStrategyEvent(self.name)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 1781, in putStrategyEvent
+    self.mainEngine.qryStatus()
+AttributeError: 'MainEngine' object has no attribute 'qryStatus'
+
+INFO  [2018-08-27 14:38:15,610][ctaEngine.py:696] 已成功订阅ag1812，从待订阅清单中移除
+INFO  [2018-08-27 14:38:16,230][ctaEngine.py:696] 策略HorizBreakout触发异常已停止.Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 1788, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 111, in onTick
+    self.putEvent()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaTemplate.py", line 259, in putEvent
+    self.ctaEngine.putStrategyEvent(self.name)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 1781, in putStrategyEvent
+    self.mainEngine.qryStatus()
+AttributeError: 'MainEngine' object has no attribute 'qryStatus'
+
+INFO  [2018-08-27 14:38:18,084][ctaEngine.py:696] AvgBreak:AvgBreak策略初始化
+INFO  [2018-08-27 14:38:18,936][ctaEngine.py:696] 策略AvgBreak触发异常已停止.Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 1790, in callStrategyFunc
+    func()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 83, in onInit
+    initData = self.loadBar(self.initDays)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaTemplate.py", line 248, in loadBar
+    return self.ctaEngine.loadBar(self.barDbName, self.vtSymbol, days)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 626, in loadBar
+    bar = CtaBarData()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaBase.py", line 110, in __init__
+    self.color = COLOR_EQUAL  # k 线颜色,COLOR_RED，COLOR_BLUE,COLOR_EQUAL
+NameError: name 'COLOR_EQUAL' is not defined
+
+INFO  [2018-08-27 14:38:18,938][ctaEngine.py:696] BasicLSTM:BasicLSTM策略初始化
+INFO  [2018-08-27 14:38:41,058][ctaEngine.py:696] 策略BasicLSTM触发异常已停止.Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 1790, in callStrategyFunc
+    func()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyBasicLSTM.py", line 128, in onInit
+    initData = self.loadBar(self.initDays)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaTemplate.py", line 248, in loadBar
+    return self.ctaEngine.loadBar(self.barDbName, self.vtSymbol, days)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 626, in loadBar
+    bar = CtaBarData()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaBase.py", line 110, in __init__
+    self.color = COLOR_EQUAL  # k 线颜色,COLOR_RED，COLOR_BLUE,COLOR_EQUAL
+NameError: name 'COLOR_EQUAL' is not defined
+
+INFO  [2018-08-27 14:38:41,060][ctaEngine.py:696] HorizBreakout:HorizBreakout策略初始化
+INFO  [2018-08-27 14:38:54,590][ctaEngine.py:696] 策略HorizBreakout触发异常已停止.Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 1790, in callStrategyFunc
+    func()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 88, in onInit
+    initData = self.loadBar(self.initDays)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaTemplate.py", line 248, in loadBar
+    return self.ctaEngine.loadBar(self.barDbName, self.vtSymbol, days)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 626, in loadBar
+    bar = CtaBarData()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaBase.py", line 110, in __init__
+    self.color = COLOR_EQUAL  # k 线颜色,COLOR_RED，COLOR_BLUE,COLOR_EQUAL
+NameError: name 'COLOR_EQUAL' is not defined
+
+INFO  [2018-08-27 14:38:54,614][ctaEngine.py:696] BollChannel01:BollChannel01策略初始化
+INFO  [2018-08-27 14:39:05,300][ctaEngine.py:696] 策略BollChannel01触发异常已停止.Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 1790, in callStrategyFunc
+    func()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyBollChannel01.py", line 101, in onInit
+    initData = self.loadBar(self.initDays)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaTemplate.py", line 248, in loadBar
+    return self.ctaEngine.loadBar(self.barDbName, self.vtSymbol, days)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 626, in loadBar
+    bar = CtaBarData()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaBase.py", line 110, in __init__
+    self.color = COLOR_EQUAL  # k 线颜色,COLOR_RED，COLOR_BLUE,COLOR_EQUAL
+NameError: name 'COLOR_EQUAL' is not defined
+
+INFO  [2018-08-27 14:43:48,440][ctaEngine.py:696] 添加合约rb1901与策略HorizBreakout的匹配目录
+INFO  [2018-08-27 14:43:48,441][ctaEngine.py:696] 向gateway订阅合约rb1901
+INFO  [2018-08-27 14:43:48,443][ctaEngine.py:696] 添加合约rb1901与策略BollChannel01的匹配目录
+INFO  [2018-08-27 14:43:48,444][ctaEngine.py:696] 向gateway订阅合约rb1901
+INFO  [2018-08-27 14:43:48,457][ctaEngine.py:696] 添加合约ag1812与策略BasicLSTM的匹配目录
+INFO  [2018-08-27 14:43:48,458][ctaEngine.py:696] 向gateway订阅合约ag1812
+INFO  [2018-08-27 14:43:48,460][ctaEngine.py:696] 添加合约rb1901与策略AvgBreak的匹配目录
+INFO  [2018-08-27 14:43:48,461][ctaEngine.py:696] 向gateway订阅合约rb1901
+INFO  [2018-08-27 14:43:48,473][ctaEngine.py:696] 已成功订阅rb1901，从待订阅清单中移除
+INFO  [2018-08-27 14:43:48,482][ctaEngine.py:696] 策略HorizBreakout触发异常已停止.Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 1788, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 111, in onTick
+    self.putEvent()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaTemplate.py", line 259, in putEvent
+    self.ctaEngine.putStrategyEvent(self.name)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 1781, in putStrategyEvent
+    self.mainEngine.qryStatus()
+  File "/home/linlin/pytrader/cyvn/trader/vtEngine.py", line 133, in qryStatus
+    gw_status_dict[k] = g.checkStatus()
+AttributeError: 'CtpGateway' object has no attribute 'checkStatus'
+
+INFO  [2018-08-27 14:43:48,507][ctaEngine.py:696] 已成功订阅ag1812，从待订阅清单中移除
+INFO  [2018-08-27 14:43:48,985][ctaEngine.py:696] 策略HorizBreakout触发异常已停止.Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 1788, in callStrategyFunc
+    func(params)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 111, in onTick
+    self.putEvent()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaTemplate.py", line 259, in putEvent
+    self.ctaEngine.putStrategyEvent(self.name)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 1781, in putStrategyEvent
+    self.mainEngine.qryStatus()
+  File "/home/linlin/pytrader/cyvn/trader/vtEngine.py", line 133, in qryStatus
+    gw_status_dict[k] = g.checkStatus()
+AttributeError: 'CtpGateway' object has no attribute 'checkStatus'
+
+INFO  [2018-08-27 14:43:49,485][ctaEngine.py:696] AvgBreak:AvgBreak策略初始化
+INFO  [2018-08-27 14:43:50,499][ctaEngine.py:696] 策略AvgBreak触发异常已停止.Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 1790, in callStrategyFunc
+    func()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyAvgBreak.py", line 83, in onInit
+    initData = self.loadBar(self.initDays)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaTemplate.py", line 248, in loadBar
+    return self.ctaEngine.loadBar(self.barDbName, self.vtSymbol, days)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 626, in loadBar
+    bar = CtaBarData()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaBase.py", line 110, in __init__
+    self.color = COLOR_EQUAL  # k 线颜色,COLOR_RED，COLOR_BLUE,COLOR_EQUAL
+NameError: name 'COLOR_EQUAL' is not defined
+
+INFO  [2018-08-27 14:43:50,501][ctaEngine.py:696] HorizBreakout:HorizBreakout策略初始化
+INFO  [2018-08-27 14:44:14,919][ctaEngine.py:696] 策略HorizBreakout触发异常已停止.Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 1790, in callStrategyFunc
+    func()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyHorizBreakout.py", line 88, in onInit
+    initData = self.loadBar(self.initDays)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaTemplate.py", line 248, in loadBar
+    return self.ctaEngine.loadBar(self.barDbName, self.vtSymbol, days)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 626, in loadBar
+    bar = CtaBarData()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaBase.py", line 110, in __init__
+    self.color = COLOR_EQUAL  # k 线颜色,COLOR_RED，COLOR_BLUE,COLOR_EQUAL
+NameError: name 'COLOR_EQUAL' is not defined
+
+INFO  [2018-08-27 14:44:14,943][ctaEngine.py:696] BollChannel01:BollChannel01策略初始化
+INFO  [2018-08-27 14:44:28,654][ctaEngine.py:696] 策略BollChannel01触发异常已停止.Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 1790, in callStrategyFunc
+    func()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyBollChannel01.py", line 101, in onInit
+    initData = self.loadBar(self.initDays)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaTemplate.py", line 248, in loadBar
+    return self.ctaEngine.loadBar(self.barDbName, self.vtSymbol, days)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 626, in loadBar
+    bar = CtaBarData()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaBase.py", line 110, in __init__
+    self.color = COLOR_EQUAL  # k 线颜色,COLOR_RED，COLOR_BLUE,COLOR_EQUAL
+NameError: name 'COLOR_EQUAL' is not defined
+
+INFO  [2018-08-27 14:44:28,666][ctaEngine.py:696] BasicLSTM:BasicLSTM策略初始化
+INFO  [2018-08-27 14:44:45,212][ctaEngine.py:696] 策略BasicLSTM触发异常已停止.Traceback (most recent call last):
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 1790, in callStrategyFunc
+    func()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/strategy/strategyBasicLSTM.py", line 128, in onInit
+    initData = self.loadBar(self.initDays)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaTemplate.py", line 248, in loadBar
+    return self.ctaEngine.loadBar(self.barDbName, self.vtSymbol, days)
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaEngine.py", line 626, in loadBar
+    bar = CtaBarData()
+  File "/home/linlin/pytrader/cyvn/trader/app/ctaStrategy/ctaBase.py", line 110, in __init__
+    self.color = COLOR_EQUAL  # k 线颜色,COLOR_RED，COLOR_BLUE,COLOR_EQUAL
+NameError: name 'COLOR_EQUAL' is not defined
+

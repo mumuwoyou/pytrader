@@ -3,8 +3,6 @@
 INIT = u'Init'
 START = u'Start'
 STOP = u'Stop'
-FORCEINIT = u'ForceInit'
-
 
 CTA_ENGINE_STARTED = u'CTA engine started.'
 

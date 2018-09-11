@@ -120,13 +120,11 @@ class CtaEngine(object):
         
         if not reqList:
             return vtOrderIDList
-        print("前")
         for convertedReq in reqList:
             vtOrderID = self.mainEngine.sendOrder(convertedReq, contract.gatewayName)    # 发单
             self.orderStrategyDict[vtOrderID] = strategy                                 # 保存vtOrderID和策略的映射关系
             self.strategyOrderDict[strategy.name].add(vtOrderID)                         # 添加到策略委托号集合中
             vtOrderIDList.append(vtOrderID)
-        print("后")
         self.writeCtaLog(u'策略%s发送委托，%s，%s，%s@%s' 
                          %(strategy.name, vtSymbol, req.direction, volume, price))
         
@@ -221,7 +219,7 @@ class CtaEngine(object):
         # 首先检查是否有策略交易该合约
         if vtSymbol in self.tickStrategyDict:
             # 遍历等待中的停止单，检查是否会被触发
-            for so in self.workingStopOrderDict.values():
+            for so in list(self.workingStopOrderDict.values()):
                 if so.vtSymbol == vtSymbol:
                     longTriggered = so.direction==DIRECTION_LONG and tick.lastPrice>=so.price        # 多头停止单被触发
                     shortTriggered = so.direction==DIRECTION_SHORT and tick.lastPrice<=so.price     # 空头停止单被触发

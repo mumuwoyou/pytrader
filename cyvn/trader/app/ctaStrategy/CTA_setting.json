@@ -1,0 +1,27 @@
+[
+    {
+        "name": "HorizBreakout",
+        "className": "HorizBreakoutStrategy",
+        "vtSymbol": "rb1810"
+    },
+    {
+        "name": "SdBoll",
+        "className": "SdBollStrategy",
+        "vtSymbol": "rb1810"
+    },
+    {
+        "name": "LiqBoll",
+        "className": "LiqBollStrategy",
+        "vtSymbol": "rb1810"
+    },
+    {
+        "name": "AvgBreak",
+        "className": "AvgBreakStrategy",
+        "vtSymbol": "rb1810"
+    },
+    {
+        "name": "PonderDNCore",
+        "className": "PonderDNCoreStrategy",
+        "vtSymbol": "ag1812"
+    }
+]

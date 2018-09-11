@@ -1,5 +1,4 @@
-#!/usr/bin/python3
-# -*- coding:utf-8 -*-
+# encoding: UTF-8
 
 # 系统模块
 from queue import Queue, Empty
@@ -8,12 +7,12 @@ from time import sleep
 from collections import defaultdict
 
 # 第三方模块
-from PyQt5.QtCore import QTimer
+from qtpy.QtCore import QTimer
 
 # 自己开发的模块
 from cyvn.trader.vtEvent import *
 
-
+########################################################################
 class EventEngine(object):
     """
     事件驱动引擎
@@ -336,12 +335,12 @@ def test():
     """测试函数"""
     import sys
     from datetime import datetime
-    from PyQt5.QtWidgets import QCoreApplication
+    from qtpy import QtWidgets,QtCore
     
     def simpletest(event):
-        print (u'处理每秒触发的计时器事件：%s' % str(datetime.now()))
+        print( u'处理每秒触发的计时器事件：%s' % str(datetime.now()))
     
-    app = QCoreApplication(sys.argv)
+    app = QtWidgets.QApplication([])
     
     ee = EventEngine2()
     #ee.register(EVENT_TIMER, simpletest)
