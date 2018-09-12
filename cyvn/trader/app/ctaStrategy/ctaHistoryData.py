@@ -17,10 +17,10 @@ import pymongo
 from cyvn.trader.vtGlobal import globalSetting
 from cyvn.trader.vtConstant import *
 from cyvn.trader.vtObject import VtBarData
-from .ctaBase import SETTING_DB_NAME, TICK_DB_NAME, MINUTE_DB_NAME, DAILY_DB_NAME
+from cyvn.trader.app.ctaStrategy.ctaBase import SETTING_DB_NAME, TICK_DB_NAME, MINUTE_DB_NAME, DAILY_DB_NAME
 
 
-#----------------------------------------------------------------------
+#-------------------------------------------------------------------.---
 def downloadEquityDailyBarts(self, symbol):
     """
     下载股票的日行情，symbol是股票代码
@@ -233,10 +233,11 @@ def loadTdxCsv(fileName, dbName, symbol):
 格式：lc1
 
 注意事项：
-"""   
+"""
+from struct import *
 def loadTdxLc1(fileName, dbName, symbol):
     """将通达信导出的lc1格式的历史分钟数据插入到Mongo数据库中"""
-    from struct import *
+
 
     start = time()
 
@@ -325,24 +326,25 @@ def loadRqCsv(fileName, dbName, symbol):
     collection.ensure_index([('datetime', pymongo.ASCENDING)], unique=True)
 
     # 读取数据和插入到数据库
-    reader = csv.reader(open(fileName,"r"))
-    for d in reader:
-        if len(d[1]) > 10:
+    reader = csv.DictReader(open(fileName, 'r', ))
+    rows = [row for row in reader]
+    for d in rows:
             bar = VtBarData()
             bar.vtSymbol = symbol
             bar.symbol = symbol
 
-            bar.datetime = datetime.strptime(d[0], '%Y-%m-%d %H:%M:%S')
+            bar.datetime = datetime.strptime(d[''], '%Y-%m-%d %H:%M:%S')
             bar.date = bar.datetime.date().strftime('%Y%m%d')
             bar.time = bar.datetime.time().strftime('%H:%M:%S')
+            bar.exchange = 'SHFE'
+            bar.gatewayName = 'CTP'
+            bar.open = float(d['open'])
+            bar.high = float(d['high'])
+            bar.low = float(d['low'])
+            bar.close = float(d['close'])
 
-            bar.open = float(d[1])
-            bar.high = float(d[3])
-            bar.low = float(d[4])
-            bar.close = float(d[2])
-
-            bar.volume = float(d[6])
-            bar.openInterest  = float(d[7])
+            bar.volume = float(d['volume'])
+            bar.openInterest  = float(d['open_interest'])
 
             flt = {'datetime': bar.datetime}
             collection.update_one(flt, {'$set':bar.__dict__}, upsert=True)
@@ -350,3 +352,5 @@ def loadRqCsv(fileName, dbName, symbol):
 
     print('插入完毕，耗时：%s' % (time()-start))
     
+if __name__ == '__main__':
+    loadRqCsv("rb1901.csv",MINUTE_DB_NAME,'rb1901')
