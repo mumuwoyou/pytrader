@@ -183,7 +183,7 @@ class MainWindow(QtWidgets.QMainWindow):
             if os.path.exists(accountfile):
                 return
             else:
-                self.widgetOrderM.saveToCsv(path=accountfile)
+                self.widgetAccountM.saveToCsv(path=accountfile)
 
         if dt.hour == 20 or dt.hour == 8:
             if dt.minute == 50 and dt.second == 0:
