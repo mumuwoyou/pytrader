@@ -56,7 +56,7 @@ class MainWindow(QtWidgets.QMainWindow):
         widgetWorkingOrderM, dockWorkingOrderM = self.createDock(WorkingOrderMonitor, vtText.WORKING_ORDER, QtCore.Qt.BottomDockWidgetArea)
         widgetPositionM, dockPositionM = self.createDock(PositionMonitor, vtText.POSITION, QtCore.Qt.BottomDockWidgetArea)
         widgetPositionDetailM, dockPositionDetailM = self.createDock(PositionDetailMonitor, vtText.POSITIONDETAIL, QtCore.Qt.BottomDockWidgetArea)
-        widgetAccountM, dockAccountM = self.createDock(AccountMonitor, vtText.ACCOUNT, QtCore.Qt.BottomDockWidgetArea)
+        self.widgetAccountM, dockAccountM = self.createDock(AccountMonitor, vtText.ACCOUNT, QtCore.Qt.BottomDockWidgetArea)
         widgetTradingW, dockTradingW = self.createDock(TradingWidget, vtText.TRADING, QtCore.Qt.LeftDockWidgetArea)
     
         self.tabifyDockWidget(dockTradeM, dockErrorM)
@@ -163,19 +163,27 @@ class MainWindow(QtWidgets.QMainWindow):
 
         today = datetime.now().strftime('%y%m%d')
         if dt.hour == 15 and dt.minute == 16 and dt.second == 0:
-            self.orderSaveDate = today
+            self.SaveDate = today
+
             self.mainEngine.writeLog(u'保存所有委托记录')
             orders_folder = os.path.abspath(os.path.join(os.getcwd(), 'orders'))
-
             if not os.path.isdir(orders_folder):
                 os.mkdir(orders_folder)
-
-            orderfile = os.path.abspath(os.path.join(orders_folder, '{}.csv'.format(self.orderSaveDate)))
-
+            orderfile = os.path.abspath(os.path.join(orders_folder, '{}.csv'.format(self.SaveDate)))
             if os.path.exists(orderfile):
                 return
             else:
                 self.widgetOrderM.saveToCsv(path=orderfile)
+
+            self.mainEngine.writeLog(u'保存账户记录')
+            account_folder = os.path.abspath(os.path.join(os.getcwd(), 'account'))
+            if not os.path.isdir(account_folder):
+                os.mkdir(account_folder)
+            accountfile = os.path.abspath(os.path.join(account_folder, '{}.csv'.format(self.SaveDate)))
+            if os.path.exists(accountfile):
+                return
+            else:
+                self.widgetOrderM.saveToCsv(path=accountfile)
 
         if dt.hour == 20 or dt.hour == 8:
             if dt.minute == 50 and dt.second == 0:
