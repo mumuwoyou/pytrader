@@ -88,7 +88,7 @@ class BollChannelStrategy01(CtaTemplate):
         """Constructor"""
         super(BollChannelStrategy01, self).__init__(ctaEngine, setting)
         
-        self.bm = BarGenerator(self.onBar, 5, self.on5minBar)        # 创建K线合成器对象
+        self.bm = BarGenerator(self.onBar, 15, self.on5minBar)        # 创建K线合成器对象
         self.am = ArrayManager()
         self.entryPriceList = []
         self.orderList = []
