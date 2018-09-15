@@ -88,7 +88,7 @@ class BollChannelStrategy01(CtaTemplate):
         """Constructor"""
         super(BollChannelStrategy01, self).__init__(ctaEngine, setting)
         
-        self.bm = BarGenerator(self.onBar, 15, self.on5minBar)        # 创建K线合成器对象
+        self.bm = BarGenerator(self.onBar, 5, self.on5minBar)        # 创建K线合成器对象
         self.am = ArrayManager()
         self.entryPriceList = []
         self.orderList = []
@@ -234,12 +234,12 @@ class BollChannelStrategy01(CtaTemplate):
             self.intraTradeLow = bar.low
             self.longStop = self.intraTradeHigh - self.atrValue * self.slMultiplier
 
-            # if bar.close < self.stopExit:
-                # 固定止损
-                # self.sell(bar.close, abs(self.pos), True)
-            # else:
-            #     跟随止损
-                # self.sell(self.longStop, abs(self.pos), True)
+            if bar.close < self.stopExit:
+                #固定止损
+                self.sell(bar.close, abs(self.pos), True)
+            else:
+                #跟随止损
+                self.sell(self.longStop, abs(self.pos), True)
             self.sell(self.longStop, abs(self.pos), True)
 
             # 记录log
@@ -260,12 +260,12 @@ class BollChannelStrategy01(CtaTemplate):
             self.intraTradeLow = min(self.intraTradeLow, bar.low)
             self.shortStop = self.intraTradeLow + self.atrValue * self.slMultiplier
             
-            # if bar.close > self.stopExit:
-            #     固定止损
-                # self.cover(bar.close, abs(self.pos), True)
-            # else:
-                # 跟随止损
-                # self.cover(self.shortStop, abs(self.pos), True)
+            if bar.close > self.stopExit:
+                #固定止损
+                self.cover(bar.close, abs(self.pos), True)
+            else:
+                #跟随止损
+                self.cover(self.shortStop, abs(self.pos), True)
             self.cover(self.shortStop, abs(self.pos), True)
 
             # 记录log
