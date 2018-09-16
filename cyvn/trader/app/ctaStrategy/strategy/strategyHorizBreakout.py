@@ -214,20 +214,20 @@ class HorizBreakoutStrategy(CtaTemplate):
 
     #----------------------------------------------------------------------
     def onTrade(self, trade):
-        if self.pos != 0:
-            # 多头开仓成交后，撤消空头委托
-            if self.pos > 0:
-                for shortOrderID in self.shortOrderIDList:
-                    self.cancelOrder(shortOrderID)
-            # 反之同样
-            elif self.pos < 0:
-                for buyOrderID in self.buyOrderIDList:
-                    self.cancelOrder(buyOrderID)
-
-            # 移除委托号
-            for orderID in (self.buyOrderIDList + self.shortOrderIDList):
-                if orderID in self.orderList:
-                    self.orderList.remove(orderID)
+        # if self.pos != 0:
+        #     # 多头开仓成交后，撤消空头委托
+        #     if self.pos > 0:
+        #         for shortOrderID in self.shortOrderIDList:
+        #             self.cancelOrder(shortOrderID)
+        #     # 反之同样
+        #     elif self.pos < 0:
+        #         for buyOrderID in self.buyOrderIDList:
+        #             self.cancelOrder(buyOrderID)
+        #
+        #     # 移除委托号
+        #     for orderID in (self.buyOrderIDList + self.shortOrderIDList):
+        #         if orderID in self.orderList:
+        #             self.orderList.remove(orderID)
 
         # 发出状态更新事件
         #self.putEvent()
