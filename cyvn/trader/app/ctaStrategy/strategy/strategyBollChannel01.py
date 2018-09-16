@@ -88,7 +88,7 @@ class BollChannelStrategy01(CtaTemplate):
         """Constructor"""
         super(BollChannelStrategy01, self).__init__(ctaEngine, setting)
         
-        self.bm = BarGenerator(self.onBar, 5, self.on5minBar)        # 创建K线合成器对象
+        self.bm = BarGenerator(self.onBar, 15, self.on5minBar)        # 创建K线合成器对象
         self.am = ArrayManager()
         self.entryPriceList = []
         self.orderList = []
@@ -240,7 +240,7 @@ class BollChannelStrategy01(CtaTemplate):
             else:
                 #跟随止损
                 self.sell(self.longStop, abs(self.pos), True)
-            self.sell(self.longStop, abs(self.pos), True)
+            #self.sell(self.longStop, abs(self.pos), True)
 
             # 记录log
             # log = "-----" * 10 + "\n@on5minBar\n" + \
@@ -266,7 +266,7 @@ class BollChannelStrategy01(CtaTemplate):
             else:
                 #跟随止损
                 self.cover(self.shortStop, abs(self.pos), True)
-            self.cover(self.shortStop, abs(self.pos), True)
+            #self.cover(self.shortStop, abs(self.pos), True)
 
             # 记录log
             # log = "-----" * 10 + "\n@on5minBar\n" + \
