@@ -64,7 +64,7 @@ class BasicLSTMStrategy(CtaTemplate):
         """Constructor"""
         super(BasicLSTMStrategy, self).__init__(ctaEngine, setting)
 
-        self.bg = BarGenerator(self.onBar, 5, self.onFiveBar)  # 创建K线合成器对象
+        self.bg = BarGenerator(self.onBar, 30, self.onFiveBar)  # 创建K线合成器对象
         self.am = ArrayManager(size=200)
 
         self.buyOrderIDList = []
@@ -161,28 +161,28 @@ class BasicLSTMStrategy(CtaTemplate):
             if self.pos < 0:
                 orderID = self.cover(bar.close + 5, abs(self.pos))
                 self.orderList.extend(orderID)
-                time.sleep(10)
+                time.sleep(3)
                 orderID = self.buy(bar.close + 5, self.fixedSize)
                 self.orderList.extend(orderID)
 
-            if self.targetPos < 0:
-                if self.pos == 0:
-                    orderID = self.short(bar.close - 5, self.fixedSize)
-                    self.orderList.extend(orderID)
-                if self.pos > 0:
-                    orderID = self.sell(bar.close - 5, abs(self.pos))
-                    self.orderList.extend(orderID)
-                    time.sleep(10)
-                    orderID = self.short(bar.close - 5, self.fixedSize)
-                    self.orderList.extend(orderID)
+        if self.targetPos < 0:
+            if self.pos == 0:
+                orderID = self.short(bar.close - 5, self.fixedSize)
+                self.orderList.extend(orderID)
+            if self.pos > 0:
+                orderID = self.sell(bar.close - 5, abs(self.pos))
+                self.orderList.extend(orderID)
+                time.sleep(3)
+                orderID = self.short(bar.close - 5, self.fixedSize)
+                self.orderList.extend(orderID)
 
-            if self.targetPos == 0:
-                if self.pos > 0:
-                    orderID = self.sell(bar.close - 5, abs(self.pos))
-                    self.orderList.extend(orderID)
-                if self.pos < 0:
-                    orderID = self.cover(bar.close + 5, abs(self.pos))
-                    self.orderList.extend(orderID)
+        if self.targetPos == 0:
+            if self.pos > 0:
+                orderID = self.sell(bar.close - 5, abs(self.pos))
+                self.orderList.extend(orderID)
+            if self.pos < 0:
+                orderID = self.cover(bar.close + 5, abs(self.pos))
+                self.orderList.extend(orderID)
         self.putEvent()
     
     #---------------------------------------------------------------------
