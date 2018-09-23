@@ -79,7 +79,7 @@ class DeepLSTMStrategy(CtaTemplate):
 
 
 
-        tmp = fix_data(u'data/AG88.csv')
+        tmp = fix_data(u'data/ag88.csv')
 
         # targets 1d 数据合成
         tmp_1d = High_2_Low(tmp, '1d')
@@ -120,9 +120,9 @@ class DeepLSTMStrategy(CtaTemplate):
             hidden_size=50,
             memory_size=50,
             learning_rate=1e-3,
-            l2_coefficient=5e-3)
+            l2_coefficient=1e-3)
 
-        a.restore_trainable_variables('models/DNCoreDeepLSTM_NADM_saver_5.ckpt')
+        a.restore_trainable_variables('models/DNCoreDeepLSTM_NADM_saver_6.ckpt')
         self.model_classifier = a
 
         # 载入历史数据，并采用回放计算的方式初始化策略数值
