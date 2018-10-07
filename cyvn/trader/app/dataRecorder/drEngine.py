@@ -348,6 +348,16 @@ class DrEngine(object):
 
                 self.mainEngine.dbInsert(DAILY_DB_NAME, contact_, day_bar.__dict__)
 
+                #写入持仓量数据
+                fileName = 'openInterest.json'
+                FilePath = getJsonPath(fileName, __file__)
+                with open(FilePath,'r') as load_f:
+                    load_dict = json.load(load_f)
+                    load_dict[day_bar.symbol] = day_bar.openInterest
+                with open(FilePath, 'w') as dump_f:
+                    json.dump(load_dict, dump_f)
+
+
  
     #----------------------------------------------------------------------
     def insertData(self, dbName, collectionName, data):
