@@ -221,8 +221,8 @@ class DeepLSTMStrategy2016(CtaTemplate):
         inputs = np.expand_dims(np.array(tmp_factors), axis=1)
 
         # 模型预测
-        probability, classification = self.model_classifier.pred(inputs)
-        flag = classification[-1][0]
+        probability, self.classification = self.model_classifier.pred(inputs)
+        flag = self.classification[-1][0]
         self.flag = flag
 
         #沽空

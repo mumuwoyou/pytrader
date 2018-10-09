@@ -31,7 +31,7 @@ class BollChannelStrategy01(CtaTemplate):
     cciWindow = 10                      # CCI窗口数
     atrWindow = 30                      # ATR窗口数
     slMultiplier = 5                 # 计算止损距离的乘数
-    initDays = 10                       # 初始化数据所用的天数
+    initDays = 30                       # 初始化数据所用的天数
     fixedSize = 1                       # 每次交易的数量
 
     # 策略变量
