@@ -518,11 +518,16 @@ class RecorderBarManager(object):
 
             # 尚未创建对象
             if not self.bar:
-                self.bar = VtBarData()
-                newMinute = True
+                tick.datetime.replace(second=0, microsecond=0)  # 将秒和微秒设为0
+                if (tick.datetime != datetime.strptime(' '.join([tick.date, '09:00:00.000']), '%Y%m%d %H:%M:%S.%f')
+                    or tick.datetime != datetime.strptime(' '.join([tick.date, '10:30:00.000']), '%Y%m%d %H:%M:%S.%f')
+                    or tick.datetime != datetime.strptime(' '.join([tick.date, '13:30:00.000']), '%Y%m%d %H:%M:%S.%f')
+                    or tick.datetime != datetime.strptime(' '.join([tick.date, '21:00:00.000']), '%Y%m%d %H:%M:%S.%f')):
+                    self.bar = VtBarData()
+                    newMinute = True
             # 新的一分钟
             elif self.bar.datetime.minute != tick.datetime.minute:
-                tick.datetime.replace(second=0, microsecond=0)
+                tick.datetime.replace(second=0, microsecond=0)   # 将秒和微秒设为0
                 if (tick.datetime != datetime.strptime(' '.join([tick.date, '09:00:00.000']), '%Y%m%d %H:%M:%S.%f')
                     or tick.datetime != datetime.strptime(' '.join([tick.date, '10:30:00.000']), '%Y%m%d %H:%M:%S.%f')
                     or tick.datetime != datetime.strptime(' '.join([tick.date, '13:30:00.000']), '%Y%m%d %H:%M:%S.%f')
