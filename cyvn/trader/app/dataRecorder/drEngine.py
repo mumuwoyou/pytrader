@@ -522,10 +522,10 @@ class RecorderBarManager(object):
                 newMinute = True
             # 新的一分钟
             elif self.bar.datetime.minute != tick.datetime.minute \
-                    and (tick.datetime != datetime.strptime(' '.join([tick.date, '09:00:00.000']), '%Y%m%d %H:%M:%S.%f')
-                    or tick.datetime != datetime.strptime(' '.join([tick.date, '10:30:00.000']), '%Y%m%d %H:%M:%S.%f')
-                    or tick.datetime != datetime.strptime(' '.join([tick.date, '13:30:00.000']), '%Y%m%d %H:%M:%S.%f')
-                    or tick.datetime != datetime.strptime(' '.join([tick.date, '21:00:00.000']), '%Y%m%d %H:%M:%S.%f')):
+                    and (tick.datetime.replace(second=0, microsecond=0) != datetime.strptime(' '.join([tick.date, '09:00:00.000']), '%Y%m%d %H:%M:%S.%f')
+                    or tick.datetime.replace(second=0, microsecond=0) != datetime.strptime(' '.join([tick.date, '10:30:00.000']), '%Y%m%d %H:%M:%S.%f')
+                    or tick.datetime.replace(second=0, microsecond=0) != datetime.strptime(' '.join([tick.date, '13:30:00.000']), '%Y%m%d %H:%M:%S.%f')
+                    or tick.datetime.replace(second=0, microsecond=0) != datetime.strptime(' '.join([tick.date, '21:00:00.000']), '%Y%m%d %H:%M:%S.%f')):
                 # 生成上一分钟K线的时间戳
                 self.bar.datetime = tick.datetime
                 self.bar.datetime = self.bar.datetime.replace(second=0, microsecond=0)  # 将秒和微秒设为0
