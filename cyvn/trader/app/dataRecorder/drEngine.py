@@ -521,23 +521,24 @@ class RecorderBarManager(object):
                 self.bar = VtBarData()
                 newMinute = True
             # 新的一分钟
-            elif self.bar.datetime.minute != tick.datetime.minute \
-                    and (tick.datetime.replace(second=0, microsecond=0) != datetime.strptime(' '.join([tick.date, '09:00:00.000']), '%Y%m%d %H:%M:%S.%f')
-                    or tick.datetime.replace(second=0, microsecond=0) != datetime.strptime(' '.join([tick.date, '10:30:00.000']), '%Y%m%d %H:%M:%S.%f')
-                    or tick.datetime.replace(second=0, microsecond=0) != datetime.strptime(' '.join([tick.date, '13:30:00.000']), '%Y%m%d %H:%M:%S.%f')
-                    or tick.datetime.replace(second=0, microsecond=0) != datetime.strptime(' '.join([tick.date, '21:00:00.000']), '%Y%m%d %H:%M:%S.%f')):
-                # 生成上一分钟K线的时间戳
-                self.bar.datetime = tick.datetime
-                self.bar.datetime = self.bar.datetime.replace(second=0, microsecond=0)  # 将秒和微秒设为0
-                self.bar.date = self.bar.datetime.strftime('%Y%m%d')
-                self.bar.time = self.bar.datetime.strftime('%H:%M:%S.%f')
+            elif self.bar.datetime.minute != tick.datetime.minute:
+                tick.datetime.replace(second=0, microsecond=0)
+                if (tick.datetime != datetime.strptime(' '.join([tick.date, '09:00:00.000']), '%Y%m%d %H:%M:%S.%f')
+                    or tick.datetime != datetime.strptime(' '.join([tick.date, '10:30:00.000']), '%Y%m%d %H:%M:%S.%f')
+                    or tick.datetime != datetime.strptime(' '.join([tick.date, '13:30:00.000']), '%Y%m%d %H:%M:%S.%f')
+                    or tick.datetime != datetime.strptime(' '.join([tick.date, '21:00:00.000']), '%Y%m%d %H:%M:%S.%f')):
+                    # 生成上一分钟K线的时间戳
+                    self.bar.datetime = tick.datetime
+                    self.bar.datetime = self.bar.datetime.replace(second=0, microsecond=0)  # 将秒和微秒设为0
+                    self.bar.date = self.bar.datetime.strftime('%Y%m%d')
+                    self.bar.time = self.bar.datetime.strftime('%H:%M:%S.%f')
 
-                # 推送已经结束的上一分钟K线
-                self.onBar(self.bar)
+                    # 推送已经结束的上一分钟K线
+                    self.onBar(self.bar)
 
-                # 创建新的K线对象
-                self.bar = VtBarData()
-                newMinute = True
+                    # 创建新的K线对象
+                    self.bar = VtBarData()
+                    newMinute = True
 
             # 初始化新一分钟的K线数据
             if newMinute:
