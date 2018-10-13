@@ -9,3 +9,5 @@ flask-socketio
 flask-restful
 flask-cors
 gevent-websocket
+psutil
+APScheduler
