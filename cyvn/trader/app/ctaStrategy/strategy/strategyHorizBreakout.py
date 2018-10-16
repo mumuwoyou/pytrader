@@ -187,18 +187,17 @@ class HorizBreakoutStrategy(CtaTemplate):
             self.sell_low = am.low[-1]
 
         # 平多头
-        if self.pos > 0:
-            if((2*am.close[-1] < self.buy_price + self.buy_high and self.buy_high > self.buy_price + 40)):
-                self.targetPos = 0
-            orderID = self.sell(l_low - 5, abs(self.pos), True)
-            self.shortOrderIDList.extend(orderID)
+        if self.pos > 0 and  ((2*am.close[-1] < self.buy_price + self.buy_high
+                  and self.buy_high > self.buy_price + 40)  or am.close[-1] < l_low):
+            # orderID = self.sell(bar.close - 5, abs(self.pos))
+            # self.orderList.extend(orderID)
+            self.targetPos = 0
         #平空头
-        if self.pos < 0:
-            if ((2*am.close[-1] > self.sell_price + self.sell_low and self.sell_low < self.sell_price  - 40) ):
-                self.targetPos = 0
-            orderID = self.cover(h_high + 5, abs(self.pos), True)
-            self.buyOrderIDList.extend(orderID)
-
+        if self.pos < 0 and ((2*am.close[-1] > self.sell_price + self.sell_low
+                    and self.sell_low < self.sell_price  - 40) or am.close[-1] >h_high):
+            # orderID = self.cover(bar.close + 5, abs(self.pos))
+            # self.orderList.extend(orderID)
+            self.targetPos = 0
 
         # 同步数据到数据库
         self.saveSyncData()
