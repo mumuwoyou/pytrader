@@ -10,6 +10,11 @@
         "vtSymbol": "rb1901"
     },
     {
+        "name": "Adxr",
+        "className": "AdxrStrategy",
+        "vtSymbol": "rb1901"
+    },
+    {
         "name": "DeepLSTM2016",
         "className": "DeepLSTMStrategy2016",
         "vtSymbol": "ag1812"

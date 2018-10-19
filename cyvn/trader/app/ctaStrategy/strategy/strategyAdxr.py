@@ -131,7 +131,7 @@ class AdxrStrategy(CtaTemplate):
             if self.pos < 0:
                 orderID = self.cover(bar.close + 5, abs(self.pos))
                 self.orderList.extend(orderID)
-                time.sleep(2)
+                time.sleep(3)
                 orderID = self.buy(bar.close + 5, self.fixedSize)
                 self.orderList.extend(orderID)
 
@@ -142,17 +142,11 @@ class AdxrStrategy(CtaTemplate):
             if self.pos > 0:
                 orderID = self.sell(bar.close - 5, abs(self.pos))
                 self.orderList.extend(orderID)
-                time.sleep(2)
+                time.sleep(3)
                 orderID = self.short(bar.close - 5, self.fixedSize)
                 self.orderList.extend(orderID)
 
-        if self.targetPos == 0:
-            if self.pos > 0:
-                orderID = self.sell(bar.close - 5, abs(self.pos))
-                self.orderList.extend(orderID)
-            if self.pos < 0:
-                orderID = self.cover(bar.close + 5, abs(self.pos))
-                self.orderList.extend(orderID)
+
 
         self.putEvent()
     
@@ -204,29 +198,10 @@ class AdxrStrategy(CtaTemplate):
         # 判断是否要进行交易
         # 多头
         if self.adxr > 30 and self.pdi > self.mdi and self.fastMa > self.middleMa > self.slowMa:
-            # if self.pos < 0:
-            #     # 这里为了保证成交，选择超价5个整指数点下单
-            #     orderID = self.cover(bar.close + 5, abs(self.pos))
-            #     self.orderList.extend(orderID)
-            #     time.sleep(2)
-            #     orderID = self.buy(bar.close + 5, self.fixedSize)
-            #     self.orderList.extend(orderID)
-            # if self.pos == 0:
-            #     orderID = self.buy(bar.close + 5, self.fixedSize)
-            #     self.orderList.extend(orderID)
             self.targetPos = self.fixedSize
 
         # 空头
         if self.adxr > 30 and self.mdi > self.pdi and self.fastMa < self.middleMa < self.slowMa:
-            # if self.pos > 0:
-            #     orderID = self.sell(bar.close - 5, abs(self.pos))
-            #     self.orderList.extend(orderID)
-            #     time.sleep(2)
-            #     orderID = self.short(bar.close - 5, self.fixedSize)
-            #     self.orderList.extend(orderID)
-            # if self.pos == 0:
-            #     orderID = self.short(bar.close - 5, self.fixedSize)
-            #     self.orderList.extend(orderID)
             self.targetPos = -self.fixedSize
 
         # 同步数据到数据库
