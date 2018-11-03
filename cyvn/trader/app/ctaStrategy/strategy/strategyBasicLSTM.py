@@ -65,6 +65,7 @@ class BasicLSTMStrategy(CtaTemplate):
         super(BasicLSTMStrategy, self).__init__(ctaEngine, setting)
 
         self.bg = BarGenerator(self.onBar, 30, self.onFiveBar)  # 创建K线合成器对象
+
         self.am = ArrayManager(size=200)
 
         self.buyOrderIDList = []

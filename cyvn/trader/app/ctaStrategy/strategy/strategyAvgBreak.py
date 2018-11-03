@@ -65,7 +65,7 @@ class AvgBreakStrategy(TargetPosTemplate):
         """Constructor"""
         super(AvgBreakStrategy, self).__init__(ctaEngine, setting)
 
-        self.bg = BarGenerator(self.onBar, 15, self.onFifteenBar)  # 创建K线合成器对象
+        self.bg = BarGenerator(self.onBar, 15, self.onMyBar)  # 创建K线合成器对象
         self.am = ArrayManager(size=100)
 
         self.buyOrderIDList = []
@@ -82,7 +82,7 @@ class AvgBreakStrategy(TargetPosTemplate):
         # 载入历史数据，并采用回放计算的方式初始化策略数值
         initData = self.loadBar(self.initDays)
         for bar in initData:
-            self.onMyBar(bar)
+            self.onBar(bar)
 
         self.putEvent()
 
@@ -110,16 +110,6 @@ class AvgBreakStrategy(TargetPosTemplate):
         TargetPosTemplate.onBar(self, bar)
         self.bg.updateBar(bar)
 
-    # ---------------------------------------------------------------------
-    def onFifteenBar(self, bar):
-        """收到15分钟K线"""
-
-
-        # 同步数据到数据库
-        self.saveSyncData()
-
-        # 发出状态更新事件
-        self.putEvent()
 
     # ----------------------------------------------------------------------
     def onMyBar(self, bar):
@@ -135,7 +125,7 @@ class AvgBreakStrategy(TargetPosTemplate):
         low_price_for_atr = am.low[-100:-1]
         close_price = am.close[-100:-1]
         close_price_for_atr = close_price
-        myatr = talib.ATR(high_price, low_price_for_atr, close_price_for_atr, timeperiod=14 )[-1]
+        myatr = talib.ATR(high_price, low_price_for_atr, close_price_for_atr, timeperiod=14)[-1]
         buyprice = long_avg + 2.5*myatr
         sellprice = long_avg - 2.5*myatr
         #做多

@@ -37,6 +37,7 @@ class BollChannelStrategy01(CtaTemplate):
     # 策略变量
     bollUp = 0                          # 布林通道上轨
     bollDown = 0                        # 布林通道下轨
+    bollMid = 0
     cciValue = 0                        # CCI指标数值
     atrValue = 0                        # ATR指标数值
     filterTime = True                  #是否过滤9点开盘后头五分钟，15点收盘前五分钟
@@ -188,7 +189,7 @@ class BollChannelStrategy01(CtaTemplate):
             return
         
         # 计算指标数值
-        self.bollUp, self.bollDown = am.boll(self.bollWindow, self.bollDev)
+        self.bollUp, self.bollDown, self.bollMid = am.boll(self.bollWindow, self.bollDev)
         self.cciValue = am.cci(self.cciWindow)
 
         atrArray = am.atr(self.atrWindow, array=True)
