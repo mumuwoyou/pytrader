@@ -15,6 +15,11 @@
         "vtSymbol": "rb1901"
     },
     {
+        "name": "AvgBreak",
+        "className": "AvgBreakStrategy",
+        "vtSymbol": "rb1901"
+    },
+    {
         "name": "DeepLSTM2016",
         "className": "DeepLSTMStrategy2016",
         "vtSymbol": "ag1812"
