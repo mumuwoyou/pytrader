@@ -747,7 +747,7 @@ class ArrayManager(object):
         up = mid + std * dev
         down = mid - std * dev
         
-        return up, down    
+        return up, down, mid
     
     #----------------------------------------------------------------------
     def keltner(self, n, dev, array=False):
