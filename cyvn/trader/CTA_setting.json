@@ -18,15 +18,5 @@
         "name": "AvgBreak",
         "className": "AvgBreakStrategy",
         "vtSymbol": "rb1901"
-    },
-    {
-        "name": "DeepLSTM2016",
-        "className": "DeepLSTMStrategy2016",
-        "vtSymbol": "ag1812"
-    },
-    {
-        "name": "DeepLSTM2017",
-        "className": "DeepLSTMStrategy2017",
-        "vtSymbol": "ag1812"
     }
 ]
