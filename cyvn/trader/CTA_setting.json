@@ -13,10 +13,5 @@
         "name": "Adxr",
         "className": "AdxrStrategy",
         "vtSymbol": "rb1901"
-    },
-    {
-        "name": "AvgBreak",
-        "className": "AvgBreakStrategy",
-        "vtSymbol": "rb1901"
     }
 ]
