@@ -20,11 +20,10 @@ class AvgBreakStrategy(TargetPosTemplate):
     className = 'AvgBreakStrategy'
     author = u'用Python的交易员'
 
-    barDbName = DAILY_DB_NAME
 
     # 策略参数
     trailingPrcnt = 0.8  # 移动止损
-    initDays = 200  # 初始化数据所用的天数
+    initDays = 30 # 初始化数据所用的天数
     fixedSize = 1  # 每次交易的数量
     m1 = 34
     m2 = 2.2
@@ -32,9 +31,6 @@ class AvgBreakStrategy(TargetPosTemplate):
 
     intraTradeHigh = 0  # 持仓期内的最高点
     intraTradeLow = 0  # 持仓期内的最低点
-
-    model_classifier = None
-
 
     buyOrderIDList = []  # OCO委托买入开仓的委托号
     shortOrderIDList = []  # OCO委托卖出开仓的委托号
@@ -139,6 +135,9 @@ class AvgBreakStrategy(TargetPosTemplate):
             self .setTargetPos(0)
         if self.pos < 0 and am.close[-1] > long_avg:
             self.setTargetPos(0)
+
+        # 同步数据到数据库
+        self.saveSyncData()
         # 发出状态更新事件
         self.putEvent()
 
