@@ -6,7 +6,7 @@
     },
     {
         "name": "BollChannel",
-        "className": "BollChannelStrategy",
+        "className": "BollChannelStrategy01",
         "vtSymbol": "rb1905"
     },
     {
