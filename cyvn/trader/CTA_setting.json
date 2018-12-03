@@ -1,17 +1,17 @@
 [
     {
-        "name": "HorizBreakout",
-        "className": "HorizBreakoutStrategy",
-        "vtSymbol": "rb1901"
+        "name": "HorizBreakoutZx",
+        "className": "HorizBreakoutZxStrategy",
+        "vtSymbol": "rb1905"
     },
     {
-        "name": "BollChannel01",
-        "className": "BollChannelStrategy01",
-        "vtSymbol": "rb1901"
+        "name": "BollChannelZx",
+        "className": "BollChannelZxStrategy",
+        "vtSymbol": "rb1905"
     },
     {
-        "name": "Adxr",
-        "className": "AdxrStrategy",
-        "vtSymbol": "rb1901"
+        "name": "AdxrZx",
+        "className": "AdxrZxStrategy",
+        "vtSymbol": "rb1905"
     }
 ]

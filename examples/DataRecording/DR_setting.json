@@ -9,7 +9,6 @@
 
     "bar":
     [
-        ["rb1810","CTP"],
         ["rb1901","CTP"],
         ["rb1905","CTP"],
         ["ag1812","CTP"],
@@ -18,7 +17,7 @@
 
     "active":
     {
-        "rb.HOT": "rb1901",
-        "ag.HOT": "ag1812"
+        "rb.HOT": "rb1905",
+        "ag.HOT": "ag1906"
     }
 }
