@@ -193,7 +193,7 @@ class DrEngine(object):
         
         # 生成datetime对象
         if not tick.datetime:
-            tick.datetime = datetime.strptime(' '.join([tick.date, tick.time]), '%Y%m%d %H:%M:%S.%f')            
+            tick.datetime = datetime.strptime(' '.join([tick.date, tick.time]), '%Y%m%d %H:%M:%S')
 
         self.onTick(tick)
         
@@ -217,7 +217,7 @@ class DrEngine(object):
 
         #中间启停去掉脏数据
         if not tick.datetime:
-            tick.datetime = datetime.strptime(' '.join([tick.date, tick.time]), '%Y%m%d %H:%M:%S.%f')
+            tick.datetime = datetime.strptime(' '.join([tick.date, tick.time]), '%Y%m%d %H:%M:%S')
 
             #判断脏数据
             time_now = datetime.now()
@@ -342,7 +342,7 @@ class DrEngine(object):
             if day_bar:
                 day_bar.datetime = datetime(time_now.year, time_now.month,time_now.day)
                 day_bar.date = day_bar.datetime.strftime('%Y%m%d')
-                day_bar.time = day_bar.datetime.strftime('%H:%M:%S.%f')
+                day_bar.time = day_bar.datetime.strftime('%H:%M:%S')
                 #day_bar.date     = datetime(time_now.year, time_now.month,time_now.day).date()
                 #day_bar.time     = datetime(time_now.year, time_now.month,time_now.day).time()
 
@@ -462,7 +462,7 @@ class RecorderBarManager(object):
                 # 生成上一分钟K线的时间戳
                 self.bar.datetime = self.bar.datetime.replace(second=0, microsecond=0)  # 将秒和微秒设为0
                 self.bar.date = self.bar.datetime.strftime('%Y%m%d')
-                self.bar.time = self.bar.datetime.strftime('%H:%M:%S.%f')
+                self.bar.time = self.bar.datetime.strftime('%H:%M:%S')
 
                 # 推送已经结束的上一分钟K线
                 self.onBar(self.bar)
@@ -483,14 +483,14 @@ class RecorderBarManager(object):
                     self.bar.volume = int(tick.volume)
 
                     if day_close:
-                        hour_str = "15:00:00.000"
+                        hour_str = "15:00:00"
                     elif night_close1:
-                        hour_str = "23:00:00.000"
+                        hour_str = "23:00:00"
                     elif night_close2:
-                        hour_str = "01:00:00.000"
-                    self.bar.datetime = datetime.strptime(' '.join([tick.date, hour_str]), '%Y%m%d %H:%M:%S.%f')
+                        hour_str = "01:00:00"
+                    self.bar.datetime = datetime.strptime(' '.join([tick.date, hour_str]), '%Y%m%d %H:%M:%S')
                     self.bar.date = self.bar.datetime.strftime('%Y%m%d')
-                    self.bar.time = self.bar.datetime.strftime('%H:%M:%S.%f')
+                    self.bar.time = self.bar.datetime.strftime('%H:%M:%S')
                 else:
                     # 整点tick有丢失，就用前一小时的最后一个tick复制生成整点的bar
                     self.bar = VtBarData()
@@ -506,10 +506,10 @@ class RecorderBarManager(object):
                     self.bar.openInterest = self.lastTick.openInterest
                     self.bar.volume = int(self.lastTick.volume)
 
-                    hour_str = tick.datetime.strftime("%H") + ":00:00.000"
-                    self.bar.datetime = datetime.strptime(' '.join([tick.date, hour_str]), '%Y%m%d %H:%M:%S.%f')
+                    hour_str = tick.datetime.strftime("%H") + ":00:00"
+                    self.bar.datetime = datetime.strptime(' '.join([tick.date, hour_str]), '%Y%m%d %H:%M:%S')
                     self.bar.date = self.bar.datetime.strftime('%Y%m%d')
-                    self.bar.time = self.bar.datetime.strftime('%H:%M:%S.%f')
+                    self.bar.time = self.bar.datetime.strftime('%H:%M:%S')
 
                 # 推送整点的bar
                 self.onBar(self.bar)
@@ -519,8 +519,8 @@ class RecorderBarManager(object):
             # 尚未创建对象
             if not self.bar:
                 dt = tick.datetime.replace(second=0, microsecond=0)  # 将秒和微秒设为0
-                if not (dt == datetime.strptime(' '.join([tick.date, '09:00:00.000']), '%Y%m%d %H:%M:%S.%f')
-                    or dt == datetime.strptime(' '.join([tick.date, '21:00:00.000']), '%Y%m%d %H:%M:%S.%f')):
+                if not (dt == datetime.strptime(' '.join([tick.date, '09:00:00']), '%Y%m%d %H:%M:%S')
+                    or dt == datetime.strptime(' '.join([tick.date, '21:00:00']), '%Y%m%d %H:%M:%S')):
                     self.bar = VtBarData()
                     newMinute = True
             # 新的一分钟
@@ -530,7 +530,7 @@ class RecorderBarManager(object):
                     self.bar.datetime = tick.datetime
                     self.bar.datetime = self.bar.datetime.replace(second=0, microsecond=0)  # 将秒和微秒设为0
                     self.bar.date = self.bar.datetime.strftime('%Y%m%d')
-                    self.bar.time = self.bar.datetime.strftime('%H:%M:%S.%f')
+                    self.bar.time = self.bar.datetime.strftime('%H:%M:%S')
 
                     # 推送已经结束的上一分钟K线
                     self.onBar(self.bar)
