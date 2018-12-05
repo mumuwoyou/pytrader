@@ -518,9 +518,6 @@ class RecorderBarManager(object):
 
             # 尚未创建对象
             if not self.bar:
-                dt = tick.datetime.replace(second=0, microsecond=0)  # 将秒和微秒设为0
-                if not (dt == datetime.strptime(' '.join([tick.date, '09:00:00']), '%Y%m%d %H:%M:%S')
-                    or dt == datetime.strptime(' '.join([tick.date, '21:00:00']), '%Y%m%d %H:%M:%S')):
                     self.bar = VtBarData()
                     newMinute = True
             # 新的一分钟
@@ -531,9 +528,10 @@ class RecorderBarManager(object):
                     self.bar.datetime = self.bar.datetime.replace(second=0, microsecond=0)  # 将秒和微秒设为0
                     self.bar.date = self.bar.datetime.strftime('%Y%m%d')
                     self.bar.time = self.bar.datetime.strftime('%H:%M:%S')
-
-                    # 推送已经结束的上一分钟K线
-                    self.onBar(self.bar)
+                    if (self.bar.datetime != datetime.strptime(' '.join([tick.date, '09:00:00']), '%Y%m%d %H:%M:%S') or
+                            self.bar.datetime != datetime.strptime(' '.join([tick.date, '21:00:00']), '%Y%m%d %H:%M:%S')):
+                         # 推送已经结束的上一分钟K线
+                        self.onBar(self.bar)
 
                     # 创建新的K线对象
                     self.bar = VtBarData()
