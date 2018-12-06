@@ -528,8 +528,10 @@ class RecorderBarManager(object):
                     self.bar.datetime = self.bar.datetime.replace(second=0, microsecond=0)  # 将秒和微秒设为0
                     self.bar.date = self.bar.datetime.strftime('%Y%m%d')
                     self.bar.time = self.bar.datetime.strftime('%H:%M:%S')
-                    if (self.bar.datetime != datetime.strptime(' '.join([tick.date, '09:00:00']), '%Y%m%d %H:%M:%S') or
-                            self.bar.datetime != datetime.strptime(' '.join([tick.date, '21:00:00']), '%Y%m%d %H:%M:%S')):
+                    if not (self.bar.datetime ==
+                            datetime.strptime(' '.join([tick.date, '09:00:00']), '%Y%m%d %H:%M:%S')
+                            or self.bar.datetime ==
+                            datetime.strptime(' '.join([tick.date, '21:00:00']), '%Y%m%d %H:%M:%S')):
                          # 推送已经结束的上一分钟K线
                         self.onBar(self.bar)
 
