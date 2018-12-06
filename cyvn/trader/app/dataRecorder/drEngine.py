@@ -529,9 +529,9 @@ class RecorderBarManager(object):
                     self.bar.date = self.bar.datetime.strftime('%Y%m%d')
                     self.bar.time = self.bar.datetime.strftime('%H:%M:%S')
                     if not (self.bar.datetime ==
-                            datetime.strptime(' '.join([tick.date, '09:00:00']), '%Y%m%d %H:%M:%S')
+                            datetime.strptime(' '.join([tick.date, '21:00:00']), '%Y%m%d %H:%M:%S')
                             or self.bar.datetime ==
-                            datetime.strptime(' '.join([tick.date, '21:00:00']), '%Y%m%d %H:%M:%S')):
+                            datetime.strptime(' '.join([tick.date, '09:00:00']), '%Y%m%d %H:%M:%S')):
                          # 推送已经结束的上一分钟K线
                         self.onBar(self.bar)
 
