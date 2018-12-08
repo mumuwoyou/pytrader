@@ -443,84 +443,81 @@ class RecorderBarManager(object):
             if tick.lastPrice == 0.0:  ##过滤当前价为0的。
                 return
 
-            # 判断整点的数据缺失，强制生成整点的bar(13是休市，要去掉)
-            # 新tick不是整点，证明整点的tick丢失
-            hour_not_end = (self.bar != None) and (tick.datetime.minute != 0 and tick.datetime.second != 0) and (
-                        tick.datetime.hour != 13) and (tick.datetime.hour != self.bar.datetime.hour)
-            # 15点的bar判断后直接生成
-            day_close = (self.bar != None) and (tick.datetime.hour == 15 and tick.datetime.minute == 0) and (
-                        self.bar.datetime.hour == 14)
-            # 夜盘整点结束的判断
-            night_close1 = (self.bar != None) and (tick.datetime.hour == 23 and tick.datetime.minute == 0) and (
-                        self.bar.datetime.hour == 22)
-            night_close2 = (self.bar != None) and (tick.datetime.hour == 1 and tick.datetime.minute == 0) and (
-                        self.bar.datetime.hour == 0)
-            close_flag = (day_close or night_close1 or night_close2)
-
-            if (hour_not_end or close_flag):
-                # 强制生成整点bar或15点bar
-                # 生成上一分钟K线的时间戳
-                self.bar.datetime = self.bar.datetime.replace(second=0, microsecond=0)  # 将秒和微秒设为0
-                self.bar.date = self.bar.datetime.strftime('%Y%m%d')
-                self.bar.time = self.bar.datetime.strftime('%H:%M:%S')
-
-                # 推送已经结束的上一分钟K线
-                self.onBar(self.bar)
-
-                if close_flag:
-                    # 15点收盘和夜盘收盘结束的tick直接用当前tick生成
-                    self.bar = VtBarData()
-                    self.bar.vtSymbol = tick.vtSymbol
-                    self.bar.symbol = tick.symbol
-                    self.bar.exchange = tick.exchange
-
-                    self.bar.open = tick.lastPrice
-                    self.bar.high = tick.lastPrice
-                    self.bar.low = tick.lastPrice
-
-                    self.bar.close = tick.lastPrice
-                    self.bar.openInterest = tick.openInterest
-                    self.bar.volume = int(tick.volume)
-
-                    if day_close:
-                        hour_str = "15:00:00"
-                    elif night_close1:
-                        hour_str = "23:00:00"
-                    elif night_close2:
-                        hour_str = "01:00:00"
-                    self.bar.datetime = datetime.strptime(' '.join([tick.date, hour_str]), '%Y%m%d %H:%M:%S')
-                    self.bar.date = self.bar.datetime.strftime('%Y%m%d')
-                    self.bar.time = self.bar.datetime.strftime('%H:%M:%S')
-                else:
-                    # 整点tick有丢失，就用前一小时的最后一个tick复制生成整点的bar
-                    self.bar = VtBarData()
-                    self.bar.vtSymbol = self.lastTick.vtSymbol
-                    self.bar.symbol = self.lastTick.symbol
-                    self.bar.exchange = self.lastTick.exchange
-
-                    self.bar.open = self.lastTick.lastPrice
-                    self.bar.high = self.lastTick.lastPrice
-                    self.bar.low = self.lastTick.lastPrice
-
-                    self.bar.close = self.lastTick.lastPrice
-                    self.bar.openInterest = self.lastTick.openInterest
-                    self.bar.volume = int(self.lastTick.volume)
-
-                    hour_str = tick.datetime.strftime("%H") + ":00:00"
-                    self.bar.datetime = datetime.strptime(' '.join([tick.date, hour_str]), '%Y%m%d %H:%M:%S')
-                    self.bar.date = self.bar.datetime.strftime('%Y%m%d')
-                    self.bar.time = self.bar.datetime.strftime('%H:%M:%S')
-
-                # 推送整点的bar
-                self.onBar(self.bar)
-                # 恢复正常流程
-                self.bar = None
+            # # 判断整点的数据缺失，强制生成整点的bar(13是休市，要去掉)
+            # # 新tick不是整点，证明整点的tick丢失
+            # hour_not_end = (self.bar != None) and (tick.datetime.minute != 0 and tick.datetime.second != 0) and (
+            #             tick.datetime.hour != 13) and (tick.datetime.hour != self.bar.datetime.hour)
+            # # 15点的bar判断后直接生成
+            # day_close = (self.bar != None) and (tick.datetime.hour == 15 and tick.datetime.minute == 0) and (
+            #             self.bar.datetime.hour == 14)
+            # # 夜盘整点结束的判断
+            # night_close1 = (self.bar != None) and (tick.datetime.hour == 23 and tick.datetime.minute == 0) and (
+            #             self.bar.datetime.hour == 22)
+            # night_close2 = (self.bar != None) and (tick.datetime.hour == 1 and tick.datetime.minute == 0) and (
+            #             self.bar.datetime.hour == 0)
+            # close_flag = (day_close or night_close1 or night_close2)
+            #
+            # if (hour_not_end or close_flag):
+            #     # 强制生成整点bar或15点bar
+            #     # 生成上一分钟K线的时间戳
+            #     self.bar.datetime = self.bar.datetime.replace(second=0, microsecond=0)  # 将秒和微秒设为0
+            #     self.bar.date = self.bar.datetime.strftime('%Y%m%d')
+            #     self.bar.time = self.bar.datetime.strftime('%H:%M:%S')
+            #
+            #     # 推送已经结束的上一分钟K线
+            #     self.onBar(self.bar)
+            #
+            #     if close_flag:
+            #         # 15点收盘和夜盘收盘结束的tick直接用当前tick生成
+            #         self.bar = VtBarData()
+            #         self.bar.vtSymbol = tick.vtSymbol
+            #         self.bar.symbol = tick.symbol
+            #         self.bar.exchange = tick.exchange
+            #
+            #         self.bar.open = tick.lastPrice
+            #         self.bar.high = tick.lastPrice
+            #         self.bar.low = tick.lastPrice
+            #
+            #         self.bar.close = tick.lastPrice
+            #         self.bar.openInterest = tick.openInterest
+            #         self.bar.volume = int(tick.volume)
+            #
+            #         if day_close:
+            #             hour_str = "15:00:00"
+            #         elif night_close1:
+            #             hour_str = "23:00:00"
+            #         elif night_close2:
+            #             hour_str = "01:00:00"
+            #         self.bar.datetime = datetime.strptime(' '.join([tick.date, hour_str]), '%Y%m%d %H:%M:%S')
+            #         self.bar.date = self.bar.datetime.strftime('%Y%m%d')
+            #         self.bar.time = self.bar.datetime.strftime('%H:%M:%S')
+            #     else:
+            #         # 整点tick有丢失，就用前一小时的最后一个tick复制生成整点的bar
+            #         self.bar = VtBarData()
+            #         self.bar.vtSymbol = self.lastTick.vtSymbol
+            #         self.bar.symbol = self.lastTick.symbol
+            #         self.bar.exchange = self.lastTick.exchange
+            #
+            #         self.bar.open = self.lastTick.lastPrice
+            #         self.bar.high = self.lastTick.lastPrice
+            #         self.bar.low = self.lastTick.lastPrice
+            #
+            #         self.bar.close = self.lastTick.lastPrice
+            #         self.bar.openInterest = self.lastTick.openInterest
+            #         self.bar.volume = int(self.lastTick.volume)
+            #
+            #         hour_str = tick.datetime.strftime("%H") + ":00:00"
+            #         self.bar.datetime = datetime.strptime(' '.join([tick.date, hour_str]), '%Y%m%d %H:%M:%S')
+            #         self.bar.date = self.bar.datetime.strftime('%Y%m%d')
+            #         self.bar.time = self.bar.datetime.strftime('%H:%M:%S')
+            #
+            #     # 推送整点的bar
+            #     self.onBar(self.bar)
+            #     # 恢复正常流程
+            #     self.bar = None
 
             # 尚未创建对象
             if not self.bar:
-                dt = tick.datetime.replace(second=0, microsecond=0)  # 将秒和微秒设为0
-                if not (dt == datetime.strptime(' '.join([tick.date, '09:00:00']), '%Y%m%d %H:%M:%S')
-                    or dt == datetime.strptime(' '.join([tick.date, '21:00:00']), '%Y%m%d %H:%M:%S')):
                     self.bar = VtBarData()
                     newMinute = True
             # 新的一分钟
@@ -531,9 +528,12 @@ class RecorderBarManager(object):
                     self.bar.datetime = self.bar.datetime.replace(second=0, microsecond=0)  # 将秒和微秒设为0
                     self.bar.date = self.bar.datetime.strftime('%Y%m%d')
                     self.bar.time = self.bar.datetime.strftime('%H:%M:%S')
-
-                    # 推送已经结束的上一分钟K线
-                    self.onBar(self.bar)
+                    if not (self.bar.datetime ==
+                            datetime.strptime(' '.join([tick.date, '21:00:00']), '%Y%m%d %H:%M:%S')
+                            or self.bar.datetime ==
+                            datetime.strptime(' '.join([tick.date, '09:00:00']), '%Y%m%d %H:%M:%S')):
+                         # 推送已经结束的上一分钟K线
+                        self.onBar(self.bar)
 
                     # 创建新的K线对象
                     self.bar = VtBarData()

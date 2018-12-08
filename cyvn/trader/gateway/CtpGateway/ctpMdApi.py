@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-import hashlib, os, sys, tempfile
-from datetime import datetime, timedelta, date
+import hashlib, os, sys, tempfile, time
+from datetime import datetime, timedelta
 import logging
 from cyvn.ctp.futures import ApiStruct, MdApi
 from cyvn.trader.vtObject import *
@@ -191,25 +191,25 @@ class CtpMdApi(MdApi):
         tick.time = '.'.join([str(pDepthMarketData.UpdateTime.decode()), str(int(pDepthMarketData.UpdateMillisec/100))])
         
         # 这里由于交易所夜盘时段的交易日数据有误，所以选择本地获取
-        #tick.date = pDepthMarketData.TradingDay.decode()
-        tick.date = date.today().strftime('%Y%m%d')
+        #tick.date = pDepthMarketData.TradingDay
+        tick.date = pDepthMarketData.TradingDay.decode() #time.now().strftime('%Y%m%d')
 
         # 先根据交易日期，生成时间
         tick.datetime = datetime.strptime(tick.date + ' ' + tick.time, '%Y%m%d %H:%M:%S.%f')
-        # # 修正时间
-        # if tick.datetime.hour >= 20:
-        #     if tick.datetime.isoweekday() == 1:
-        #         # 交易日是星期一，实际时间应该是星期五
-        #         tick.datetime = tick.datetime - timedelta(days=3)
-        #         tick.date = tick.datetime.strftime('%Y%m%d')
-        #     else:
-        #         # 第二天
-        #         tick.datetime = tick.datetime - timedelta(days=1)
-        #         tick.date = tick.datetime.strftime('%Y%m%d')
-        # elif tick.datetime.hour < 8 and tick.datetime.isoweekday() == 1:
-        #     # 如果交易日是星期一，并且时间是早上8点前 => 星期六
-        #     tick.datetime = tick.datetime + timedelta(days=2)
-        #     tick.date = tick.datetime.strftime('%Y%m%d')
+        # 修正时间
+        if tick.datetime.hour >= 20:
+            if tick.datetime.isoweekday() == 1:
+                # 交易日是星期一，实际时间应该是星期五
+                tick.datetime = tick.datetime - timedelta(days=3)
+                tick.date = tick.datetime.strftime('%Y%m%d')
+            else:
+                # 第二天
+                tick.datetime = tick.datetime - timedelta(days=1)
+                tick.date = tick.datetime.strftime('%Y%m%d')
+        elif tick.datetime.hour < 8 and tick.datetime.isoweekday() == 1:
+            # 如果交易日是星期一，并且时间是早上8点前 => 星期六
+            tick.datetime = tick.datetime + timedelta(days=2)
+            tick.date = tick.datetime.strftime('%Y%m%d')
 
         
         tick.openPrice = pDepthMarketData.OpenPrice
