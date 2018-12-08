@@ -333,7 +333,7 @@ def loadRqCsv(fileName, dbName, symbol):
             bar.vtSymbol = symbol
             bar.symbol = symbol
 
-            bar.datetime = datetime.strptime(d[''], '%Y-%m-%d %H:%M:%S')
+            bar.datetime = datetime.strptime(d['datetime'], '%Y-%m-%d %H:%M:%S')
             bar.date = bar.datetime.date().strftime('%Y%m%d')
             bar.time = bar.datetime.time().strftime('%H:%M:%S')
             bar.exchange = 'SHFE'
@@ -353,4 +353,5 @@ def loadRqCsv(fileName, dbName, symbol):
     print('插入完毕，耗时：%s' % (time()-start))
     
 if __name__ == '__main__':
-    loadRqCsv("rb1901.csv",MINUTE_DB_NAME,'rb1901')
+    loadRqCsv("rb1905.csv",MINUTE_DB_NAME,'rb1905')
+    loadRqCsv("agb1906.csv", MINUTE_DB_NAME, 'ag1906')
