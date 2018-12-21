@@ -303,7 +303,7 @@ class DrEngine(object):
         nl = []
         for ocn in contract_data:
             nl.append([ocn.decode(), "CTP"])
-            json_data = {'working': True, 'tick': nl, 'bar': nl, 'active': {}}
+            json_data = {'working': True, 'tick': {}, 'bar': nl, 'active': {}}
             d1 = json.dumps(json_data, sort_keys=True, indent=4)
 
         f = open(os.path.join(os.getcwd(), self.settingFileName), 'w')
