@@ -76,7 +76,7 @@ class DrEngine(object):
         self.thread = Thread(target=self.run)   # 线程
         
         # 载入设置，订阅行情
-        self.loadSetting()
+        #self.loadSetting()
         
         # 启动数据插入线程
         self.start()
@@ -294,8 +294,22 @@ class DrEngine(object):
         """注册事件监听"""
         self.eventEngine.register(EVENT_TICK, self.procecssTickEvent)
         self.eventEngine.register(EVENT_RECORDER_DAY, self.handleRecorderDay)
+        self.eventEngine.register(EVENT_ALLCONTRACTS, self.processContractsEvent)
 
 
+    #--------------------------------------------------------------------------
+    def processContractsEvent(self, event):
+        contract_data = event.dict_['data']
+        nl = []
+        for ocn in contract_data:
+            nl.append([ocn.decode(), "CTP"])
+            json_data = {'working': True, 'tick': nl, 'bar': nl, 'active': {}}
+            d1 = json.dumps(json_data, sort_keys=True, indent=4)
+
+        f = open(os.path.join(os.getcwd(), self.settingFileName), 'w')
+        f.write(d1)
+        f.close()
+        self.loadSetting()
 
     #--------------------------------------------------------------------------
     ##处理日线数据

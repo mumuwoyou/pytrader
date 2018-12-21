@@ -128,7 +128,15 @@ class VtGateway(object):
     def connect(self):
         """连接"""
         pass
-    
+
+    #----------------------------------------------------------------------
+    def onAllContracts(self, activateContracts):
+        """合约基础信息推送"""
+        # 通用事件
+        event1 = Event(type_=EVENT_ALLCONTRACTS)
+        event1.dict_['data'] = activateContracts
+        self.eventEngine.put(event1)
+
     #----------------------------------------------------------------------
     def subscribe(self, subscribeReq):
         """订阅行情"""

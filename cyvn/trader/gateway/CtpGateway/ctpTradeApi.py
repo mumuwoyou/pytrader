@@ -157,7 +157,7 @@ class CtpTdApi(TraderApi):
         self.symbolSizeDict = {}            # 保存合约代码和合约大小的印射关系
 
         self.requireAuthentication = False
-
+        self.activeContracts = []
         self.Create()
 
     def Create(self):
@@ -440,11 +440,13 @@ class CtpTdApi(TraderApi):
 
         # 推送
         self.gateway.onContract(contract)
+        self.activeContracts.append(pInstrument.InstrumentID)
 
         # 缓存合约代码和交易所映射
         symbolExchangeDict[contract.symbol] = contract.exchange
 
         if bIsLast:
+            self.gateway.onAllContracts(self.activeContracts)
             self.writeLog(text.CONTRACT_DATA_RECEIVED)
         
     #----------------------------------------------------------------------
