@@ -1,18 +1,25 @@
 # -*- coding: utf-8 -*-
 
-import hashlib, os, sys, tempfile, time
+import hashlib, os, sys, tempfile
 from datetime import datetime, timedelta
 import logging
 from cyvn.ctp.futures import ApiStruct, MdApi
 from cyvn.trader.vtObject import *
 from cyvn.trader.gateway.CtpGateway.language import text
 from cyvn.trader.vtConstant import *
-
+from datetime import time
 # 夜盘交易时间段分隔判断
 NIGHT_TRADING = datetime(1900, 1, 1, 20).time()
 
 # 全局字典, key:symbol, value:exchange
 symbolExchangeDict = {}
+# 过滤掉的时间区间，注意集合竞价tick被顾虑掉了
+invalid_sections = [(time(2, 30, 59), time(9, 0, 0)),
+                    (time(11, 30, 59), time(13, 0, 0)),
+                    (time(15, 15, 0), time(21, 0, 0))]
+
+# 本地时间此区间的收到的tick不处理，避免重推数据
+invalid_local_section = (time(5, 0, 0), time(8, 30, 0))
 
 # 交易所类型映射
 exchangeMap = {}
@@ -173,11 +180,11 @@ class CtpMdApi(MdApi):
             self.connectionStatus = True
 
 
-        
+
         # 创建对象
         tick = VtTickData()
         tick.gatewayName = self.gatewayName
-        
+
         tick.symbol = str(pDepthMarketData.InstrumentID.decode())
         #tick.exchange = symbolExchangeDict[tick.symbol]
         #tick.exchange = str(pDepthMarketData.ExchangeID.decode()) #exchangeMapReverse.get(pDepthMarketData.ExchangeID, u'未知')
@@ -189,60 +196,46 @@ class CtpMdApi(MdApi):
         tick.volume = pDepthMarketData.Volume
         tick.openInterest = pDepthMarketData.OpenInterest
         tick.time = '.'.join([str(pDepthMarketData.UpdateTime.decode()), str(int(pDepthMarketData.UpdateMillisec/100))])
-        
+
         # 这里由于交易所夜盘时段的交易日数据有误，所以选择本地获取
         #tick.date = pDepthMarketData.TradingDay
-        tick.date = pDepthMarketData.TradingDay.decode() #time.now().strftime('%Y%m%d')
+        local_datetime = datetime.now()
+        local_time = local_datetime.time()
+        if local_time > invalid_local_section[0] and local_time < invalid_local_section[1]:
+            return
+        if tick.time[2] != ':':
+            tick.time = '0' + tick.time
+        tick_hour = int(tick.time[0:2])
+        local_hour = local_time.hour
+        real_date = local_datetime
+        if tick_hour == 23 and local_hour == 0:
+            real_date += timedelta(-1)
+        if tick_hour == 0 and local_hour == 23:
+            real_date += timedelta(1)
+        tick.date = real_date.strftime('%Y%m%d')
 
         # 先根据交易日期，生成时间
         tick.datetime = datetime.strptime(tick.date + ' ' + tick.time, '%Y%m%d %H:%M:%S.%f')
-        # 修正时间
-        if tick.datetime.hour >= 20:
-            if tick.datetime.isoweekday() == 1:
-                # 交易日是星期一，实际时间应该是星期五
-                tick.datetime = tick.datetime - timedelta(days=3)
-                tick.date = tick.datetime.strftime('%Y%m%d')
-            else:
-                # 第二天
-                tick.datetime = tick.datetime - timedelta(days=1)
-                tick.date = tick.datetime.strftime('%Y%m%d')
-        elif tick.datetime.hour < 8 and tick.datetime.isoweekday() == 1:
-            # 如果交易日是星期一，并且时间是早上8点前 => 星期六
-            tick.datetime = tick.datetime + timedelta(days=2)
-            tick.date = tick.datetime.strftime('%Y%m%d')
 
-        
+        tmptime = tick.datetime.time()
+        for sec in invalid_sections:
+            if tmptime > sec[0] and tmptime < sec[1]:
+                return
+
         tick.openPrice = pDepthMarketData.OpenPrice
         tick.highPrice = pDepthMarketData.HighestPrice
         tick.lowPrice = pDepthMarketData.LowestPrice
         tick.preClosePrice = pDepthMarketData.PreClosePrice
-        
+
         tick.upperLimit = pDepthMarketData.UpperLimitPrice
         tick.lowerLimit = pDepthMarketData.LowerLimitPrice
-        
+
         # CTP只有一档行情
         tick.bidPrice1 = pDepthMarketData.BidPrice1
         tick.bidVolume1 = pDepthMarketData.BidVolume1
         tick.askPrice1 = pDepthMarketData.AskPrice1
         tick.askVolume1 = pDepthMarketData.AskVolume1
         tick.datetime = datetime.strptime(' '.join([tick.date, tick.time]), '%Y%m%d %H:%M:%S.%f')
-
-        # 大商所日期转换
-        if tick.exchange is EXCHANGE_DCE:
-            newTime = datetime.strptime(tick.time, '%H:%M:%S.%f').time()  # 最新tick时间戳
-            print(tick.exchange)
-            # 如果新tick的时间小于夜盘分隔，且上一个tick的时间大于夜盘分隔，则意味着越过了12点
-            if (self.tickTime and
-                    newTime < NIGHT_TRADING and
-                    self.tickTime > NIGHT_TRADING):
-                self.tradingDt += datetime.timedelta(1)  # 日期加1
-                self.tradingDate = self.tradingDt.strftime('%Y%m%d')  # 生成新的日期字符串
-
-            tick.date = self.tradingDate  # 使用本地维护的日期
-
-            self.tickTime = newTime  # 更新上一个tick时间
-
-
         self.gateway.onTick(tick)
 
     def connect(self, userID, password, brokerID, address):
