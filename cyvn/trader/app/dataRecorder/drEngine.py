@@ -319,7 +319,7 @@ class DrEngine(object):
     def handleRecorderDay(self, event):
         """从数据库中读取Bar数据，startDate是datetime对象"""
         for contact_ in self.barSymbolSet:
-
+            oi = []
             time_now = datetime.now()
             if datetime.today().weekday() == 0:
                 #周一接上周五的夜盘
@@ -363,16 +363,18 @@ class DrEngine(object):
                 #day_bar.date     = datetime(time_now.year, time_now.month,time_now.day).date()
                 #day_bar.time     = datetime(time_now.year, time_now.month,time_now.day).time()
 
-                self.mainEngine.dbInsert(DAILY_DB_NAME, contact_, day_bar.__dict__)
+            self.mainEngine.dbInsert(DAILY_DB_NAME, contact_, day_bar.__dict__)
+            # 写入持仓量数据
+            oi.append(day_bar.symbol, day_bar.openInterest)
 
-                #写入持仓量数据
-                # fileName = 'openInterest.json'
-                # FilePath = getJsonPath(fileName, __file__)
-                # with open(FilePath,'r') as load_f:
-                #     load_dict = json.load(load_f)
-                #     load_dict[day_bar.symbol] = day_bar.openInterest
-                # with open(FilePath, 'w') as dump_f:
-                #     json.dump(load_dict, dump_f)
+        # 保存持仓量数据
+        filename = 'openInterest.json'
+        json_data = {'bar': oi}
+        d1 = json.dumps(json_data, sort_keys=True, indent=4)
+        f = open(os.path.join(os.getcwd(), filename), 'w')
+        f.write(d1)
+        f.close()
+
 
 
  
