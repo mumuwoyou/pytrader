@@ -302,7 +302,17 @@ class DrEngine(object):
     def processContractsEvent(self, event):
         contract_data = event.dict_['data']
         nl = []
-        tradingContractData = ['ag', 'rb']
+        activefilename = 'active.json'
+        # 交易的合约代码也应可以用配置文件配置
+        tradingContractData = []
+        # 打开设置文件
+        with open(getJsonPath(activefilename, __file__)) as f:
+            activejson = json.load(f)
+            if 'active' in activejson:
+                actives = activejson['active']
+                if actives != {}:
+                    for i in actives:
+                        tradingContractData.append(i)
         for ocn in contract_data:
             contract = ocn.decode()
             if contract[:1] in tradingContractData or contract[:2] in tradingContractData:
@@ -314,28 +324,49 @@ class DrEngine(object):
         f.write(d1)
         f.close()
         self.loadSetting()
+        self.saveContractMain()
 
     #------------------------------------------------------------------------
     def saveContractMain(self):
 
         from operator import itemgetter, attrgetter
-
         filename = 'openInterest.json'
-        settingfilename = 'DR_setting.json'
-        tradingContractData = ['ag', 'rb']
-        openinterestfile = open(os.path.join(os.getcwd(), filename), 'r')
-        openinterestjson = json.load(openinterestfile)
-        settingfile = open(os.path.join(os.getcwd(), settingfilename), 'r')
-        settingjson = json.load(settingfile)
-        if 'oi' in openinterestjson:
-            ois = openinterestfile['oi']
-            for item in tradingContractData:
-                oiarray = []
-                for  oi in ois:
-                    if oi[0][:1] == item or oi[0][:2] == item:
-                        oiarray.append(oi)
-                if oiarray != []:
-                    sorted(oiarray, key=itemgetter(1))
+        activefilename = 'active.json'
+        # 交易的合约代码也应可以用配置文件配置
+        tradingContractData = []
+        # 打开设置文件
+        with open(getJsonPath(activefilename, __file__)) as f:
+            activejson = json.load(f)
+            if 'active' in activejson:
+                actives = activejson['active']
+                if actives != {}:
+                    for i in actives:
+                        tradingContractData.append(i)
+            activejson['active'] = {}
+        # 打开持仓量文件
+        with open(getJsonPath(filename, __file__)) as f:
+            openinterests = json.load(f)
+            if 'oi' in openinterests:
+                ois = openinterests['oi']
+                for item in tradingContractData:
+                    oiarray = []
+                    # 获取持仓量列表
+                    for oi in ois:
+                        if oi[:1] == item or oi[:2] == item:
+                            oiarray.append([oi, ois[oi]])
+                    # 排序持仓量列表
+                    if oiarray != []:
+                        sortedioarray = sorted(oiarray, key=itemgetter(1), reverse=True)
+                        if sortedioarray[0][1] / sortedioarray[1][1] > 1.1:
+                            if actives[item] != sortedioarray[0][0]:
+                                actives[item] = sortedioarray[0][0]
+                # 把主力合约的代码添加到设置文件中
+                activejson['active'] = actives
+                d1 = json.dumps(activejson, sort_keys=True, indent=4)
+                f = open(os.path.join(os.getcwd(), activefilename), 'w')
+                f.write(d1)
+                f.close()
+
 
 
 
@@ -343,8 +374,10 @@ class DrEngine(object):
     ##处理日线数据
     def handleRecorderDay(self, event):
         """从数据库中读取Bar数据，startDate是datetime对象"""
+        #oi = []
+        oi = {}
         for contact_ in self.barSymbolSet:
-            oi = []
+
             time_now = datetime.now()
             if datetime.today().weekday() == 0:
                 #周一接上周五的夜盘
@@ -379,6 +412,7 @@ class DrEngine(object):
                 day_bar.close = bar['close']
                 day_bar.datetime = bar['datetime']
                 day_bar.openInterest = bar['openInterest']
+
                 day_bar.volume += int(bar['volume'])
 
             if day_bar:
@@ -388,9 +422,10 @@ class DrEngine(object):
                 #day_bar.date     = datetime(time_now.year, time_now.month,time_now.day).date()
                 #day_bar.time     = datetime(time_now.year, time_now.month,time_now.day).time()
 
-            self.mainEngine.dbInsert(DAILY_DB_NAME, contact_, day_bar.__dict__)
-            # 写入持仓量数据
-            oi.append(day_bar.symbol, day_bar.openInterest)
+                self.mainEngine.dbInsert(DAILY_DB_NAME, contact_, day_bar.__dict__)
+                # 写入持仓量数据
+                #oi.append([day_bar.symbol, day_bar.openInterest])
+                oi[day_bar.symbol] = day_bar.openInterest
 
         # 保存持仓量数据
         filename = 'openInterest.json'
