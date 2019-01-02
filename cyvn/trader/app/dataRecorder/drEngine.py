@@ -302,70 +302,89 @@ class DrEngine(object):
     def processContractsEvent(self, event):
         contract_data = event.dict_['data']
         nl = []
-        activefilename = 'active.json'
+
         # 交易的合约代码也应可以用配置文件配置
         tradingContractData = []
         # 打开设置文件
-        with open(getJsonPath(activefilename, __file__)) as f:
-            activejson = json.load(f)
-            if 'active' in activejson:
-                actives = activejson['active']
+        with open(getJsonPath(self.settingFileName, __file__)) as f:
+            drsettings = json.load(f)
+            if 'active' in drsettings:
+                actives = drsettings['active']
                 if actives != {}:
                     for i in actives:
                         tradingContractData.append(i)
-        for ocn in contract_data:
-            contract = ocn.decode()
-            if contract[:1] in tradingContractData or contract[:2] in tradingContractData:
-                nl.append([contract, "CTP"])
-        json_data = {'working': True, 'tick': {}, 'bar': nl, 'active': {}}
+                for ocn in contract_data:
+                    contract = ocn.decode()
+                    if contract[:1] in tradingContractData or contract[:2] in tradingContractData:
+                        nl.append([contract, "CTP"])
+
+                from operator import itemgetter, attrgetter
+                filename = 'openInterest.json'
+                # 打开持仓量文件
+                with open(getJsonPath(filename, __file__)) as f:
+                    openinterests = json.load(f)
+                    if 'oi' in openinterests:
+                        ois = openinterests['oi']
+                        for item in tradingContractData:
+                            oiarray = []
+                            # 获取持仓量列表
+                            for oi in ois:
+                                if oi[:1] == item or oi[:2] == item:
+                                    oiarray.append([oi, ois[oi]])
+                            # 排序持仓量列表
+                            if oiarray != []:
+                                sortedioarray = sorted(oiarray, key=itemgetter(1), reverse=True)
+                                if sortedioarray[0][1] / sortedioarray[1][1] > 1.1 and sortedioarray[0][0] > sortedioarray[1][0]:
+                                    if actives[item] != sortedioarray[0][0]:
+                                        actives[item] = sortedioarray[0][0]
+        json_data = {'working': True, 'tick': {}, 'bar': nl, 'active': actives}
         d1 = json.dumps(json_data, sort_keys=True, indent=4)
 
         f = open(os.path.join(os.getcwd(), self.settingFileName), 'w')
         f.write(d1)
         f.close()
         self.loadSetting()
-        self.saveContractMain()
 
-    #------------------------------------------------------------------------
-    def saveContractMain(self):
-
-        from operator import itemgetter, attrgetter
-        filename = 'openInterest.json'
-        activefilename = 'active.json'
-        # 交易的合约代码也应可以用配置文件配置
-        tradingContractData = []
-        # 打开设置文件
-        with open(getJsonPath(activefilename, __file__)) as f:
-            activejson = json.load(f)
-            if 'active' in activejson:
-                actives = activejson['active']
-                if actives != {}:
-                    for i in actives:
-                        tradingContractData.append(i)
-            activejson['active'] = {}
-        # 打开持仓量文件
-        with open(getJsonPath(filename, __file__)) as f:
-            openinterests = json.load(f)
-            if 'oi' in openinterests:
-                ois = openinterests['oi']
-                for item in tradingContractData:
-                    oiarray = []
-                    # 获取持仓量列表
-                    for oi in ois:
-                        if oi[:1] == item or oi[:2] == item:
-                            oiarray.append([oi, ois[oi]])
-                    # 排序持仓量列表
-                    if oiarray != []:
-                        sortedioarray = sorted(oiarray, key=itemgetter(1), reverse=True)
-                        if sortedioarray[0][1] / sortedioarray[1][1] > 1.1:
-                            if actives[item] != sortedioarray[0][0]:
-                                actives[item] = sortedioarray[0][0]
-                # 把主力合约的代码添加到设置文件中
-                activejson['active'] = actives
-                d1 = json.dumps(activejson, sort_keys=True, indent=4)
-                f = open(os.path.join(os.getcwd(), activefilename), 'w')
-                f.write(d1)
-                f.close()
+    # #------------------------------------------------------------------------
+    # def saveContractMain(self):
+    #
+    #     from operator import itemgetter, attrgetter
+    #     filename = 'openInterest.json'
+    #     activefilename = 'active.json'
+    #     # 交易的合约代码也应可以用配置文件配置
+    #     tradingContractData = []
+    #     # 打开设置文件
+    #     with open(getJsonPath(activefilename, __file__)) as f:
+    #         activejson = json.load(f)
+    #         if 'active' in activejson:
+    #             actives = activejson['active']
+    #             if actives != {}:
+    #                 for i in actives:
+    #                     tradingContractData.append(i)
+    #         activejson['active'] = {}
+    #     # 打开持仓量文件
+    #     with open(getJsonPath(filename, __file__)) as f:
+    #         openinterests = json.load(f)
+    #         if 'oi' in openinterests:
+    #             ois = openinterests['oi']
+    #             for item in tradingContractData:
+    #                 oiarray = []
+    #                 # 获取持仓量列表
+    #                 for oi in ois:
+    #                     if oi[:1] == item or oi[:2] == item:
+    #                         oiarray.append([oi, ois[oi]])
+    #                 # 排序持仓量列表
+    #                 if oiarray != []:
+    #                     sortedioarray = sorted(oiarray, key=itemgetter(1), reverse=True)
+    #                     if sortedioarray[0][1] / sortedioarray[1][1] > 1.1:
+    #                         if actives[item] != sortedioarray[0][0]:
+    #                             actives[item] = sortedioarray[0][0]
+    #             # 把主力合约的代码添加到设置文件中
+    #             activejson['active'] = actives
+    #             d1 = json.dumps(activejson, sort_keys=True, indent=4)
+    #             f = open(os.path.join(os.getcwd(), activefilename), 'w')
+    #             f.write(d1)
+    #             f.close()
 
 
 
