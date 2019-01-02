@@ -5,7 +5,7 @@
 '''
 
 
-from cyvn.trader.eventEngine import Event
+from cyvn.event import Event
 
 from cyvn.trader.uiBasicWidget import QtGui, QtWidgets, QtCore
 from cyvn.trader.app.riskManager.language import text

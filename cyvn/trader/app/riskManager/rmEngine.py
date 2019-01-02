@@ -13,7 +13,7 @@ import json
 import os
 import platform
 
-from cyvn.trader.eventEngine import Event
+from cyvn.event import Event
 from cyvn.trader.vtEvent import *
 from cyvn.trader.vtConstant import *
 from cyvn.trader.vtGateway import VtLogData

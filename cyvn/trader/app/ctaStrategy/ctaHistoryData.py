@@ -79,12 +79,14 @@ def loadMcCsv(fileName, dbName, symbol):
     print('开始读取CSV文件%s中的数据插入到%s的%s中' %(fileName, dbName, symbol))
     
     # 锁定集合，并创建索引
-    client = pymongo.MongoClient(globalSetting['mongoHost'], globalSetting['mongoPort']) 
+    client = pymongo.MongoClient(globalSetting['mongoHost'], globalSetting['mongoPort'])
     collection = client[dbName][symbol]
     collection.ensure_index([('datetime', pymongo.ASCENDING)], unique=True)   
-    
+
+
+
     # 读取数据和插入到数据库
-    reader = csv.DictReader(file(fileName, 'r'))
+    reader = csv.DictReader(open(fileName, 'r'))
     for d in reader:
         bar = VtBarData()
         bar.vtSymbol = symbol

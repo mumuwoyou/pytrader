@@ -280,7 +280,7 @@ class DrEngine(object):
 
             if vtSymbol in self.activeSymbolDict:
                 activeSymbol = self.activeSymbolDict[vtSymbol]
-                self.insertData(MINUTE_DB_NAME, activeSymbol, bar)
+                self.insertData(MINUTE_TO_DB_NAME[xmin], activeSymbol, bar)
 
             self.writeDrLog(text.BAR_LOGGING_MESSAGE.format(symbol=bar.vtSymbol,
                                                             time=bar.time,
@@ -312,7 +312,7 @@ class DrEngine(object):
                 actives = drsettings['active']
                 if actives != {}:
                     for i in actives:
-                        tradingContractData.append(i)
+                        tradingContractData.append(i[:-4])
                 for ocn in contract_data:
                     contract = ocn.decode()
                     if contract[:1] in tradingContractData or contract[:2] in tradingContractData:
@@ -335,8 +335,8 @@ class DrEngine(object):
                             if oiarray != []:
                                 sortedioarray = sorted(oiarray, key=itemgetter(1), reverse=True)
                                 if sortedioarray[0][1] / sortedioarray[1][1] > 1.1 and sortedioarray[0][0] > sortedioarray[1][0]:
-                                    if actives[item] != sortedioarray[0][0]:
-                                        actives[item] = sortedioarray[0][0]
+                                    if actives[item + '.HOT'] != sortedioarray[0][0]:
+                                        actives[item + '.HOT'] = sortedioarray[0][0]
         json_data = {'working': True, 'tick': {}, 'bar': nl, 'active': actives}
         d1 = json.dumps(json_data, sort_keys=True, indent=4)
 
@@ -393,7 +393,7 @@ class DrEngine(object):
     ##处理日线数据
     def handleRecorderDay(self, event):
         """从数据库中读取Bar数据，startDate是datetime对象"""
-        #oi = []
+
         oi = {}
         for contact_ in self.barSymbolSet:
 
@@ -438,15 +438,18 @@ class DrEngine(object):
                 day_bar.datetime = datetime(time_now.year, time_now.month,time_now.day)
                 day_bar.date = day_bar.datetime.strftime('%Y%m%d')
                 day_bar.time = day_bar.datetime.strftime('%H:%M:%S')
-                #day_bar.date     = datetime(time_now.year, time_now.month,time_now.day).date()
-                #day_bar.time     = datetime(time_now.year, time_now.month,time_now.day).time()
+
 
                 self.mainEngine.dbInsert(DAILY_DB_NAME, contact_, day_bar.__dict__)
+
+                if contact_ in self.activeSymbolDict:
+                    activeSymbol = self.activeSymbolDict[contact_]
+                    self.mainEngine.dbInsert(DAILY_DB_NAME, activeSymbol, day_bar.__dict__)
+
                 # 写入持仓量数据
-                #oi.append([day_bar.symbol, day_bar.openInterest])
                 oi[day_bar.symbol] = day_bar.openInterest
 
-        # 保存持仓量数据
+                    # 保存持仓量数据
         filename = 'openInterest.json'
         json_data = {'oi': oi}
         d1 = json.dumps(json_data, sort_keys=True, indent=4)
