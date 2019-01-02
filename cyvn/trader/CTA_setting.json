@@ -5,8 +5,8 @@
         "vtSymbol": "rb1905"
     },
     {
-        "name": "Adxr",
-        "className": "AdxrStrategy",
+        "name": "BollChannel",
+        "className": "BollChannelStrategy01",
         "vtSymbol": "rb1905"
     }
 ]
