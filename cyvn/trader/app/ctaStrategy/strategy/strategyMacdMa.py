@@ -29,7 +29,7 @@ class MacdMaStrategy(CtaTemplate):
     initDays = 20           # 初始化数据所用的天数
     fixedSize = 1           # 每次交易的数量
     trailingPercent = 0.8   # 百分比移动止损
-    openBuy = False         # 开多仓
+    openBuy = True         # 开多仓
     openShort = False       # 开空仓
     stoploss = 20           # 固定止损
     stopfit = 60            # 固定止盈
@@ -38,19 +38,18 @@ class MacdMaStrategy(CtaTemplate):
 
     intraTradeHigh = 0                  # 持仓期内的最高点
     intraTradeLow = 0                   # 持仓期内的最低点
+    lastPrice = 0                            # 持仓价
     maBuy = False                       # MA买入
     maShort = False                     # MA卖出
     macdBuy = False                     # MACD买入
     macdShort = False                   # MACD卖出
+    macdOpen = False
     count = 0                           # 持仓周期
 
     fastMa = 0
     slowMa = 0
     dif = 0
     dea = 0
-    macdbar = 0
-
-
 
     buyOrderIDList = []                 # OCO委托买入开仓的委托号
     shortOrderIDList = []               # OCO委托卖出开仓的委托号
@@ -73,17 +72,20 @@ class MacdMaStrategy(CtaTemplate):
                'slowMa',
                'dif',
                'dea',
-               'Macdbar',
                'maBuy',
                'maShort',
                'macdBuy',
-               'macdShort'
+               'macdShort',
+               'macdOpen',
+               'lastPrice',
+               'count'
                ]
     
     # 同步列表，保存了需要保存到数据库的变量名称
     syncList = ['pos',
                 'intraTradeHigh',
                 'intraTradeLow',
+                'lastPrice',
                 'count']
 
     #----------------------------------------------------------------------
@@ -145,46 +147,63 @@ class MacdMaStrategy(CtaTemplate):
         am = self.am
         am.updateBar(bar)
 
-        if not am.inited:
-            return
+        # if not am.inited:
+        #     return
         
         # 计算指标数值
+
+        dif = talib.EMA(am.close, 12) - talib.EMA(am.close, 26)
+        dea = talib.EMA(dif, 9)
         fast_ma = talib.MA(am.close, 5)
         slow_ma = talib.MA(am.close, 13)
-
-        dif, dea, macdbar = talib.MACD(am.close, fastperiod=12, slowperiod=24, signalperiod=9)
-
         self.fastMa = fast_ma[-1]
         self.slowMa = slow_ma[-1]
         self.dif = dif[-1]
         self.dea = dea[-1]
-        self.macdbar = macdbar
+        #self.macdbar = macdbar[-1]
 
         if self.pos == 0:
             self.intraTradeHigh = bar.high
             self.intraTradeLow = bar.low
+            self.lastPrice = bar.close
             self.count = 0
 
         elif self.pos > 0:
             self.count += 1
-            # 计算多头持有期内的最高价，以及重置最低价
-            self.intraTradeHigh = max(self.intraTradeHigh, bar.high)
-            self.intraTradeLow = bar.low
+            # # 计算多头持有期内的最高价，以及重置最低价
+            # self.intraTradeHigh = max(self.intraTradeHigh, bar.high)
+            # self.intraTradeLow = bar.low
+            #
+            # # 计算多头移动止损
+            # longStop = self.intraTradeHigh * (1 - self.trailingPercent / 100)
+            #
+            # # 发出本地止损委托
+            # self.sell(longStop, abs(self.pos), stop=True)
+            # 固定止损
+            self.sell(self.lastPrice - self.stoploss, self.fixedSize, stop=True)
+            # 固定止盈
+            self.sell(self.lastPrice + self.stopfit, self.fixedSize, stop=True)
 
-            # 计算多头移动止损
-            longStop = self.intraTradeHigh * (1 - self.trailingPercent / 100)
-
-            # 发出本地止损委托
-            self.sell(longStop, abs(self.pos), stop=True)
+            if self.count >= 36:
+                self.sell(bar.close - 5, abs(self.pos))
 
         # 持有空头仓位
         elif self.pos < 0:
             self.count += 1
-            self.intraTradeLow = min(self.intraTradeLow, bar.low)
-            self.intraTradeHigh = bar.high
+            # # 计算空头持有期内的最高价，以及重置最低价
+            # self.intraTradeLow = min(self.intraTradeLow, bar.low)
+            # self.intraTradeHigh = bar.high
+            # # 计算空头移动止损
+            # shortStop = self.intraTradeLow * (1 + self.trailingPercent / 100)
+            # # 发出本地止损委托
+            # self.cover(shortStop, abs(self.pos), stop=True)
+            # 固定止损
+            self.cover(self.lastPrice + self.stoploss, self.fixedSize, stop=True)
+            # 固定止盈
+            self.cover(self.lastPrice - self.stopfit, self.fixedSize, stop=True)
 
-            shortStop = self.intraTradeLow * (1 + self.trailingPercent / 100)
-            self.cover(shortStop, abs(self.pos), stop=True)
+            if self.count >= 36:
+                self.cover(bar.close + 5, abs(self.pos))
 
 
 
@@ -205,30 +224,34 @@ class MacdMaStrategy(CtaTemplate):
 
         if abs(dif[-1]) < 3 or abs(dea[-1] < 3):
             self.writeCtaLog(u'%s策略MACD进入可交易区间' % self.name)
+            self.macdOpen = True
+        else:
+            self.writeCtaLog(u'%s策略MACD离开可交易区间' % self.name)
+            self.macdOpen = False
 
-            if dif[-1] > dea[-1] and dif[-2] < dea[-2]:
-                self.writeCtaLog(u'%s策略MACD金叉' % self.name)
-                self.macdBuy = True
-                self.macdShort = False
+        if dif[-1] > dea[-1] and dif[-2] < dea[-2] and self.macdOpen:
+            self.writeCtaLog(u'%s策略MACD交易区域内金叉' % self.name)
+            self.macdBuy = True
+            self.macdShort = False
 
-            if dif[-1] < dea[-1] and dif[-2] > dea[-2]:
-                self.writeCtaLog(u'%s策略MACD死叉' % self.name)
-                self.macdShort = True
-                self.macdBuy = False
+        if dif[-1] < dea[-1] and dif[-2] > dea[-2] and self.macdOpen:
+            self.writeCtaLog(u'%s策略MACD交易区域内死叉' % self.name)
+            self.macdShort = True
+            self.macdBuy = False
+
+
 
         if self.pos == 0:
             # 买入
             if self.openBuy and self.maBuy and self.macdBuy:
                 orderID = self.buy(bar.close + 5, self.fixedSize)
                 self.orderList.extend(orderID)
-                self.sell(bar.close - self.stoploss, self.fixedSize, stop=True)
-                self.sell(bar.close + self.stopfit, self.fixedSize, stop=True)
+
             # 卖出
-            if self.openShort and self.maShort and self.maShort:
+            if self.openShort and self.maShort and self.macdShort:
                 orderID = self.short(bar.close - 5, self.fixedSize)
                 self.orderList.extend(orderID)
-                self.cover(bar.close + self.stoploss, self.fixedSize, stop=True)
-                self.cover(bar.close - self.stopfit, self.fixedSize, stop=True)
+
 
 
 
